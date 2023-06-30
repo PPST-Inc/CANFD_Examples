@@ -75,80 +75,6 @@ m_objPCANBasic = PCANBasic()
 
 
 ###*****************************************************************
-### Read Test
-###**********
-def ReadTest():
-    m_LastMsgsList = []
-
-
-    #init.Read();
-
-
-    m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4, 
-                                'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8, 
-                                'PCAN_DNGBUS1':PCAN_DNGBUS1}
-
-    m_BAUDRATES = {'1 MBit/sec':PCAN_BAUD_1M, '800 kBit/sec':PCAN_BAUD_800K, '500 kBit/sec':PCAN_BAUD_500K, '250 kBit/sec':PCAN_BAUD_250K,
-                            '125 kBit/sec':PCAN_BAUD_125K, '100 kBit/sec':PCAN_BAUD_100K, '95,238 kBit/sec':PCAN_BAUD_95K, '83,333 kBit/sec':PCAN_BAUD_83K,
-                            '50 kBit/sec':PCAN_BAUD_50K, '47,619 kBit/sec':PCAN_BAUD_47K, '33,333 kBit/sec':PCAN_BAUD_33K, '20 kBit/sec':PCAN_BAUD_20K,
-                            '10 kBit/sec':PCAN_BAUD_10K, '5 kBit/sec':PCAN_BAUD_5K}
-
-    m_HWTYPES = {'ISA-82C200':PCAN_TYPE_ISA, 'ISA-SJA1000':PCAN_TYPE_ISA_SJA, 'ISA-PHYTEC':PCAN_TYPE_ISA_PHYTEC, 'DNG-82C200':PCAN_TYPE_DNG,
-                         'DNG-82C200 EPP':PCAN_TYPE_DNG_EPP, 'DNG-SJA1000':PCAN_TYPE_DNG_SJA, 'DNG-SJA1000 EPP':PCAN_TYPE_DNG_SJA_EPP}
-
-    m_IOPORTS = {'0100':0x100, '0120':0x120, '0140':0x140, '0200':0x200, '0220':0x220, '0240':0x240, '0260':0x260, '0278':0x278, 
-                          '0280':0x280, '02A0':0x2A0, '02C0':0x2C0, '02E0':0x2E0, '02E8':0x2E8, '02F8':0x2F8, '0300':0x300, '0320':0x320,
-                          '0340':0x340, '0360':0x360, '0378':0x378, '0380':0x380, '03BC':0x3BC, '03E0':0x3E0, '03E8':0x3E8, '03F8':0x3F8}
-
-    m_INTERRUPTS = {'3':3, '4':4, '5':5, '7':7, '9':9, '10':10, '11':11, '12':12, '15':15}
- 
-    baudrate = PCAN_BAUD_500K
-    hwtype = PCAN_TYPE_ISA_SJA
-    ioport = 0x100
-    interrupt = 3
-    
-    result =  m_objPCANBasic.GetValue(PCAN_NONEBUS, PCAN_ATTACHED_CHANNELS)
-    channels_handlers = []
-    if  (result[0] == PCAN_ERROR_OK):
-        # Include only connectable channels
-        #
-        for channel in result[1]:
-            if  (channel.channel_condition & PCAN_CHANNEL_AVAILABLE):
-                    logging.debug(f'Channel hanndle is {channel.channel_handle}')
-                    l_PcanHandle = channel.channel_handle
-                    verstring =f'l_PcanHandle is {l_PcanHandle}'
-                    result =  m_objPCANBasic.Initialize(l_PcanHandle,baudrate,hwtype,ioport,interrupt)
-                    if result != PCAN_ERROR_OK:
-                        if result != PCAN_ERROR_CAUTION:
-                            logging.debug(m_objPCANBasic.GetErrorText(result, 0x09)[1])
-                    else:
-                            break
-    logging.debug("Connected")
-    return  l_PcanHandle
-
-
-
-
-def PCANBasicReadMessage():
-        result = m_objPCANBasic.Read(m_PcanHandle)
-        if result[0] == PCAN_ERROR_OK:
-            logging.debug(result[1:])
-        return result[0]
-
-def ReadMessages():
-    stsResult = PCAN_ERROR_OK
-    m_CanRead = True
-    # We read at least one time the queue looking for messages.
-    # If a message is found, we look again trying to find more.
-    # If the queue is empty or an error occurr, we get out from
-    # the dowhile statement.
-    #
-    while (m_CanRead and not (stsResult & PCAN_ERROR_QRCVEMPTY)):
-        stsResult = PCANBasicReadMessage()
-        if stsResult == PCAN_ERROR_ILLOPERATION:
-            break
-
-###*****************************************************************
 ### Timer class
 ###*****************************************************************
 class TimerRepeater(object):
@@ -223,6 +149,16 @@ class TimerRepeater(object):
             self._event.set()
             self._thread = None
 
+            
+###*****************************************************************
+
+
+################################################################################################################################################
+################################################################################################################################################
+
+###*****************************************************************
+
+
 ###*****************************************************************
 ### PCAN Tester app
 ###*****************************************************************
@@ -232,14 +168,18 @@ class PCANTester(object):
     def __init__(self):
         self.m_Parent = 1
         self.exit = -1
-        self.tmrRead = TimerRepeater("tmrRead", 0.010, ReadMessages, False)
+        self.m_IsFD = False
+        self.m_LastMsgsList = []
+        self._lock = threading.RLock()
+        self.m_PcanHandle = self.ReadTest()
+        self.Initializetimer()
+
 
 
     ## Destructor
     ##
     def destroy (self):
         self.tmrRead.stop()
-        pprint("PCANTester destructor")
 
         
     ## Message loop
@@ -267,10 +207,131 @@ class PCANTester(object):
                 self.exit = 1
                 raise(SystemExit, 1)
 
-m_PcanHandle = ReadTest()
-global basicExl
+    def Initializetimer(self):
+        self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
+        self.tmrRead.start()
 
+
+
+    def PCANBasicReadMessage(self):
+            result = m_objPCANBasic.Read(self.m_PcanHandle)
+            if result[0] == PCAN_ERROR_OK:
+                #self.ProcessMessageFD(result[1:])
+                self.ProcessMessage(result[1:])
+                
+            return result[0]
+
+    def ReadMessages(self):
+        stsResult = PCAN_ERROR_OK
+        m_CanRead = True
+        # We read at least one time the queue looking for messages.
+        # If a message is found, we look again trying to find more.
+        # If the queue is empty or an error occurr, we get out from
+        # the dowhile statement.
+        #
+        while (m_CanRead and not (stsResult & PCAN_ERROR_QRCVEMPTY)):
+            stsResult = self.PCANBasicReadMessage()
+            if stsResult == PCAN_ERROR_ILLOPERATION:
+                break
+
+    def ReadTest(self):
+        m_LastMsgsList = []
+
+
+        #init.Read();
+
+
+        m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4, 
+                                    'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8, 
+                                    'PCAN_DNGBUS1':PCAN_DNGBUS1}
+
+        m_BAUDRATES = {'1 MBit/sec':PCAN_BAUD_1M, '800 kBit/sec':PCAN_BAUD_800K, '500 kBit/sec':PCAN_BAUD_500K, '250 kBit/sec':PCAN_BAUD_250K,
+                                '125 kBit/sec':PCAN_BAUD_125K, '100 kBit/sec':PCAN_BAUD_100K, '95,238 kBit/sec':PCAN_BAUD_95K, '83,333 kBit/sec':PCAN_BAUD_83K,
+                                '50 kBit/sec':PCAN_BAUD_50K, '47,619 kBit/sec':PCAN_BAUD_47K, '33,333 kBit/sec':PCAN_BAUD_33K, '20 kBit/sec':PCAN_BAUD_20K,
+                                '10 kBit/sec':PCAN_BAUD_10K, '5 kBit/sec':PCAN_BAUD_5K}
+
+        m_HWTYPES = {'ISA-82C200':PCAN_TYPE_ISA, 'ISA-SJA1000':PCAN_TYPE_ISA_SJA, 'ISA-PHYTEC':PCAN_TYPE_ISA_PHYTEC, 'DNG-82C200':PCAN_TYPE_DNG,
+                            'DNG-82C200 EPP':PCAN_TYPE_DNG_EPP, 'DNG-SJA1000':PCAN_TYPE_DNG_SJA, 'DNG-SJA1000 EPP':PCAN_TYPE_DNG_SJA_EPP}
+
+        m_IOPORTS = {'0100':0x100, '0120':0x120, '0140':0x140, '0200':0x200, '0220':0x220, '0240':0x240, '0260':0x260, '0278':0x278, 
+                            '0280':0x280, '02A0':0x2A0, '02C0':0x2C0, '02E0':0x2E0, '02E8':0x2E8, '02F8':0x2F8, '0300':0x300, '0320':0x320,
+                            '0340':0x340, '0360':0x360, '0378':0x378, '0380':0x380, '03BC':0x3BC, '03E0':0x3E0, '03E8':0x3E8, '03F8':0x3F8}
+
+        m_INTERRUPTS = {'3':3, '4':4, '5':5, '7':7, '9':9, '10':10, '11':11, '12':12, '15':15}
+    
+        baudrate = PCAN_BAUD_500K
+        hwtype = PCAN_TYPE_ISA_SJA
+        ioport = 0x100
+        interrupt = 3
+        
+        result =  m_objPCANBasic.GetValue(PCAN_NONEBUS, PCAN_ATTACHED_CHANNELS)
+        channels_handlers = []
+        if  (result[0] == PCAN_ERROR_OK):
+            # Include only connectable channels
+            #
+            for channel in result[1]:
+                if  (channel.channel_condition & PCAN_CHANNEL_AVAILABLE):
+                        logging.debug(f'Channel hanndle is {channel.channel_handle}')
+                        l_PcanHandle = channel.channel_handle
+                        verstring =f'l_PcanHandle is {l_PcanHandle}'
+                        result =  m_objPCANBasic.Initialize(l_PcanHandle,baudrate,hwtype,ioport,interrupt)
+                        if result != PCAN_ERROR_OK:
+                            if result != PCAN_ERROR_CAUTION:
+                                logging.debug(m_objPCANBasic.GetErrorText(result, 0x09)[1])
+                        else:
+                                break
+        logging.debug("Connected")
+        return  l_PcanHandle
+
+
+    ###*****************************************************************
+    ### Message-proccessing functions
+    def ProcessMessageFD(self, *args):
+        with self._lock:
+            # Split the arguments. [0] TPCANMsgFD, [1] TPCANTimestampFD
+            #
+            theMsg = args[0][0]
+            itsTimeStamp = args[0][1]
+            
+            for msg in self.m_LastMsgsList:
+                if (msg.CANMsg.ID == theMsg.ID) and (msg.CANMsg.MSGTYPE == theMsg.MSGTYPE):
+                    msg.Update(theMsg, itsTimeStamp)                    
+                    return
+            a_message = db.get_message_by_frame_id(theMsg.ID)
+            decoded = db.decode_message(theMsg.ID, theMsg.DATA )
+            try:
+                prsting = f'Id: {a_message.name} - Periodic_Voltage_ACDC:{decoded["Periodic_Voltage_ACDC"]} '
+                #prsting = f'Id: {a_message.name} - :{decoded}'
+                logging.info(prsting)
+            except KeyError:
+                return
+
+
+## Processes a received message, in order to show it in the Message-ListView
+    ##
+    def ProcessMessage(self, *args):        
+        with self._lock:       
+            # Split the arguments. [0] TPCANMsg, [1] TPCANTimestamp
+            #
+            theMsg = args[0][0]
+            itsTimeStamp = args[0][1]    
+
+            newMsg = TPCANMsgFD()
+            newMsg.ID = theMsg.ID
+            newMsg.DLC = theMsg.LEN
+            for i in range(8 if (theMsg.LEN > 8) else theMsg.LEN):
+                newMsg.DATA[i] = theMsg.DATA[i]
+            newMsg.MSGTYPE = theMsg.MSGTYPE
+            newTimestamp = TPCANTimestampFD()
+            newTimestamp.value = (itsTimeStamp.micros + 1000 * itsTimeStamp.millis + 0x100000000 * 1000 * itsTimeStamp.millis_overflow)
+            self.ProcessMessageFD([newMsg, newTimestamp])
+
+
+
+###*****************************************************************
+
+###*    Run program
 basicExl = PCANTester()
-basicExl.tmrRead.start()
 basicExl.loop()
 basicExl.destroy()
+
