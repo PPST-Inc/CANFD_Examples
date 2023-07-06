@@ -11,18 +11,12 @@
 
 from PCANBasic import *        ## PCAN-Basic library import
 
-#import tkMessageBox            ## Simple-Messages library
 import traceback                ## Error-Tracing library
-
-import string                   ## String functions
-#import tkFont                  ## Font-Management library
 
 import time                     ## Time-related library
 from time import sleep
 
 import threading                ## Threading-based Timer library
-
-import platform                 ## Underlying platform�s info library
 
 import logging
 
@@ -30,14 +24,25 @@ import cantools
 
 import sys
 
-import asyncio
-
 from pprint import pprint
 
+###*****************************************************************
+### Can Database Import
 db = cantools.database.load_file('test.dbc')
-db.messages
-log_file_name = 'can_test_log.txt'#+time.strftime('%Y_%m_%d_%I_%M_%S.log')
 
+### Can Hardware setup
+testBaudrate = PCAN_BAUD_500K
+testHardwareType = PCAN_TYPE_ISA_SJA
+testCANFD = False
+
+###*****************************************************************
+### PCANBasic Object 
+
+m_objPCANBasic = PCANBasic()
+
+###*****************************************************************
+### Logger file configuration
+log_file_name = 'can_test_log.txt'
 logging.FileHandler(log_file_name,"w")
 
 logging.basicConfig(
@@ -54,29 +59,21 @@ logging.info(f'File : {log_file_name}')
 dateString = time.strftime('%I:%M:%S %m/%d/%Y')
 logging.info(f'Date : {dateString}')
 
-
-a_message = db.messages[0]
-
-a_signals = a_message.signals
-argument_data = dict()
-
-for signal in a_signals:
-    pprint(signal.name)
-
-m_PcanHandle = PCAN_NONEBUS
-
-m_objPCANBasic = PCANBasic()
-
 ###*****************************************************************
-### Error def 
+### Error strings
 ###*****************************************************************
-
-#Make a const dict
-#const Errors_String = dict  [error num]
-
-def ErrorStringEq(num):
-    nucase
-    return ""
+def ErrorString(status):
+    match status:
+        case 0:
+            return "Ok"
+        case 1:
+            return "Error"
+        case 2:
+            return "Communication error"
+        case 3:
+            return "Failed getting messages from data base"
+        case _:
+            return "Unspecified error"
 
 ###*****************************************************************
 ### Timer class
@@ -166,9 +163,9 @@ class PCANTester(object):
     def __init__(self):
         self.m_Parent = 1
         self.exit = -1
-        self.m_IsFD = False
+        self.m_IsFD = testCANFD
         self._lock = threading.RLock()
-        self.m_PcanHandle = self.ReadTest()
+        self.m_PcanHandle = self.InitializeCan()
         self.LastMsgTimeStamp = TPCANTimestampFD()
         self.m_LastMsgsList = []
         self.periodicTimestampList = []
@@ -253,23 +250,30 @@ class PCANTester(object):
             self.CANMsgWrt.ID  = a_message.frame_id
             self.CANMsgWrt.LEN = a_message.length
             self.CANMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
-            #self.CANMsgWrt.DATA
-            stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
-            if stsResult != PCAN_ERROR_OK:
-                logging.debug(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
-                testStage2Result = 2
-                break
-            delta_time = time.time_ns()
-            if self.writeSem.acquire(True, 5):
-                delta_time = (time.time_ns() - delta_time) / 1000000
-                for signame,value in self.CANMesageReceived.items():
-                    logging.info(f'{a_message.name} {delta_time:0.0f} ms - {signame}: {value:0.2f}' )
-                self.CANMesageReceived
-                testStage2Result = 0
-            else:
-                logging.info(f'Fail to read Get messages')
-                testStage2Result = 1
-        
+            countString = ''
+            for j in range(10):
+                stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
+                if stsResult != PCAN_ERROR_OK:
+                    logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
+                    testStage2Result = 2
+                    self.tmrRead.stop()
+                    return testStage2Result
+                delta_time = time.time_ns()
+                if self.writeSem.acquire(True, 10):
+                    delta_time = (time.time_ns() - delta_time) / 1000000
+                    countString =countString + '-'
+                    self.CANMesageReceived
+                    testStage2Result = 0
+                else:
+                    logging.info(f'Fail to read Get messages')
+                    testStage2Result = 1
+                    self.tmrRead.stop()
+                    return testStage2Result
+
+            pprint(f'{a_message.name} {countString}')
+            for signame,value in self.CANMesageReceived.items():
+                logging.info(f'{a_message.name} {delta_time:0.0f} ms - {signame}: {round(value,2)}' )
+    
         self.tmrRead.stop()
         return testStage2Result
 
@@ -282,6 +286,8 @@ class PCANTester(object):
     def TestStage4(self):
         return self.getter_sended('Get_Protection_1',8)
 
+    def TestStage5(self):
+        return self.getter_sended('Get_Setpoints_1',14)
 
     def WriteFrame(self):
         return m_objPCANBasic.Write(self.m_PcanHandle, self.CANMsgWrt)
@@ -313,13 +319,8 @@ class PCANTester(object):
             if stsResult == PCAN_ERROR_ILLOPERATION:
                 break
 
-    def ReadTest(self):
+    def InitializeCan(self):
         m_LastMsgsList = []
-
-
-        #init.Read();
-
-
         m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4, 
                                     'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8, 
                                     'PCAN_DNGBUS1':PCAN_DNGBUS1}
@@ -338,16 +339,15 @@ class PCANTester(object):
 
         m_INTERRUPTS = {'3':3, '4':4, '5':5, '7':7, '9':9, '10':10, '11':11, '12':12, '15':15}
     
-        baudrate = PCAN_BAUD_500K
-        hwtype = PCAN_TYPE_ISA_SJA
+        baudrate = testBaudrate
+        hwtype = testHardwareType
         ioport = 0x100
         interrupt = 3
         
         result =  m_objPCANBasic.GetValue(PCAN_NONEBUS, PCAN_ATTACHED_CHANNELS)
-        channels_handlers = []
+
         if  (result[0] == PCAN_ERROR_OK):
             # Include only connectable channels
-            #
             for channel in result[1]:
                 if  (channel.channel_condition & PCAN_CHANNEL_AVAILABLE):
                         l_PcanHandle = channel.channel_handle
@@ -355,12 +355,15 @@ class PCANTester(object):
                         result =  m_objPCANBasic.Initialize(l_PcanHandle,baudrate,hwtype,ioport,interrupt)
                         if result != PCAN_ERROR_OK:
                             if result != PCAN_ERROR_CAUTION:
-                                logging.debug(m_objPCANBasic.GetErrorText(result, 0x09)[1])
+                                logging.info(m_objPCANBasic.GetErrorText(result, 0x09)[1])
                         else:
-                            logging.debug(f'Channel handle {channel.channel_handle}')
-                            break
-        logging.debug("USB CAN - connection established\n")
-        return  l_PcanHandle
+                            logging.info(f'Channel handle {channel.channel_handle}')
+                            logging.info("USB CAN - connection established\n")
+                            return  l_PcanHandle
+        logging.info("USB CAN - connection failed\n")
+        logging.info(f'###*    Test End')
+        logging.info(f'###*****************************************************************')
+        exit()
 
 
     ###*****************************************************************
@@ -390,11 +393,6 @@ class PCANTester(object):
             itsTimeStamp = args[0][1]
             try:
                 decoded = db.decode_message(theMsg.ID, theMsg.DATA )
-                #for key in decoded.keys():
-                #    if key > "Periodic_":
-                #        periodic_key = key
-                #decoded_val = decoded[periodic_key]
-
                 decoded_val = decoded["Periodic_Voltage_ACDC"]
                 self.periodicTimestampList.append(itsTimeStamp)
             except KeyError:
@@ -404,8 +402,6 @@ class PCANTester(object):
 
     def ProcessMessage(self, *args):        
         with self._lock:       
-            # Split the arguments. [0] TPCANMsg, [1] TPCANTimestamp
-            #
             theMsg = args[0][0]
             itsTimeStamp = args[0][1]    
 
@@ -421,37 +417,42 @@ class PCANTester(object):
 
 
 ###*****************************************************************
-###*    Run program
+###*    Run Test
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Test start')
+
 basicExl = PCANTester()
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 1 start')
 stageResult = basicExl.TestStage1()
-stageResultText =''
-logging.info(f'###*    Stage end at {stageResult} {stageResultText}\n')
-
+logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 2 start')
 stageResult =basicExl.TestStage2()
 if stageResult != 0:
     stageResultText = ''
-    logging.info(f'###*    Stage end at {stageResult} {stageResultText}\n')
+    logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
     basicExl.destroy()
     exit()
-logging.info(f'###*    Stage end at {stageResult}\n')
-
+logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 3 start')
 stageResult = basicExl.TestStage3()
-logging.info(f'###*    Stage end at {stageResult}\n')
+logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 4 start')
 stageResult = basicExl.TestStage4()
-logging.info(f'###*    Stage end at {stageResult}\n')
+logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Stage 5 start')
+stageResult = basicExl.TestStage5()
+logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
-
+logging.info(f'###*    Test end')
+logging.info(f'###*****************************************************************')
 basicExl.destroy()
