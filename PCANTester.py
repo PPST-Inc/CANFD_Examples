@@ -11,15 +11,6 @@
 
 from PCANBasic import *        ## PCAN-Basic library import
 
-## Imports for UI
-##
-#from Tkinter import *          ## TK UI library
-#import Tix                     ## TK extensions library
-from tkinter import *
-from tkinter import tix
-from tkinter import messagebox
-from tkinter import font
-
 #import tkMessageBox            ## Simple-Messages library
 import traceback                ## Error-Tracing library
 
@@ -39,11 +30,13 @@ import cantools
 
 import sys
 
+import asyncio
+
 from pprint import pprint
 
 db = cantools.database.load_file('test.dbc')
 db.messages
-log_file_name = 'can_test_T.txt'#+time.strftime('%Y_%m_%d_%I_%M_%S.log')
+log_file_name = 'can_test_log.txt'#+time.strftime('%Y_%m_%d_%I_%M_%S.log')
 
 logging.FileHandler(log_file_name,"w")
 
@@ -58,24 +51,32 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 logging.info('USB CAN TEST LOG\n')
 logging.info(f'File : {log_file_name}')
+dateString = time.strftime('%I:%M:%S %m/%d/%Y')
+logging.info(f'Date : {dateString}')
 
-a_message = db.get_message_by_name('Periodic_Measurements_Total')
+
 a_message = db.messages[0]
 
 a_signals = a_message.signals
-
 argument_data = dict()
 
 for signal in a_signals:
-    argument_data[signal.name] = 0xFF
-
-data = a_message.encode(argument_data)
-a_message = str(a_message) + str(time.time_ns())
+    pprint(signal.name)
 
 m_PcanHandle = PCAN_NONEBUS
 
 m_objPCANBasic = PCANBasic()
 
+###*****************************************************************
+### Error def 
+###*****************************************************************
+
+#Make a const dict
+#const Errors_String = dict  [error num]
+
+def ErrorStringEq(num):
+    nucase
+    return ""
 
 ###*****************************************************************
 ### Timer class
@@ -152,13 +153,8 @@ class TimerRepeater(object):
             self._event.set()
             self._thread = None
 
-            
+
 ###*****************************************************************
-
-
-################################################################################################################################################
-################################################################################################################################################
-
 
 
 ###*****************************************************************
@@ -177,6 +173,11 @@ class PCANTester(object):
         self.m_LastMsgsList = []
         self.periodicTimestampList = []
         self.processMessageFunction = self.ProcessMessage
+        self.Initializetimer()
+        self.writeSem = threading.Semaphore(0)
+        self.CANMsgWrt= TPCANMsg()
+        self.CANMesageReceived = db.messages[0]
+
 
     ## Destructor
     ##
@@ -211,33 +212,79 @@ class PCANTester(object):
 
 
     def TestStage1(self):
-        self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
+        sleep(0.500)
+        self.tmrRead.stop()
+        self.processMessageFunction = self.PeriodicsProcessMessage
         self.Initializetimer()
-        sleep(1.0)
+        sleep(3)
         self.tmrRead.stop()
 
         if len(self.periodicTimestampList) > 1 :
             prevSt=self.periodicTimestampList.pop(0)
             average_period = 0
             for stamp in self.periodicTimestampList:
-                average_period = average_period + ((stamp.value - prevSt.value)/1000)
+                stamp_value = (stamp.micros + 1000 * stamp.millis + 0x100000000 * 1000 * stamp.millis_overflow)
+                prevSt_value = (prevSt.micros + 1000 * prevSt.millis + 0x100000000 * 1000 * prevSt.millis_overflow)
+                average_period += (stamp_value - prevSt_value) / 1000
+
                 prevSt = stamp
+
             average_period = average_period / len(self.periodicTimestampList)
 
             logging.info(f'Periodics enable, periodic messages reception at {average_period:03.2f} ms')
-            return 0
         else:
             logging.info(f'Periodics messages are disabled')
             return 1
+        return 0
 
-        return 2
+    def getter_sended(self, name, n_messages): 
+        try:
+            first_message = db.get_message_by_name(name)
+        except KeyError:
+            logging.info(f'Failed getting messages from data base')
+            return 3
+ 
+        self.processMessageFunction = self.ProcessWriteAnswer
+        self.Initializetimer()
+        
+        for i in range(n_messages):
+            a_message = db.get_message_by_frame_id(first_message.frame_id+i)
+            self.CANMsgWrt= TPCANMsg()
+            self.CANMsgWrt.ID  = a_message.frame_id
+            self.CANMsgWrt.LEN = a_message.length
+            self.CANMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
+            #self.CANMsgWrt.DATA
+            stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
+            if stsResult != PCAN_ERROR_OK:
+                logging.debug(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
+                testStage2Result = 2
+                break
+            delta_time = time.time_ns()
+            if self.writeSem.acquire(True, 5):
+                delta_time = (time.time_ns() - delta_time) / 1000000
+                for signame,value in self.CANMesageReceived.items():
+                    logging.info(f'{a_message.name} {delta_time:0.0f} ms - {signame}: {value:0.2f}' )
+                self.CANMesageReceived
+                testStage2Result = 0
+            else:
+                logging.info(f'Fail to read Get messages')
+                testStage2Result = 1
+        
+        self.tmrRead.stop()
+        return testStage2Result
 
     def TestStage2(self):
-        logging.info(f'All get messages failed')
-        return 1
+        return self.getter_sended('Get_messages_1',4)
 
     def TestStage3(self):
-        return 0
+        return self.getter_sended('Get_configuration_1',6)
+
+    def TestStage4(self):
+        return self.getter_sended('Get_Protection_1',8)
+
+
+    def WriteFrame(self):
+        return m_objPCANBasic.Write(self.m_PcanHandle, self.CANMsgWrt)
 
     def Initializetimer(self):
         self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
@@ -250,7 +297,7 @@ class PCANTester(object):
             if result[0] == PCAN_ERROR_OK:
                 #self.ProcessMessageFD(result[1:])
                 self.processMessageFunction(result[1:])
-                
+
             return result[0]
 
     def ReadMessages(self):
@@ -315,21 +362,6 @@ class PCANTester(object):
         logging.debug("USB CAN - connection established\n")
         return  l_PcanHandle
 
-    ## Button btnWrite handler
-    ##
-    def PCANBasicWrite(self):
-        # Send the message
-        #
-        stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
-
-        # The message was successfully sent
-        #
-        if stsResult == PCAN_ERROR_OK:
-            self.IncludeTextMessage("Message was successfully SENT")
-        else:
-            # An error occurred.  We show the error.
-            #
-            logging.debug(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
 
     ###*****************************************************************
     ### Message-proccessing functions
@@ -339,28 +371,37 @@ class PCANTester(object):
             #
             theMsg = args[0][0]
             itsTimeStamp = args[0][1]
-            
-            for msg in self.m_LastMsgsList:
-                if (msg.CANMsg.ID == theMsg.ID) and (msg.CANMsg.MSGTYPE == theMsg.MSGTYPE):
-                    msg.Update(theMsg, itsTimeStamp)                    
-                    return
-            a_message = db.get_message_by_frame_id(theMsg.ID)
-            decoded = db.decode_message(theMsg.ID, theMsg.DATA )
-            try:
-                decoded_val = decoded["Periodic_Voltage_ACDC"]
-                self.periodicDeltaTime = ((itsTimeStamp.value - self.LastMsgTimeStamp.value)/1000)
-                #prsting = f'Id: {a_message.name} - Periodic_Voltage_ACDC:{decoded_val:05.2f} {self.periodicDeltaTime:06.2f}ms'
-                #prsting = f'Id: {a_message.name} - :{decoded}'
-                #pprint(prsting)
-                self.periodicTimestampList.append(itsTimeStamp)
-                self.LastMsgTimeStamp = itsTimeStamp
 
+
+    def ProcessWriteAnswer(self, *args):
+        with self._lock:
+            theMsg = args[0][0]
+            if self.CANMsgWrt.ID == theMsg.ID:
+                try:
+                    self.CANMesageReceived = db.decode_message(self.CANMsgWrt.ID, theMsg.DATA )
+                    self.writeSem.release(1)
+                except KeyError:
+                    return
+
+
+    def PeriodicsProcessMessage(self, *args):
+        with self._lock:
+            theMsg = args[0][0]
+            itsTimeStamp = args[0][1]
+            try:
+                decoded = db.decode_message(theMsg.ID, theMsg.DATA )
+                #for key in decoded.keys():
+                #    if key > "Periodic_":
+                #        periodic_key = key
+                #decoded_val = decoded[periodic_key]
+
+                decoded_val = decoded["Periodic_Voltage_ACDC"]
+                self.periodicTimestampList.append(itsTimeStamp)
             except KeyError:
                 return
+            return
 
 
-## Processes a received message, in order to show it in the Message-ListView
-    ##
     def ProcessMessage(self, *args):        
         with self._lock:       
             # Split the arguments. [0] TPCANMsg, [1] TPCANTimestamp
@@ -383,28 +424,34 @@ class PCANTester(object):
 ###*    Run program
 basicExl = PCANTester()
 
-###*    Run program
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 1 start')
 stageResult = basicExl.TestStage1()
-stageResultText ='Ok'
-logging.info(f'###*    Stage end at {stageResult} ({stageResultText})\n')
+stageResultText =''
+logging.info(f'###*    Stage end at {stageResult} {stageResultText}\n')
+
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 2 start')
-stageResult = basicExl.TestStage2()
+stageResult =basicExl.TestStage2()
 if stageResult != 0:
-    stageResultText = 'error'
-    logging.info(f'###*    Stage end at {stageResult} ({stageResultText})\n')
+    stageResultText = ''
+    logging.info(f'###*    Stage end at {stageResult} {stageResultText}\n')
     basicExl.destroy()
     exit()
 logging.info(f'###*    Stage end at {stageResult}\n')
+
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 3 start')
 stageResult = basicExl.TestStage3()
 logging.info(f'###*    Stage end at {stageResult}\n')
 
-#basicExl.loop()
-basicExl.destroy()
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Stage 4 start')
+stageResult = basicExl.TestStage4()
+logging.info(f'###*    Stage end at {stageResult}\n')
 
+
+
+basicExl.destroy()
