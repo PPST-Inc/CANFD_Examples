@@ -35,6 +35,63 @@ testBaudrate = PCAN_BAUD_500K
 testHardwareType = PCAN_TYPE_ISA_SJA
 testCANFD = False
 
+tableSetPointsControl ={
+    'Setpoint_Enable_Output': 0,
+    'Setpoint_Current_Limit': 29.365,
+    'Setpoint_KVA_Limit': 4.21,
+    'Setpoint_Power_Limit': 3.156,
+    'Setpoint_Program_Frequency': 54.32,
+    'Setpoint_Program_Voltage_AC': 6.32,
+    'Setpoint_Program_Voltage_DC': 5.28,
+
+    'Setpoint_Current_Limit_A': 0,#18.365,
+    'Setpoint_Current_Limit_B': 0,
+    'Setpoint_Current_Limit_C': 0,
+
+    'Setpoint_KVA_Limit_A': 0,#2.3,
+    'Setpoint_KVA_Limit_B': 0,
+    'Setpoint_KVA_Limit_C': 0,
+
+    'Setpoint_Phase_Offset_Output_B': 0,
+    'Setpoint_Phase_Offset_Output_C': 0,
+
+    'Setpoint_Power_Limit_A': 0,#2.456,
+    'Setpoint_Power_Limit_B': 0,
+    'Setpoint_Power_Limit_C': 0,
+
+    'Setpoint_Program_Frequency_A': 0,#63.41,
+    'Setpoint_Program_Frequency_B': 0,
+    'Setpoint_Program_Frequency_C': 0,
+    
+    'Setpoint_Program_Voltage_AC_A': 0,#5.82,
+    'Setpoint_Program_Voltage_AC_B': 0,
+    'Setpoint_Program_Voltage_AC_C': 0,
+    
+    'Setpoint_Program_Voltage_DC_A': 0,#9.11,
+    'Setpoint_Program_Voltage_DC_B': 0,
+    'Setpoint_Program_Voltage_DC_C': 0,
+}
+
+tableSetPointsConfigurationRampAndSlew ={
+    'Config_Slew_Frequency':0,
+    'Config_Slew_Phase':0,
+    'Config_Slew_Ramp_Time':0,
+    'Config_Slew_Voltage_AC':0,
+    'Config_Slew_Voltage_DC':0
+}
+
+tableSetPointsConfigurationUnit = {
+'Config_Unit_C_Self_Calibration':0,
+'Config_Unit_Fault_On_Saturation':0,
+'Config_Unit_Form':0,
+'Config_Unit_Max_CSC_Gain':0,
+'Config_Unit_Mode':0,
+'Config_Unit_Out_Impedance_Mode':0,
+'Config_Unit_Out_Phase_Disable':0,
+'Config_Unit_Phase_Rotation':0,
+'Config_Unit_Update_Phase':0,
+'Config_Unit_Voltage_Range':0
+}
 ###*****************************************************************
 ### PCANBasic Object 
 
@@ -42,11 +99,11 @@ m_objPCANBasic = PCANBasic()
 
 ###*****************************************************************
 ### Logger file configuration
-log_file_name = 'can_test_log.txt'
-logging.FileHandler(log_file_name,"w")
+loggerFileName = 'can_test_log.txt'
+logging.FileHandler(loggerFileName,"w")
 
 logging.basicConfig(
-    filename=log_file_name,
+    filename=loggerFileName,
     encoding='utf-8',
     format='%(message)s',#:%(asctime)s:%(created)f %(levelname)s:
     datefmt='%I:%M:%S',
@@ -55,7 +112,7 @@ logging.basicConfig(
 logging.getLogger().addHandler(logging.StreamHandler())
 
 logging.info('USB CAN TEST LOG\n')
-logging.info(f'File : {log_file_name}')
+logging.info(f'File : {loggerFileName}')
 dateString = time.strftime('%I:%M:%S %m/%d/%Y')
 logging.info(f'Date : {dateString}')
 
@@ -108,11 +165,10 @@ class TimerRepeater(object):
         self._kwargs = kwargs
         # initialize timer
         self._interval = interval
-        self._bStarted = False
 
     # Runs the thread that emulates the timer
     #
-    def _run(self):
+    def Run(self):
         """
         Runs the thread that emulates the timer.
 
@@ -122,24 +178,15 @@ class TimerRepeater(object):
         while not self._event.wait(self._interval):
             self._target(*self._args, **self._kwargs)
 
-    # Starts the timer
-    #
-    def start(self):
-        """
-        Starts the timer
-
-        Returns:
-            None
-        """
-        # avoid multiple start calls
+    def Start(self):
         if (self._thread == None):
             self._event = threading.Event()
-            self._thread = threading.Thread(None, self._run, self._name)
+            self._thread = threading.Thread(None, self.Run, self._name)
             self._thread.start()
 
     # Stops the timer
     #
-    def stop(self):
+    def Stop(self):
         """
         Stops the timer
 
@@ -166,24 +213,21 @@ class PCANTester(object):
         self.m_IsFD = testCANFD
         self._lock = threading.RLock()
         self.m_PcanHandle = self.InitializeCan()
-        self.LastMsgTimeStamp = TPCANTimestampFD()
-        self.m_LastMsgsList = []
         self.periodicTimestampList = []
         self.processMessageFunction = self.ProcessMessage
         self.Initializetimer()
         self.writeSem = threading.Semaphore(0)
-        self.CANMsgWrt= TPCANMsg()
-        self.CANMesageReceived = db.messages[0]
+        self.canMsgWrt= TPCANMsg()
+        self.canMesageReceived = db.messages[0]
 
 
     ## Destructor
     ##
-    def destroy (self):
-        self.tmrRead.stop()
+    def Destroy (self):
+        self.tmrRead.Stop()
 
 
-    ## Message loop
-    def loop(self):
+    def Loop(self):
         # Catch keyboard interrupts easier, and avoids
         # 20 mseconds dead sleep() which burns a constant CPU.
         while self.exit < 0:
@@ -208,94 +252,172 @@ class PCANTester(object):
                 raise(SystemExit, 1)
 
 
-    def TestStage1(self):
+    def StageTest1(self):
         sleep(0.500)
-        self.tmrRead.stop()
+        self.tmrRead.Stop()
         self.processMessageFunction = self.PeriodicsProcessMessage
         self.Initializetimer()
         sleep(3)
-        self.tmrRead.stop()
+        self.tmrRead.Stop()
 
         if len(self.periodicTimestampList) > 1 :
             prevSt=self.periodicTimestampList.pop(0)
-            average_period = 0
+            averagePeriod = 0
             for stamp in self.periodicTimestampList:
-                stamp_value = (stamp.micros + 1000 * stamp.millis + 0x100000000 * 1000 * stamp.millis_overflow)
-                prevSt_value = (prevSt.micros + 1000 * prevSt.millis + 0x100000000 * 1000 * prevSt.millis_overflow)
-                average_period += (stamp_value - prevSt_value) / 1000
+                stampValue = (stamp.micros + 1000 * stamp.millis + 0x100000000 * 1000 * stamp.millis_overflow)
+                prevStvalue = (prevSt.micros + 1000 * prevSt.millis + 0x100000000 * 1000 * prevSt.millis_overflow)
+                averagePeriod += (stampValue - prevStvalue) / 1000
 
                 prevSt = stamp
 
-            average_period = average_period / len(self.periodicTimestampList)
+            averagePeriod = averagePeriod / len(self.periodicTimestampList)
 
-            logging.info(f'Periodics enable, periodic messages reception at {average_period:03.2f} ms')
+            logging.info(f'Periodics enable, periodic messages reception at {averagePeriod:03.2f} ms')
         else:
             logging.info(f'Periodics messages are disabled')
             return 1
         return 0
 
-    def getter_sended(self, name, n_messages): 
+    def RequestGetMessages(self, name, nMessages): 
         try:
-            first_message = db.get_message_by_name(name)
+            firstMessage = db.get_message_by_name(name)
         except KeyError:
             logging.info(f'Failed getting messages from data base')
             return 3
  
-        self.processMessageFunction = self.ProcessWriteAnswer
+        self.processMessageFunction = self.ProcessRequestAnswer
         self.Initializetimer()
         
-        for i in range(n_messages):
-            a_message = db.get_message_by_frame_id(first_message.frame_id+i)
-            self.CANMsgWrt= TPCANMsg()
-            self.CANMsgWrt.ID  = a_message.frame_id
-            self.CANMsgWrt.LEN = a_message.length
-            self.CANMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
+        for i in range(nMessages):
+            a_message = db.get_message_by_frame_id(firstMessage.frame_id+i)
+            self.canMsgWrt= TPCANMsg()
+            self.canMsgWrt.ID  = a_message.frame_id
+            self.canMsgWrt.LEN = a_message.length
+            self.canMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
             countString = ''
-            for j in range(10):
+            for j in range(2):
                 stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
                 if stsResult != PCAN_ERROR_OK:
                     logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
                     testStage2Result = 2
-                    self.tmrRead.stop()
+                    self.tmrRead.Stop()
                     return testStage2Result
-                delta_time = time.time_ns()
-                if self.writeSem.acquire(True, 10):
-                    delta_time = (time.time_ns() - delta_time) / 1000000
+                deltaTime = time.time_ns()
+                if self.writeSem.acquire(True, 5):
+                    deltaTime = (time.time_ns() - deltaTime) / 1000000
                     countString =countString + '-'
-                    self.CANMesageReceived
+                    self.canMesageReceived
                     testStage2Result = 0
                 else:
                     logging.info(f'Fail to read Get messages')
                     testStage2Result = 1
-                    self.tmrRead.stop()
+                    self.tmrRead.Stop()
                     return testStage2Result
 
             pprint(f'{a_message.name} {countString}')
-            for signame,value in self.CANMesageReceived.items():
-                logging.info(f'{a_message.name} {delta_time:0.0f} ms - {signame}: {round(value,2)}' )
+            for signame,value in self.canMesageReceived.items():
+                logging.info(f'{a_message.name} {deltaTime:0.0f} ms - {signame}: {round(value,2)}' )
     
-        self.tmrRead.stop()
+        self.tmrRead.Stop()
         return testStage2Result
 
-    def TestStage2(self):
-        return self.getter_sended('Get_messages_1',4)
+    def StageTest2(self):
+        logging.info(f'Measurements Get')
+        error = self.RequestGetMessages('Get_messages_1',4)
+        if error !=0 :  return
 
-    def TestStage3(self):
-        return self.getter_sended('Get_configuration_1',6)
+        logging.info(f'\nConfigurations')
+        error = self.RequestGetMessages('Get_configuration_1',6)
+        if error !=0 :  return
 
-    def TestStage4(self):
-        return self.getter_sended('Get_Protection_1',8)
+        logging.info(f'\nProtection Parameters')
+        error = self.RequestGetMessages('Get_Protection_1',8)
+        if error !=0 :  return
+ 
+        logging.info(f'\nProtection Parameters')
+        error = self.RequestGetMessages('Get_Setpoints_1',14)
+        return error
 
-    def TestStage5(self):
-        return self.getter_sended('Get_Setpoints_1',14)
+    def SetpointMessages (self, name , nMessages):
+
+        try:
+            firstMessage = db.get_message_by_name(name)
+        except KeyError:
+            logging.info(f'Failed getting messages from data base')
+            return 3
+        
+        self.processMessageFunction = self.ProcessSetpointAnswer
+        self.Initializetimer()
+        for i in range(nMessages):
+            setMessage = db.get_message_by_frame_id(firstMessage.frame_id+i)
+            toSendData = dict()
+            for signal in setMessage.signals:
+                toSendData[signal.name]=tableSetPointsControl[signal.name]
+
+            data = setMessage.encode(toSendData)
+
+            self.canMsgWrt= TPCANMsg()
+            self.canMsgWrt.ID  = setMessage.frame_id
+            self.canMsgWrt.LEN = setMessage.length
+            self.canMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
+            for i in range(8 if (self.canMsgWrt.LEN > 8) else self.canMsgWrt.LEN):
+                self.canMsgWrt.DATA[i]=  data[i]
+
+            #Send Data
+            stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
+            if stsResult != PCAN_ERROR_OK:
+                logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
+                testStage3Result = 2
+                self.tmrRead.Stop()
+                return testStage3Result
+            deltaTime = time.time_ns()
+            if self.writeSem.acquire(True, 2):
+                deltaTime = (time.time_ns() - deltaTime) / 1000000
+                testStage3Result = 0
+                for signame,value in toSendData.items():
+                    signalsArray = (f'{signame}: as {value}' )
+                logging.info(f'{deltaTime:0.0f} ms - Setpoints Seted {signalsArray}')
+
+            else:
+                logging.info(f'Fail to communicate setpoint')
+                testStage3Result = 1
+                self.tmrRead.Stop()
+                return testStage3Result
+
+        self.tmrRead.Stop()
+        return testStage3Result
+
+    def StageTest3(self):
+        logging.info(f'StageTest3 process')
+
+        logging.info(f'Setpoints B Write')
+        self.SetpointMessages('Setpoint_B_1' , 4)
+
+        logging.info(f'Setpoints C Write')
+        self.SetpointMessages('Setpoint_C_1' , 4)
+
+        logging.info(f'Setpoints A Write')
+        self.SetpointMessages('Setpoint_A_1' , 3)
+
+        logging.info(f'Setpoints All Write')
+        return self.SetpointMessages('Setpoint_All_1' , 3)
+
+
+
+
+    def StageTest4(self):
+        logging.info(f'StageTest4')
+
+    def StageTest5(self):
+        logging.info(f'StageTest5')
 
     def WriteFrame(self):
-        return m_objPCANBasic.Write(self.m_PcanHandle, self.CANMsgWrt)
+        return m_objPCANBasic.Write(self.m_PcanHandle, self.canMsgWrt)
 
     def Initializetimer(self):
         self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
         
-        self.tmrRead.start()
+        self.tmrRead.Start()
         ##self.PCANBasicWrite()
 
     def PCANBasicReadMessage(self):
@@ -320,7 +442,6 @@ class PCANTester(object):
                 break
 
     def InitializeCan(self):
-        m_LastMsgsList = []
         m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4, 
                                     'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8, 
                                     'PCAN_DNGBUS1':PCAN_DNGBUS1}
@@ -365,7 +486,6 @@ class PCANTester(object):
         logging.info(f'###*****************************************************************')
         exit()
 
-
     ###*****************************************************************
     ### Message-proccessing functions
     def ProcessMessageFD(self, *args):
@@ -375,30 +495,35 @@ class PCANTester(object):
             theMsg = args[0][0]
             itsTimeStamp = args[0][1]
 
-
-    def ProcessWriteAnswer(self, *args):
+    def ProcessSetpointAnswer(self, *args):
         with self._lock:
             theMsg = args[0][0]
-            if self.CANMsgWrt.ID == theMsg.ID:
+            try:
+                ackStatus = db.decode_message(theMsg.ID, theMsg.DATA )["Ack_App_Signal"]
+                if ackStatus == 0:
+                    self.writeSem.release(1)
+            except KeyError:
+                return
+
+    def ProcessRequestAnswer(self, *args):
+        with self._lock:
+            theMsg = args[0][0]
+            if self.canMsgWrt.ID == theMsg.ID:
                 try:
-                    self.CANMesageReceived = db.decode_message(self.CANMsgWrt.ID, theMsg.DATA )
+                    self.canMesageReceived = db.decode_message(self.canMsgWrt.ID, theMsg.DATA )
                     self.writeSem.release(1)
                 except KeyError:
                     return
-
 
     def PeriodicsProcessMessage(self, *args):
         with self._lock:
             theMsg = args[0][0]
             itsTimeStamp = args[0][1]
             try:
-                decoded = db.decode_message(theMsg.ID, theMsg.DATA )
-                decoded_val = decoded["Periodic_Voltage_ACDC"]
+                db.decode_message(theMsg.ID, theMsg.DATA )["Periodic_Voltage_ACDC"]
                 self.periodicTimestampList.append(itsTimeStamp)
             except KeyError:
                 return
-            return
-
 
     def ProcessMessage(self, *args):        
         with self._lock:       
@@ -415,44 +540,34 @@ class PCANTester(object):
             newTimestamp.value = (itsTimeStamp.micros + 1000 * itsTimeStamp.millis + 0x100000000 * 1000 * itsTimeStamp.millis_overflow)
             self.ProcessMessageFD([newMsg, newTimestamp])
 
-
 ###*****************************************************************
 ###*    Run Test
 logging.info(f'###*****************************************************************')
-logging.info(f'###*    Test start')
+logging.info(f'###*    Test Start')
 
 basicExl = PCANTester()
 
 logging.info(f'###*****************************************************************')
-logging.info(f'###*    Stage 1 start')
-stageResult = basicExl.TestStage1()
+logging.info(f'###*    Stage 1 Start')
+stageResult = basicExl.StageTest1()
 logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
 
 logging.info(f'###*****************************************************************')
-logging.info(f'###*    Stage 2 start')
-stageResult =basicExl.TestStage2()
+logging.info(f'###*    Stage 2 Start')
+logging.info(f'###*    Reading all get messages avaiable in can database file\n')
+stageResult = basicExl.StageTest2()
 if stageResult != 0:
     stageResultText = ''
     logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
-    basicExl.destroy()
+    basicExl.Destroy()
     exit()
 logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
-logging.info(f'###*    Stage 3 start')
-stageResult = basicExl.TestStage3()
-logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
-
-logging.info(f'###*****************************************************************')
-logging.info(f'###*    Stage 4 start')
-stageResult = basicExl.TestStage4()
-logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
-
-logging.info(f'###*****************************************************************')
-logging.info(f'###*    Stage 5 start')
-stageResult = basicExl.TestStage5()
+logging.info(f'###*    Stage 3 Start')
+stageResult = basicExl.StageTest3()
 logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*    Test end')
 logging.info(f'###*****************************************************************')
-basicExl.destroy()
+basicExl.Destroy()
