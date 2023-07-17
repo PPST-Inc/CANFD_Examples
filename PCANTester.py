@@ -290,16 +290,61 @@ class PCANTester(object):
                 stampValue = (stamp.micros + 1000 * stamp.millis + 0x100000000 * 1000 * stamp.millis_overflow)
                 prevStvalue = (prevSt.micros + 1000 * prevSt.millis + 0x100000000 * 1000 * prevSt.millis_overflow)
                 averagePeriod += (stampValue - prevStvalue) / 1000
-
                 prevSt = stamp
 
             averagePeriod = averagePeriod / len(self.periodicTimestampList)
-
             logging.info(f'Periodics enable, periodic messages reception at {averagePeriod:03.2f} ms')
         else:
             logging.info(f'Periodics messages are disabled')
             return 1
         return 0
+
+    def StageTest2(self):
+        getMessagessDict = {
+            'Get_messages_1':[11,'Measurements Get'],
+            'Get_configuration_1' :[7,'\nConfigurations'],
+            'Get_Protection_1' :[8,'\nProtection'],
+            'Get_Setpoints_1' :[16,'\nSetpoints'],
+        }
+        for signame,value in getMessagessDict.items():
+            logging.info(value[1])
+            error = self.RequestGetMessages(signame,value[0])
+            if error !=0 :  return error
+        return error
+
+    def StageTest3(self):
+        setpointsDict = {
+            'Protection_Setpoint_1':[8,tableProtections],
+            'Setpoint_Unit_Settings_1' :[5,tableUnitSettings],
+            'Setpoint_B_1' :[4,tableSetPointsControl],
+            'Setpoint_C_1' :[4,tableSetPointsControl],
+            'Setpoint_A_1' :[3 ,tableSetPointsControl],
+            'Setpoint_All_1': [ 4,tableSetPointsControl]
+        }
+
+        for signame,value in setpointsDict.items():
+            logging.info(f'\n Setpoint: {signame} {value[0]} ')
+            result = self.SetpointMessages(signame , value[0],value[1])
+            if (result!=0):
+                return result
+        return result
+
+    def StageTest4(self):
+
+        self.CommandTest("\n")# clean buffer
+        commandList = [
+            "MEASure:ALL1?\n",
+            "MEASure:FREQ1?\n",
+            "MEASure:FREQ?\n",
+            ]
+        for command in commandList:
+            result = self.CommandTest(command)
+            if result != 0 :
+                return
+        return result
+
+    def StageTest5(self):
+        logging.info(f'StageTest5')
 
     def RequestGetMessages(self, name, nMessages): 
         try:
@@ -343,22 +388,6 @@ class PCANTester(object):
         self.StopTimer()
         return testStage2Result
 
-    def StageTest2(self):
-        logging.info(f'Measurements Get')
-        error = self.RequestGetMessages('Get_messages_1',11)
-        if error !=0 :  return
-
-        logging.info(f'\nConfigurations')
-        error = self.RequestGetMessages('Get_configuration_1',7)
-        if error !=0 :  return
-
-        logging.info(f'\nProtection Parameters')
-        error = self.RequestGetMessages('Get_Protection_1',8)
-        if error !=0 :  return
- 
-        logging.info(f'\nSetpoints')
-        error = self.RequestGetMessages('Get_Setpoints_1',16)
-        return error
 
     def SetpointMessages (self, name , nMessages, tableValues):
         try:
@@ -410,46 +439,13 @@ class PCANTester(object):
         self.StopTimer()
         return testStage3Result
 
-    def StageTest3(self):
-        logging.info(f'n\Protection Setpoints')
-        self.SetpointMessages('Protection_Setpoint_1' , 8,tableProtections)
-
-        logging.info(f'\nConfiguration Ramp and Slew Setpoints')
-        self.SetpointMessages('Setpoint_Ramp_And_Slew_1' , 4,tableRampAndSlew)
-
-        logging.info(f'\nConfiguration Unit Settings Setpoints')
-        self.SetpointMessages('Setpoint_Unit_Settings_1' , 5,tableUnitSettings)
-
-        logging.info(f'\nSetpoints B Write')
-        self.SetpointMessages('Setpoint_B_1' , 4,tableSetPointsControl)
-
-        logging.info(f'\nSetpoints C Write')
-        self.SetpointMessages('Setpoint_C_1' , 4,tableSetPointsControl)
-
-        logging.info(f'\nSetpoints A Write')
-        self.SetpointMessages('Setpoint_A_1' , 3 ,tableSetPointsControl)
- 
-        sleep(3)
-        logging.info(f'\nSetpoints All Write')
-        return self.SetpointMessages('Setpoint_All_1' , 4,tableSetPointsControl)
-
-    def StageTest4(self):
-
-        self.CommandTest("\n")# clean buffer
-        commandList = [
-            "MEASure:ALL1?\n",
-            "MEASure:FREQ1?\n",
-            "MEASure:FREQ?\n",
-            ]
-        for command in commandList:
-            result = self.CommandTest(command)
-            if result != 0 :
-                return
-        return result
 
     def CommandTest(self,command):
+        deltaTime = time.time_ns()
         if self.WriteCommand(command) == 0 :
             if self.ReadCommand() == 0:
+                deltaTime = (time.time_ns() - deltaTime) / 1000000
+                logging.info(f'Command :{command[0:-1]} - done {deltaTime:0.0f} ms')
                 answerString = self.answerBytes.decode('utf-8', 'ignore')
                 pprint(command)
                 pprint (answerString[0:answerString.index('\n')+1])
@@ -545,18 +541,12 @@ class PCANTester(object):
         if self.writeSem.acquire(True, 5):
             deltaTime = (time.time_ns() - deltaTime) / 1000000
             testStageResult = 0
-            signalsArray = ''
-            for signame,value in toSendData.items():
-                signalsArray += (f'{signame}: as {value} ' )
-                logging.info(f'{deltaTime:0.0f} ms - Set Done {signalsArray}')
         else:
             logging.info(f'{toSendData} failed: {commandStr}')
             testStageResult = 1
         self.StopTimer()
         return testStageResult
 
-    def StageTest5(self):
-        logging.info(f'StageTest5')
 
     def WriteFrame(self):
         return m_objPCANBasic.Write(self.m_PcanHandle, self.canMsgWrt)
