@@ -26,75 +26,96 @@ import sys
 
 from pprint import pprint
 
+from struct import *
+
 ###*****************************************************************
 ### Can Database Import
-db = cantools.database.load_file('test.dbc')
+db = cantools.database.load_file('updatedcanfdtest.dbc')
 
 ### Can Hardware setup
-testBaudrate = PCAN_BAUD_500K
+testBaudrate = PCAN_BAUD_1M
 testHardwareType = PCAN_TYPE_ISA_SJA
 testCANFD = False
 
 tableSetPointsControl ={
-    'Setpoint_Enable_Output': 0,
-    'Setpoint_Current_Limit': 29.365,
-    'Setpoint_KVA_Limit': 4.21,
-    'Setpoint_Power_Limit': 3.156,
-    'Setpoint_Program_Frequency': 54.32,
-    'Setpoint_Program_Voltage_AC': 6.32,
-    'Setpoint_Program_Voltage_DC': 5.28,
-
-    'Setpoint_Current_Limit_A': 0,#18.365,
-    'Setpoint_Current_Limit_B': 0,
-    'Setpoint_Current_Limit_C': 0,
-
-    'Setpoint_KVA_Limit_A': 0,#2.3,
-    'Setpoint_KVA_Limit_B': 0,
-    'Setpoint_KVA_Limit_C': 0,
-
-    'Setpoint_Phase_Offset_Output_B': 0,
-    'Setpoint_Phase_Offset_Output_C': 0,
-
-    'Setpoint_Power_Limit_A': 0,#2.456,
-    'Setpoint_Power_Limit_B': 0,
-    'Setpoint_Power_Limit_C': 0,
-
-    'Setpoint_Program_Frequency_A': 0,#63.41,
-    'Setpoint_Program_Frequency_B': 0,
-    'Setpoint_Program_Frequency_C': 0,
+    'SP_ALL_Current_Limit': 29.365,
+    'SP_ALL_Enable_Output': 0,
+    'SP_ALL_Frequency': 54.32, #  Fail value: 2.2
+    'SP_ALL_KVA_Limit': 4.21,
+    'SP_ALL_Power_Limit': 3.156,
+    'SP_ALL_Voltage_AC': 6.32,
+    'SP_ALL_Voltage_DC': 5.28,
+    'SP_ALL_Phase': 0,
     
-    'Setpoint_Program_Voltage_AC_A': 0,#5.82,
-    'Setpoint_Program_Voltage_AC_B': 0,
-    'Setpoint_Program_Voltage_AC_C': 0,
-    
-    'Setpoint_Program_Voltage_DC_A': 0,#9.11,
-    'Setpoint_Program_Voltage_DC_B': 0,
-    'Setpoint_Program_Voltage_DC_C': 0,
+
+    'SP_A_Current_Limit': 18.365,
+    'SP_B_Current_Limit': 0.0,
+    'SP_C_Current_Limit': 0.0,
+
+    'SP_A_KVA_Limit': 2.3,
+    'SP_B_KVA_Limit': 0.0,
+    'SP_C_KVA_Limit': 0.0,
+
+    'SP_A_Phase': 0.0,
+    'SP_B_Phase': 0.0,
+    'SP_C_Phase': 0.0,
+
+    'SP_A_Power_Limit': 2.456,
+    'SP_B_Power_Limit': 0.0,
+    'SP_C_Power_Limit': 0.0,
+
+    'SP_A_Frequency': 63.41,
+    'SP_B_Frequency': 0.0,
+    'SP_C_Frequency': 0.0,
+
+    'SP_A_Voltage_AC': 5.82, # Fail value: -1.0
+    'SP_B_Voltage_AC': 0.0,
+    'SP_C_Voltage_AC': 0.0,
+
+    'SP_A_Voltage_DC': 9.11,
+    'SP_B_Voltage_DC': 0.0,
+    'SP_C_Voltage_DC': 0.0,
 }
 
-tableSetPointsConfigurationRampAndSlew ={
-    'Config_Slew_Frequency':0,
-    'Config_Slew_Phase':0,
-    'Config_Slew_Ramp_Time':0,
-    'Config_Slew_Voltage_AC':0,
-    'Config_Slew_Voltage_DC':0
+tableRampAndSlew ={
+    'SC_Slew_Frequency':5.5,
+    'SC_Slew_Phase':5.1,
+    'SC_Slew_Voltage_AC':9.3,
+    'SC_Slew_Voltage_DC':7.2
 }
 
-tableSetPointsConfigurationUnit = {
-'Config_Unit_C_Self_Calibration':0,
-'Config_Unit_Fault_On_Saturation':0,
-'Config_Unit_Form':0,
-'Config_Unit_Max_CSC_Gain':0,
-'Config_Unit_Mode':0,
-'Config_Unit_Out_Impedance_Mode':0,
-'Config_Unit_Out_Phase_Disable':0,
-'Config_Unit_Phase_Rotation':0,
-'Config_Unit_Update_Phase':0,
-'Config_Unit_Voltage_Range':0
+tableUnitSettings = {
+    'SC_CSC_Enable':0,
+    'SC_CSC_Fault_on_Saturation':0,
+    'SC_CSC_Max_Gain':1.15,
+    'SC_Form':3,
+    'SC_Mode':2,
+    'SC_Output_Disable_Phase':0,
+    'SC_Output_Impedance_Mode':0,
+    'SC_Phase_Rotation':0,
+    'SC_Range':0,
+    'SC_Update_Phase':0,
+    'SC_Ramp_Time':1.2
 }
+
+tableProtections = {
+    'SPP_Peak_Current_Enable': 1,
+    'SPP_Peak_Current_Level': 41.67,
+    'SPP_Peak_Current_Limit': 104.0,
+    'SPP_Peak_Voltage_Enable': 1,
+    'SPP_Peak_Voltage_Level': 275.0,
+    'SPP_Peak_Voltage_Margin': 100.0,
+    'SPP_Peak_Voltage_Mode': 0,
+    'SPP_RMS_Current_Enable': 0,
+    'SPP_RMS_Current_Level': 41.62,
+    'SPP_RMS_KVA_Level': 5.0,
+    'SPP_RMS_Power_Enable': 0,
+    'SPP_RMS_Power_Level': 5.0,
+    'SPP_RMS_Trip_Time': 15
+}
+
 ###*****************************************************************
 ### PCANBasic Object 
-
 m_objPCANBasic = PCANBasic()
 
 ###*****************************************************************
@@ -215,17 +236,19 @@ class PCANTester(object):
         self.m_PcanHandle = self.InitializeCan()
         self.periodicTimestampList = []
         self.processMessageFunction = self.ProcessMessage
-        self.Initializetimer()
         self.writeSem = threading.Semaphore(0)
         self.canMsgWrt= TPCANMsg()
         self.canMesageReceived = db.messages[0]
-
+        self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
+        self.uniqueTimerInitialized = False
+        self.ackStatus = 0
+        self.ackRequestFlag = False
+        self.answerBytes = bytes()
 
     ## Destructor
     ##
     def Destroy (self):
-        self.tmrRead.Stop()
-
+        self.StopTimer()
 
     def Loop(self):
         # Catch keyboard interrupts easier, and avoids
@@ -254,11 +277,11 @@ class PCANTester(object):
 
     def StageTest1(self):
         sleep(0.500)
-        self.tmrRead.Stop()
+        self.StopTimer()
         self.processMessageFunction = self.PeriodicsProcessMessage
-        self.Initializetimer()
-        sleep(3)
-        self.tmrRead.Stop()
+        self.InitializeTimer()
+        sleep(2)
+        self.StopTimer()
 
         if len(self.periodicTimestampList) > 1 :
             prevSt=self.periodicTimestampList.pop(0)
@@ -284,9 +307,8 @@ class PCANTester(object):
         except KeyError:
             logging.info(f'Failed getting messages from data base')
             return 3
- 
         self.processMessageFunction = self.ProcessRequestAnswer
-        self.Initializetimer()
+        self.InitializeTimer()
         
         for i in range(nMessages):
             a_message = db.get_message_by_frame_id(firstMessage.frame_id+i)
@@ -300,7 +322,7 @@ class PCANTester(object):
                 if stsResult != PCAN_ERROR_OK:
                     logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
                     testStage2Result = 2
-                    self.tmrRead.Stop()
+                    self.StopTimer()
                     return testStage2Result
                 deltaTime = time.time_ns()
                 if self.writeSem.acquire(True, 5):
@@ -311,35 +333,34 @@ class PCANTester(object):
                 else:
                     logging.info(f'Fail to read Get messages')
                     testStage2Result = 1
-                    self.tmrRead.Stop()
+                    self.StopTimer()
                     return testStage2Result
 
             pprint(f'{a_message.name} {countString}')
             for signame,value in self.canMesageReceived.items():
                 logging.info(f'{a_message.name} {deltaTime:0.0f} ms - {signame}: {round(value,2)}' )
     
-        self.tmrRead.Stop()
+        self.StopTimer()
         return testStage2Result
 
     def StageTest2(self):
         logging.info(f'Measurements Get')
-        error = self.RequestGetMessages('Get_messages_1',4)
+        error = self.RequestGetMessages('Get_messages_1',11)
         if error !=0 :  return
 
         logging.info(f'\nConfigurations')
-        error = self.RequestGetMessages('Get_configuration_1',6)
+        error = self.RequestGetMessages('Get_configuration_1',7)
         if error !=0 :  return
 
         logging.info(f'\nProtection Parameters')
         error = self.RequestGetMessages('Get_Protection_1',8)
         if error !=0 :  return
  
-        logging.info(f'\nProtection Parameters')
-        error = self.RequestGetMessages('Get_Setpoints_1',14)
+        logging.info(f'\nSetpoints')
+        error = self.RequestGetMessages('Get_Setpoints_1',16)
         return error
 
-    def SetpointMessages (self, name , nMessages):
-
+    def SetpointMessages (self, name , nMessages, tableValues):
         try:
             firstMessage = db.get_message_by_name(name)
         except KeyError:
@@ -347,12 +368,12 @@ class PCANTester(object):
             return 3
         
         self.processMessageFunction = self.ProcessSetpointAnswer
-        self.Initializetimer()
+        self.InitializeTimer()
         for i in range(nMessages):
             setMessage = db.get_message_by_frame_id(firstMessage.frame_id+i)
             toSendData = dict()
             for signal in setMessage.signals:
-                toSendData[signal.name]=tableSetPointsControl[signal.name]
+                toSendData[signal.name] = tableValues[signal.name]
 
             data = setMessage.encode(toSendData)
 
@@ -368,45 +389,171 @@ class PCANTester(object):
             if stsResult != PCAN_ERROR_OK:
                 logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
                 testStage3Result = 2
-                self.tmrRead.Stop()
+                self.StopTimer()
                 return testStage3Result
             deltaTime = time.time_ns()
-            if self.writeSem.acquire(True, 2):
+            if self.writeSem.acquire(True, 5):
                 deltaTime = (time.time_ns() - deltaTime) / 1000000
                 testStage3Result = 0
+                signalsArray = ''
                 for signame,value in toSendData.items():
-                    signalsArray = (f'{signame}: as {value}' )
-                logging.info(f'{deltaTime:0.0f} ms - Setpoints Seted {signalsArray}')
+                    signalsArray += (f'{signame}: as {value} ' )
+                logging.info(f'{deltaTime:0.0f} ms - Set Done {signalsArray}')
 
             else:
-                logging.info(f'Fail to communicate setpoint')
+                logging.info(f'Fail to set {toSendData} {setMessage}')
+
                 testStage3Result = 1
-                self.tmrRead.Stop()
+                self.StopTimer()
                 return testStage3Result
 
-        self.tmrRead.Stop()
+        self.StopTimer()
         return testStage3Result
 
     def StageTest3(self):
-        logging.info(f'StageTest3 process')
+        logging.info(f'n\Protection Setpoints')
+        self.SetpointMessages('Protection_Setpoint_1' , 8,tableProtections)
 
-        logging.info(f'Setpoints B Write')
-        self.SetpointMessages('Setpoint_B_1' , 4)
+        logging.info(f'\nConfiguration Ramp and Slew Setpoints')
+        self.SetpointMessages('Setpoint_Ramp_And_Slew_1' , 4,tableRampAndSlew)
 
-        logging.info(f'Setpoints C Write')
-        self.SetpointMessages('Setpoint_C_1' , 4)
+        logging.info(f'\nConfiguration Unit Settings Setpoints')
+        self.SetpointMessages('Setpoint_Unit_Settings_1' , 5,tableUnitSettings)
 
-        logging.info(f'Setpoints A Write')
-        self.SetpointMessages('Setpoint_A_1' , 3)
+        logging.info(f'\nSetpoints B Write')
+        self.SetpointMessages('Setpoint_B_1' , 4,tableSetPointsControl)
 
-        logging.info(f'Setpoints All Write')
-        return self.SetpointMessages('Setpoint_All_1' , 3)
+        logging.info(f'\nSetpoints C Write')
+        self.SetpointMessages('Setpoint_C_1' , 4,tableSetPointsControl)
 
-
-
+        logging.info(f'\nSetpoints A Write')
+        self.SetpointMessages('Setpoint_A_1' , 3 ,tableSetPointsControl)
+ 
+        sleep(3)
+        logging.info(f'\nSetpoints All Write')
+        return self.SetpointMessages('Setpoint_All_1' , 4,tableSetPointsControl)
 
     def StageTest4(self):
-        logging.info(f'StageTest4')
+
+        self.CommandTest("\n")# clean buffer
+        commandList = [
+            "MEASure:ALL1?\n",
+            "MEASure:FREQ1?\n",
+            "MEASure:FREQ?\n",
+            ]
+        for command in commandList:
+            result = self.CommandTest(command)
+            if result != 0 :
+                return
+        return result
+
+    def CommandTest(self,command):
+        if self.WriteCommand(command) == 0 :
+            if self.ReadCommand() == 0:
+                answerString = self.answerBytes.decode('utf-8', 'ignore')
+                pprint(command)
+                pprint (answerString[0:answerString.index('\n')+1])
+                return 0
+        return 1
+
+    def ReadCommand(self):
+        self.readIndexMessageID = db.get_message_by_name('SCPI_INDEX_MESSAGE').frame_id
+        self.readIndexMessageSignal = db.get_message_by_name('SCPI_INDEX_MESSAGE').signals[0]
+        try:
+            readMessage = db.get_message_by_name('SCPI_READ_MESSAGE')
+        except KeyError:
+            logging.info(f'Failed getting messages from data base')
+            return 3
+
+        self.ackRequestFlag = False
+        localAnswerBytes = bytes()
+
+        self.processMessageFunction = self.ProcessRequestCommand
+        self.InitializeTimer()
+
+        self.canMsgWrt= TPCANMsg()
+        self.canMsgWrt.ID  = readMessage.frame_id
+        self.canMsgWrt.LEN = readMessage.length
+        self.canMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
+        self.canMsgWrt.DATA[3]= 0
+
+        for j in range(50):
+            self.canMsgWrt.DATA[0]= 8*j
+            stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
+            if stsResult != PCAN_ERROR_OK:
+                logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
+                testStage2Result = 2
+                self.StopTimer()
+                return testStage2Result
+            deltaTime = time.time_ns()
+            if self.writeSem.acquire(True, 5):
+                deltaTime = (time.time_ns() - deltaTime) / 1000000
+                testStage2Result = 0
+            else:
+                if(self.ackRequestFlag):
+                    pprint(f'ackRequestFlag {self.ackStatus}')
+                    break
+                else:
+                    logging.info(f'Fail to read Get messages')
+                    testStage2Result = 1
+                    self.StopTimer()
+                    return testStage2Result
+
+            for signame,value in self.canMesageReceived.items():
+                localAnswerBytes =localAnswerBytes+ (value).to_bytes(8, byteorder='little')
+
+            if(self.ackRequestFlag):
+                pprint(f'ackRequestFlag {self.ackStatus}')
+                break
+
+        self.answerBytes = localAnswerBytes
+        self.StopTimer()
+        return testStage2Result
+
+    def WriteCommand(self,commandStr):
+        try:
+            writeMessage = db.get_message_by_name('SCPI_WRITE_MESSAGE')
+        except KeyError:
+            logging.info(f'Failed getting messages from data base')
+            return 3
+
+        self.processMessageFunction = self.ProcessSetpointAnswer
+        self.InitializeTimer()
+        toSendData = dict()
+
+        chunks = [commandStr[i:i+8] for i in range(0, len(commandStr), 8)]
+        for st in chunks:
+            s_binary= bytearray(st, 'utf-8').ljust(8,b'\0')
+            # b_binary = bytes(s_binary)
+            value = unpack('<Q', s_binary)
+            toSendData[writeMessage.signals[0].name] = value[0]
+            data = writeMessage.encode(toSendData)
+            self.canMsgWrt= TPCANMsg()
+            self.canMsgWrt.ID  = writeMessage.frame_id
+            self.canMsgWrt.LEN = writeMessage.length
+            self.canMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
+            for i in range(8 if (self.canMsgWrt.LEN > 8) else self.canMsgWrt.LEN):
+                self.canMsgWrt.DATA[i]=  data[i]
+            stsResult = self.WriteFrameFD() if self.m_IsFD else self.WriteFrame()
+            if stsResult != PCAN_ERROR_OK:
+                logging.info(m_objPCANBasic.GetErrorText(stsResult, 0x09)[1])
+                testStageResult = 2
+                self.StopTimer()
+                return testStageResult
+
+        deltaTime = time.time_ns()
+        if self.writeSem.acquire(True, 5):
+            deltaTime = (time.time_ns() - deltaTime) / 1000000
+            testStageResult = 0
+            signalsArray = ''
+            for signame,value in toSendData.items():
+                signalsArray += (f'{signame}: as {value} ' )
+                logging.info(f'{deltaTime:0.0f} ms - Set Done {signalsArray}')
+        else:
+            logging.info(f'{toSendData} failed: {commandStr}')
+            testStageResult = 1
+        self.StopTimer()
+        return testStageResult
 
     def StageTest5(self):
         logging.info(f'StageTest5')
@@ -414,11 +561,14 @@ class PCANTester(object):
     def WriteFrame(self):
         return m_objPCANBasic.Write(self.m_PcanHandle, self.canMsgWrt)
 
-    def Initializetimer(self):
-        self.tmrRead = TimerRepeater("tmrRead", 0.010, self.ReadMessages, False)
-        
+    def InitializeTimer(self):
+        if self.uniqueTimerInitialized: return
         self.tmrRead.Start()
-        ##self.PCANBasicWrite()
+        self.uniqueTimerInitialized = True
+
+    def StopTimer(self):
+        self.tmrRead.Stop()
+        self.uniqueTimerInitialized = False
 
     def PCANBasicReadMessage(self):
             result = m_objPCANBasic.Read(self.m_PcanHandle)
@@ -499,9 +649,11 @@ class PCANTester(object):
         with self._lock:
             theMsg = args[0][0]
             try:
-                ackStatus = db.decode_message(theMsg.ID, theMsg.DATA )["Ack_App_Signal"]
+                ackStatus = db.decode_message(theMsg.ID, theMsg.DATA )["ACK_Signal"]
                 if ackStatus == 0:
                     self.writeSem.release(1)
+                else:
+                    logging.info(f'ack: Error {ackStatus}')
             except KeyError:
                 return
 
@@ -514,13 +666,26 @@ class PCANTester(object):
                     self.writeSem.release(1)
                 except KeyError:
                     return
+    def ProcessRequestCommand(self, *args):
+        with self._lock:
+            theMsg = args[0][0]
+            try:
+                self.ackStatus = db.decode_message(theMsg.ID, theMsg.DATA )["ACK_Signal"]
+                self.ackRequestFlag = True
+            except KeyError:
+                pass
+            try:
+                self.canMesageReceived = db.decode_message(self.readIndexMessageID, theMsg.DATA )
+                self.writeSem.release(1)
+            except KeyError:
+                return
 
     def PeriodicsProcessMessage(self, *args):
         with self._lock:
             theMsg = args[0][0]
             itsTimeStamp = args[0][1]
             try:
-                db.decode_message(theMsg.ID, theMsg.DATA )["Periodic_Voltage_ACDC"]
+                db.decode_message(theMsg.ID, theMsg.DATA )["PM_ALL_Voltage_ACDC"]
                 self.periodicTimestampList.append(itsTimeStamp)
             except KeyError:
                 return
@@ -544,13 +709,12 @@ class PCANTester(object):
 ###*    Run Test
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Test Start')
-
 basicExl = PCANTester()
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 1 Start')
 stageResult = basicExl.StageTest1()
-logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
+logging.info(f'###*    Stage 1 end at {stageResult} {ErrorString(stageResult)}\n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 2 Start')
@@ -558,7 +722,7 @@ logging.info(f'###*    Reading all get messages avaiable in can database file\n'
 stageResult = basicExl.StageTest2()
 if stageResult != 0:
     stageResultText = ''
-    logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)}\n')
+    logging.info(f'###*    Stage 2 end at {stageResult} {ErrorString(stageResult)}\n')
     basicExl.Destroy()
     exit()
 logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
@@ -566,8 +730,12 @@ logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n'
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 3 Start')
 stageResult = basicExl.StageTest3()
-logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
+logging.info(f'###*    Stage 3 end at {stageResult} {ErrorString(stageResult)} \n')
+
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Stage 4 Start')
+stageResult = basicExl.StageTest4()
+logging.info(f'###*    Stage 4 end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*    Test end')
 logging.info(f'###*****************************************************************')
-basicExl.Destroy()
