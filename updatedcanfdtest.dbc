@@ -37,54 +37,6 @@ BU_:
 
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ Firmware_Version : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
- SG_ PM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_A_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_A_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_B_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_B_Current_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_B_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Crest_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_B_Peak_Current_Recoded : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Power_Factor_Angle : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Displacement_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ PM_B_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_C_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_Current_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Crest_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_Peak_Current_Recoded : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Power_Factor_Angle : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Displacement_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ PM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
  SG_ GM_A_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
  SG_ GM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
  SG_ GM_A_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
@@ -148,6 +100,77 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ GM_C_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
  SG_ GM_C_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
  SG_ GM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+
+BO_ 243 Fault_Message_Fault: 8 Vector__XXX
+ SG_ GS_Fault : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 242 Fault_Message_Index: 8 Vector__XXX
+ SG_ GS_Faults_Index : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 241 Fault_Message_Reset: 8 Vector__XXX
+ SG_ SS_Faults_Reset : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 250 Firmware_Message: 8 Vector__XXX
+ SG_ Firmware_Version : 0|64@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 14 Periodic_Measurements_14: 8 Vector__XXX
+ SG_ PM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+
+BO_ 13 Periodic_Measurements_13: 8 Vector__XXX
+ SG_ PM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+
+BO_ 12 Periodic_Measurements_12: 8 Vector__XXX
+ SG_ PM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+
+BO_ 11 Periodic_Measurements_11: 8 Vector__XXX
+ SG_ PM_C_VoltageLL_DC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_VoltageLL_ACDC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_VoltageLL_AC m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_Voltage_THD m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Voltage_DC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_Voltage_ACDC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_Voltage_AC m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_C_Power_Factor_Angle m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Power_Factor m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Peak_Current_Recoded m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Peak_Current m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ PM_C_KWH_Elapsed_Time m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Kilowatt_Hour m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
+ SG_ PM_C_Frequency m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
+ SG_ PM_C_Distortion_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Displacement_Factor m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Current_THD m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Current_DC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ PM_C_Current_ACDC m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ PM_C_Crest_Factor m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_C_Active_Power m0 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ Multiplex_Periodic_Test M : 0|8@1- (1,0) [-128|127] "" Vector__XXX
+
+BO_ 10 Periodic_Measurements_10: 8 Vector__XXX
+ SG_ PM_B_Crest_Factor m32 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_VoltageLL_DC m25 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_VoltageLL_ACDC m24 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_VoltageLL_AC m23 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_Voltage_THD m22 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Voltage_DC m21 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_Voltage_ACDC m20 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_Voltage_AC m19 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ PM_B_Power_Factor_Angle m18 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Power_Factor m17 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Peak_Current_Recoded m16 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Peak_Current m9 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ PM_B_KWH_Elapsed_Time m8 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Kilowatt_Hour m7 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
+ SG_ PM_B_Frequency m6 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
+ SG_ PM_B_Distortion_Factor m5 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Displacement_Factor m4 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Current_THD m3 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ PM_B_Current_DC m2 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ PM_B_Current_ACDC m1 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+ SG_ Multiplex_Periodic_Test M : 32|8@1- (1,0) [-128|127] "" Vector__XXX
+ SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 BO_ 162 SCPI_READ_MESSAGE: 8 Vector__XXX
  SG_ SCPI_Read : 0|32@1+ (1,0) [0|0] "" Vector__XXX
@@ -446,8 +469,8 @@ BO_ 34 Get_messages_2: 8 Vector__XXX
  SG_ GM_ALL_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
 
 BO_ 33 Get_messages_1: 8 Vector__XXX
- SG_ GM_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ GM_ALL_Voltage_DC : 32|1@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+ SG_ GM_ALL_Voltage_AC : 0|1@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
 
 BO_ 0 Confirmation_Message: 8 Vector__XXX
  SG_ ACK_Signal : 0|16@1+ (1,0) [0|15] "" Vector__XXX
@@ -513,54 +536,6 @@ BO_ 1 Periodic_Measurements_1: 8 Vector__XXX
 EV_ PPST: 0 [0|16] "" 5 1 DUMMY_NODE_VECTOR3 Vector__XXX;
 
 CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
-CM_ SG_ 3221225472 Firmware_Version "Firmware version";
-CM_ SG_ 3221225472 PM_A_Voltage_DC "Periodic measurement voltage line to neutral DC A";
-CM_ SG_ 3221225472 PM_A_Voltage_THD "Periodic measurement voltage line to neutral THD A";
-CM_ SG_ 3221225472 PM_A_VoltageLL_AC "Periodic measurement voltage line to line AC A";
-CM_ SG_ 3221225472 PM_A_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) A";
-CM_ SG_ 3221225472 PM_A_VoltageLL_DC "Periodic measurement voltage line to line DC A";
-CM_ SG_ 3221225472 PM_B_Frequency "Periodic measurement frequency B";
-CM_ SG_ 3221225472 PM_B_Voltage_AC "Periodic measurement voltage line to neutral AC B";
-CM_ SG_ 3221225472 PM_B_Voltage_ACDC "Periodic measurement voltage line to neutral RMS (AC+DC) B";
-CM_ SG_ 3221225472 PM_B_Voltage_DC "Periodic measurement voltage line to neutral DC B";
-CM_ SG_ 3221225472 PM_B_Voltage_THD "Periodic measurement voltage line to neutral THD B";
-CM_ SG_ 3221225472 PM_B_VoltageLL_AC "Periodic measurement voltage line to line AC B";
-CM_ SG_ 3221225472 PM_B_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) B";
-CM_ SG_ 3221225472 PM_B_VoltageLL_DC "Periodic measurement voltage line to line DC B";
-CM_ SG_ 3221225472 PM_B_Current_ACDC "Periodic measurement current RMS (AC+DC) B";
-CM_ SG_ 3221225472 PM_B_Current_DC "Periodic measurement current DC B";
-CM_ SG_ 3221225472 PM_B_Current_THD "Periodic measurement current THD B";
-CM_ SG_ 3221225472 PM_B_Crest_Factor "Periodic measurement crest factor B";
-CM_ SG_ 3221225472 PM_B_Peak_Current "Periodic measurement peak current B";
-CM_ SG_ 3221225472 PM_B_Peak_Current_Recoded "Periodic measurement peak current recorded B";
-CM_ SG_ 3221225472 PM_B_Active_Power "Periodic measurement active power B";
-CM_ SG_ 3221225472 PM_B_Power_Factor "Periodic measurement power factor B";
-CM_ SG_ 3221225472 PM_B_Power_Factor_Angle "Periodic measurement power factor angle B";
-CM_ SG_ 3221225472 PM_B_Displacement_Factor "Periodic measurement displacement factor B";
-CM_ SG_ 3221225472 PM_B_Distortion_Factor "Periodic measurement distortion factor B";
-CM_ SG_ 3221225472 PM_B_Kilowatt_Hour "Periodic measurement kilowatt hour B";
-CM_ SG_ 3221225472 PM_B_KWH_Elapsed_Time "Periodic measurement kilowatt hour elapsed time B";
-CM_ SG_ 3221225472 PM_C_Frequency "Periodic measurement frequency C";
-CM_ SG_ 3221225472 PM_C_Voltage_AC "Periodic measurement voltage line to neutral AC C";
-CM_ SG_ 3221225472 PM_C_Voltage_ACDC "Periodic measurement voltage line to neutral RMS (AC+DC) C";
-CM_ SG_ 3221225472 PM_C_Voltage_DC "Periodic measurement voltage line to neutral DC C";
-CM_ SG_ 3221225472 PM_C_Voltage_THD "Periodic measurement voltage line to neutral THD C";
-CM_ SG_ 3221225472 PM_C_VoltageLL_AC "Periodic measurement voltage line to line AC C";
-CM_ SG_ 3221225472 PM_C_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) C";
-CM_ SG_ 3221225472 PM_C_VoltageLL_DC "Periodic measurement voltage line to line DC C";
-CM_ SG_ 3221225472 PM_C_Current_ACDC "Periodic measurement current RMS (AC+DC) C";
-CM_ SG_ 3221225472 PM_C_Current_DC "Periodic measurement current DC C";
-CM_ SG_ 3221225472 PM_C_Current_THD "Periodic measurement current THD C";
-CM_ SG_ 3221225472 PM_C_Crest_Factor "Periodic measurement crest factor C";
-CM_ SG_ 3221225472 PM_C_Peak_Current "Periodic measurement peak current C";
-CM_ SG_ 3221225472 PM_C_Peak_Current_Recoded "Periodic measurement peak current recorded C";
-CM_ SG_ 3221225472 PM_C_Active_Power "Periodic measurement active power C";
-CM_ SG_ 3221225472 PM_C_Power_Factor "Periodic measurement power factor C";
-CM_ SG_ 3221225472 PM_C_Power_Factor_Angle "Periodic measurement power factor angle C";
-CM_ SG_ 3221225472 PM_C_Displacement_Factor "Periodic measurement displacement factor C";
-CM_ SG_ 3221225472 PM_C_Distortion_Factor "Periodic measurement distortion factor C";
-CM_ SG_ 3221225472 PM_C_Kilowatt_Hour "Periodic measurement kilowatt hour C";
-CM_ SG_ 3221225472 PM_C_KWH_Elapsed_Time "Periodic measurement kilowatt hour elapsed time C";
 CM_ SG_ 3221225472 GM_A_Frequency "Get measurement frequency A";
 CM_ SG_ 3221225472 GM_A_Voltage_AC "Get measurement voltage line to neutral AC A";
 CM_ SG_ 3221225472 GM_A_Voltage_ACDC "Get measurement voltage line to neutral RMS (AC+DC) A";
@@ -624,6 +599,54 @@ CM_ SG_ 3221225472 GM_C_Displacement_Factor "Get measurement displacement factor
 CM_ SG_ 3221225472 GM_C_Distortion_Factor "Get measurement distortion factor C";
 CM_ SG_ 3221225472 GM_C_Kilowatt_Hour "Get measurement kilowatt hour C";
 CM_ SG_ 3221225472 GM_C_KWH_Elapsed_Time "Get measurement kilowatt hour elapsed time C";
+CM_ SG_ 250 Firmware_Version "Firmware version";
+CM_ SG_ 14 PM_A_VoltageLL_DC "Periodic measurement voltage line to line DC A";
+CM_ SG_ 13 PM_A_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) A";
+CM_ SG_ 13 PM_A_VoltageLL_AC "Periodic measurement voltage line to line AC A";
+CM_ SG_ 12 PM_A_Voltage_THD "Periodic measurement voltage line to neutral THD A";
+CM_ SG_ 12 PM_A_Voltage_DC "Periodic measurement voltage line to neutral DC A";
+CM_ SG_ 11 PM_C_VoltageLL_DC "Periodic measurement voltage line to line DC C";
+CM_ SG_ 11 PM_C_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) C";
+CM_ SG_ 11 PM_C_VoltageLL_AC "Periodic measurement voltage line to line AC C";
+CM_ SG_ 11 PM_C_Voltage_THD "Periodic measurement voltage line to neutral THD C";
+CM_ SG_ 11 PM_C_Voltage_DC "Periodic measurement voltage line to neutral DC C";
+CM_ SG_ 11 PM_C_Voltage_ACDC "Periodic measurement voltage line to neutral RMS (AC+DC) C";
+CM_ SG_ 11 PM_C_Voltage_AC "Periodic measurement voltage line to neutral AC C";
+CM_ SG_ 11 PM_C_Power_Factor_Angle "Periodic measurement power factor angle C";
+CM_ SG_ 11 PM_C_Power_Factor "Periodic measurement power factor C";
+CM_ SG_ 11 PM_C_Peak_Current_Recoded "Periodic measurement peak current recorded C";
+CM_ SG_ 11 PM_C_Peak_Current "Periodic measurement peak current C";
+CM_ SG_ 11 PM_C_KWH_Elapsed_Time "Periodic measurement kilowatt hour elapsed time C";
+CM_ SG_ 11 PM_C_Kilowatt_Hour "Periodic measurement kilowatt hour C";
+CM_ SG_ 11 PM_C_Frequency "Periodic measurement frequency C";
+CM_ SG_ 11 PM_C_Distortion_Factor "Periodic measurement distortion factor C";
+CM_ SG_ 11 PM_C_Displacement_Factor "Periodic measurement displacement factor C";
+CM_ SG_ 11 PM_C_Current_THD "Periodic measurement current THD C";
+CM_ SG_ 11 PM_C_Current_DC "Periodic measurement current DC C";
+CM_ SG_ 11 PM_C_Current_ACDC "Periodic measurement current RMS (AC+DC) C";
+CM_ SG_ 11 PM_C_Crest_Factor "Periodic measurement crest factor C";
+CM_ SG_ 11 PM_C_Active_Power "Periodic measurement active power C";
+CM_ SG_ 10 PM_B_Crest_Factor "Periodic measurement crest factor B";
+CM_ SG_ 10 PM_B_VoltageLL_DC "Periodic measurement voltage line to line DC B";
+CM_ SG_ 10 PM_B_VoltageLL_ACDC "Periodic measurement voltage line to line RMS (AC+DC) B";
+CM_ SG_ 10 PM_B_VoltageLL_AC "Periodic measurement voltage line to line AC B";
+CM_ SG_ 10 PM_B_Voltage_THD "Periodic measurement voltage line to neutral THD B";
+CM_ SG_ 10 PM_B_Voltage_DC "Periodic measurement voltage line to neutral DC B";
+CM_ SG_ 10 PM_B_Voltage_ACDC "Periodic measurement voltage line to neutral RMS (AC+DC) B";
+CM_ SG_ 10 PM_B_Voltage_AC "Periodic measurement voltage line to neutral AC B";
+CM_ SG_ 10 PM_B_Power_Factor_Angle "Periodic measurement power factor angle B";
+CM_ SG_ 10 PM_B_Power_Factor "Periodic measurement power factor B";
+CM_ SG_ 10 PM_B_Peak_Current_Recoded "Periodic measurement peak current recorded B";
+CM_ SG_ 10 PM_B_Peak_Current "Periodic measurement peak current B";
+CM_ SG_ 10 PM_B_KWH_Elapsed_Time "Periodic measurement kilowatt hour elapsed time B";
+CM_ SG_ 10 PM_B_Kilowatt_Hour "Periodic measurement kilowatt hour B";
+CM_ SG_ 10 PM_B_Frequency "Periodic measurement frequency B";
+CM_ SG_ 10 PM_B_Distortion_Factor "Periodic measurement distortion factor B";
+CM_ SG_ 10 PM_B_Displacement_Factor "Periodic measurement displacement factor B";
+CM_ SG_ 10 PM_B_Current_THD "Periodic measurement current THD B";
+CM_ SG_ 10 PM_B_Current_DC "Periodic measurement current DC B";
+CM_ SG_ 10 PM_B_Current_ACDC "Periodic measurement current RMS (AC+DC) B";
+CM_ SG_ 10 PM_B_Active_Power "Periodic measurement active power B";
 CM_ SG_ 162 SCPI_Read "SCPI Read";
 CM_ SG_ 161 SCPI_Read_Index "SCPI Read Index";
 CM_ SG_ 160 SCPI_Write "SCPI Write";
@@ -830,6 +853,117 @@ BA_DEF_DEF_  "Data_Bit_Rate" 2000000;
 BA_DEF_DEF_  "Nominal_Bit_Rate" 1000000;
 BA_ "BusType" "CAN FD";
 BA_ "DBName" "PPST";
+BA_ "Mode" EV_ PPST 0;
+SIG_VALTYPE_ 3221225472 GM_A_Frequency : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Voltage_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Voltage_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Voltage_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Voltage_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_A_VoltageLL_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_VoltageLL_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Current_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Current_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Current_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Crest_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Peak_Current : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Active_Power : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Power_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Displacement_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Distortion_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_A_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 3221225472 GM_A_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Frequency : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Voltage_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Voltage_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Voltage_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Voltage_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_B_VoltageLL_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_VoltageLL_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Current_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Current_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Current_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Crest_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Peak_Current : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Active_Power : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Power_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Displacement_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Distortion_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_B_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 3221225472 GM_B_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Frequency : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Voltage_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Voltage_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Voltage_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Voltage_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_C_VoltageLL_AC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_VoltageLL_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Current_ACDC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Current_DC : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Current_THD : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Crest_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Peak_Current : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Active_Power : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Power_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Displacement_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Distortion_Factor : 1;
+SIG_VALTYPE_ 3221225472 GM_C_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 3221225472 GM_C_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 14 PM_A_VoltageLL_DC : 1;
+SIG_VALTYPE_ 13 PM_A_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 13 PM_A_VoltageLL_AC : 1;
+SIG_VALTYPE_ 12 PM_A_Voltage_THD : 1;
+SIG_VALTYPE_ 12 PM_A_Voltage_DC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_DC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_AC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_THD : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_DC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_AC : 1;
+SIG_VALTYPE_ 11 PM_C_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 11 PM_C_Power_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 11 PM_C_Peak_Current : 1;
+SIG_VALTYPE_ 11 PM_C_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 11 PM_C_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 11 PM_C_Frequency : 1;
+SIG_VALTYPE_ 11 PM_C_Distortion_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Displacement_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Current_THD : 1;
+SIG_VALTYPE_ 11 PM_C_Current_DC : 1;
+SIG_VALTYPE_ 11 PM_C_Current_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_Crest_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Active_Power : 1;
+SIG_VALTYPE_ 10 PM_B_Crest_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_DC : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_AC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_THD : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_DC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_AC : 1;
+SIG_VALTYPE_ 10 PM_B_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 10 PM_B_Power_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 10 PM_B_Peak_Current : 1;
+SIG_VALTYPE_ 10 PM_B_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 10 PM_B_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 10 PM_B_Frequency : 1;
+SIG_VALTYPE_ 10 PM_B_Distortion_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Displacement_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Current_THD : 1;
+SIG_VALTYPE_ 10 PM_B_Current_DC : 1;
+SIG_VALTYPE_ 10 PM_B_Current_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_Active_Power : 1;
 SIG_VALTYPE_ 371 SPP_Peak_Voltage_Level : 1;
 SIG_VALTYPE_ 372 SPP_Peak_Voltage_Margin : 1;
 SIG_VALTYPE_ 373 SPP_RMS_Current_Level : 1;
@@ -838,6 +972,42 @@ SIG_VALTYPE_ 375 SPP_RMS_Power_Level : 1;
 SIG_VALTYPE_ 376 SPP_RMS_Trip_Time : 1;
 SIG_VALTYPE_ 370 SPP_Peak_Current_Limit : 1;
 SIG_VALTYPE_ 369 SPP_Peak_Current_Level : 1;
+SIG_VALTYPE_ 291 SC_Slew_Voltage_DC : 1;
+SIG_VALTYPE_ 290 SC_Slew_Voltage_AC : 1;
+SIG_VALTYPE_ 289 SC_Slew_Phase : 1;
+SIG_VALTYPE_ 288 SC_Slew_Frequency : 1;
+SIG_VALTYPE_ 341 SC_Update_Phase : 1;
+SIG_VALTYPE_ 339 SC_Output_Disable_Phase : 1;
+SIG_VALTYPE_ 339 SC_CSC_Max_Gain : 1;
+SIG_VALTYPE_ 340 SC_Ramp_Time : 1;
+SIG_VALTYPE_ 272 SP_C_Voltage_DC : 1;
+SIG_VALTYPE_ 268 SP_B_Voltage_DC : 1;
+SIG_VALTYPE_ 271 SP_C_Voltage_AC : 1;
+SIG_VALTYPE_ 271 SP_C_Power_Limit : 1;
+SIG_VALTYPE_ 270 SP_C_Phase : 1;
+SIG_VALTYPE_ 270 SP_C_KVA_Limit : 1;
+SIG_VALTYPE_ 269 SP_C_Frequency : 1;
+SIG_VALTYPE_ 269 SP_C_Current_Limit : 1;
+SIG_VALTYPE_ 267 SP_B_Voltage_AC : 1;
+SIG_VALTYPE_ 267 SP_B_Power_Limit : 1;
+SIG_VALTYPE_ 266 SP_B_Phase : 1;
+SIG_VALTYPE_ 266 SP_B_KVA_Limit : 1;
+SIG_VALTYPE_ 265 SP_B_Frequency : 1;
+SIG_VALTYPE_ 265 SP_B_Current_Limit : 1;
+SIG_VALTYPE_ 264 SP_A_Voltage_DC : 1;
+SIG_VALTYPE_ 260 SP_ALL_Voltage_DC : 1;
+SIG_VALTYPE_ 263 SP_A_Voltage_AC : 1;
+SIG_VALTYPE_ 263 SP_A_Power_Limit : 1;
+SIG_VALTYPE_ 259 SP_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 259 SP_ALL_Power_Limit : 1;
+SIG_VALTYPE_ 258 SP_ALL_Phase : 1;
+SIG_VALTYPE_ 258 SP_ALL_KVA_Limit : 1;
+SIG_VALTYPE_ 262 SP_A_Phase : 1;
+SIG_VALTYPE_ 262 SP_A_KVA_Limit : 1;
+SIG_VALTYPE_ 257 SP_ALL_Frequency : 1;
+SIG_VALTYPE_ 257 SP_ALL_Current_Limit : 1;
+SIG_VALTYPE_ 261 SP_A_Frequency : 1;
+SIG_VALTYPE_ 261 SP_A_Current_Limit : 1;
 SIG_VALTYPE_ 96 GP_C_Voltage_DC : 1;
 SIG_VALTYPE_ 95 GP_C_Voltage_AC : 1;
 SIG_VALTYPE_ 95 GP_C_Power_Limit : 1;
@@ -867,6 +1037,7 @@ SIG_VALTYPE_ 82 GP_ALL_KVA_Limit : 1;
 SIG_VALTYPE_ 82 GP_ALL_Frequency : 1;
 SIG_VALTYPE_ 81 GP_ALL_Current_Limit : 1;
 SIG_VALTYPE_ 54 GPP_RMS_Power_Level : 1;
+SIG_VALTYPE_ 55 GPP_RMS_Trip_Time : 1;
 SIG_VALTYPE_ 53 GPP_RMS_KVA_Level : 1;
 SIG_VALTYPE_ 53 GPP_RMS_Current_Level : 1;
 SIG_VALTYPE_ 51 GPP_Peak_Voltage_Margin : 1;
@@ -900,6 +1071,41 @@ SIG_VALTYPE_ 35 GM_ALL_Current_DC : 1;
 SIG_VALTYPE_ 35 GM_ALL_Current_ACDC : 1;
 SIG_VALTYPE_ 34 GM_ALL_Crest_Factor : 1;
 SIG_VALTYPE_ 34 GM_ALL_Active_Power : 1;
-SIG_VALTYPE_ 33 GM_ALL_Voltage_DC : 1;
-SIG_VALTYPE_ 33 GM_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 3 PM_A_Current_DC : 1;
+SIG_VALTYPE_ 3 PM_A_Current_ACDC : 1;
+SIG_VALTYPE_ 4 PM_A_Displacement_Factor : 1;
+SIG_VALTYPE_ 4 PM_A_Current_THD : 1;
+SIG_VALTYPE_ 5 PM_A_Frequency : 1;
+SIG_VALTYPE_ 5 PM_A_Distortion_Factor : 1;
+SIG_VALTYPE_ 6 PM_A_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 6 PM_A_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 7 PM_A_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 7 PM_A_Peak_Current : 1;
+SIG_VALTYPE_ 8 PM_A_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 8 PM_A_Power_Factor : 1;
+SIG_VALTYPE_ 9 PM_A_Voltage_ACDC : 1;
+SIG_VALTYPE_ 9 PM_A_Voltage_AC : 1;
+SIG_VALTYPE_ 2 PM_A_Crest_Factor : 1;
+SIG_VALTYPE_ 2 PM_A_Active_Power : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_AC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_THD : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 1 PM_ALL_Power_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 1 PM_ALL_Peak_Current : 1;
+SIG_VALTYPE_ 1 PM_ALL_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 1 PM_ALL_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 1 PM_ALL_Frequency : 1;
+SIG_VALTYPE_ 1 PM_ALL_Distortion_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Displacement_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_THD : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Crest_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Active_Power : 1;
 

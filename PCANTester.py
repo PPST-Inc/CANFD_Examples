@@ -345,6 +345,45 @@ class PCANTester(object):
 
     def StageTest5(self):
         logging.info(f'StageTest5')
+        error = self.RequestGetMessages('Firmware_Message',1)
+        for signame,value in self.canMesageReceived.items():
+                firmwareBytes = (value).to_bytes(8, byteorder='little')
+                firmwareString = firmwareBytes.decode('utf-8', 'strict')
+                if firmwareString.count('\0') < 4:
+                    logging.info(f'Firmware version: {firmwareString}')
+                else:
+                    logging.info(f'Firmware version: {value}')
+        return error
+
+    def StageTest6(self):
+        result = self.RequestGetMessages('Fault_Message_Fault',1)
+        if result != 0 : return result
+        for signame,valFlag in self.canMesageReceived.items(): 
+            faultFlag = valFlag
+        hexVec= []
+        if faultFlag == 1: 
+            logging.info('There is a Fault ')
+            for indexVal in range(5):
+                self.canMsgWrt.DATA[0]=indexVal
+                if 0 == self.RequestGetMessages('Fault_Message_Index', 1):
+                    for signame,value in self.canMesageReceived.items():
+                        aHex = (value).to_bytes(8).hex()
+                        hexVec.append(aHex)
+                else: break
+
+            for i , aVal in enumerate(hexVec):
+                logging.info(f'Fault val:0x{aVal} Index: {i}')
+
+            dummyTable ={'SS_Faults_Reset': 0}
+            return self.SetpointMessages('Fault_Message_Reset', 1, dummyTable)
+
+
+    def StageTest7(self):
+        logging.info(f'Same message 9 iterations')
+        for i in range(9):
+            error = self.RequestGetMessages('Get_messages_11',1)
+            if error !=0 :  return error
+        return error
 
     def RequestGetMessages(self, name, nMessages): 
         try:
@@ -357,7 +396,6 @@ class PCANTester(object):
         
         for i in range(nMessages):
             a_message = db.get_message_by_frame_id(firstMessage.frame_id+i)
-            self.canMsgWrt= TPCANMsg()
             self.canMsgWrt.ID  = a_message.frame_id
             self.canMsgWrt.LEN = a_message.length
             self.canMsgWrt.MSGTYPE = PCAN_MESSAGE_STANDARD
@@ -726,6 +764,17 @@ logging.info(f'###**************************************************************
 logging.info(f'###*    Stage 4 Start')
 stageResult = basicExl.StageTest4()
 logging.info(f'###*    Stage 4 end at {stageResult} {ErrorString(stageResult)} \n')
+
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Stage 5 Start')
+stageResult = basicExl.StageTest5()
+logging.info(f'###*    Stage 5 end at {stageResult} {ErrorString(stageResult)} \n')
+
+logging.info(f'###*****************************************************************')
+logging.info(f'###*    Stage 6 Start')
+stageResult = basicExl.StageTest6()
+logging.info(f'###*    Stage 6 end at {stageResult} {ErrorString(stageResult)} \n')
+
 
 logging.info(f'###*    Test end')
 logging.info(f'###*****************************************************************')
