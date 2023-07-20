@@ -487,8 +487,11 @@ class PCANTester(object):
                 logging.info(f'Command :{command[0:-1]} - done {deltaTime:0.0f} ms')
                 answerString = self.answerBytes.decode('utf-8', 'ignore')
                 pprint(command)
-                pprint (answerString[0:answerString.index('\n')+1])
-                return 0
+                try:
+                    pprint (answerString[0:answerString.index('\n')+1])
+                    return 0
+                except ValueError:
+                    pprint (f'Bad answer')
         return 1
 
     def ReadCommand(self):
@@ -525,21 +528,21 @@ class PCANTester(object):
                 deltaTime = (time.time_ns() - deltaTime) / 1000000
                 testStage2Result = 0
             else:
+                logging.info(f'Fail to read Get messages')
                 if(self.ackRequestFlag):
                     pprint(f'ackRequestFlag {self.ackStatus}')
                     break
                 else:
-                    logging.info(f'Fail to read Get messages')
                     testStage2Result = 1
                     self.StopTimer()
                     return testStage2Result
 
-            for signame,value in self.canMesageReceived.items():
-                localAnswerBytes =localAnswerBytes+ (value).to_bytes(8, byteorder='little')
-
             if(self.ackRequestFlag):
                 pprint(f'ackRequestFlag {self.ackStatus}')
                 break
+            for signame,value in self.canMesageReceived.items():
+                localAnswerBytes =localAnswerBytes+ (value).to_bytes(8, byteorder='little')
+
 
         self.answerBytes = localAnswerBytes
         self.StopTimer()
@@ -701,8 +704,10 @@ class PCANTester(object):
             try:
                 self.ackStatus = db.decode_message(theMsg.ID, theMsg.DATA )["ACK_Signal"]
                 self.ackRequestFlag = True
+                self.writeSem.release(1)
             except KeyError:
                 pass
+            if theMsg.ID != self.readIndexMessageID: return
             try:
                 self.canMesageReceived = db.decode_message(self.readIndexMessageID, theMsg.DATA )
                 self.writeSem.release(1)
