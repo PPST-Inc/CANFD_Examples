@@ -350,7 +350,8 @@ class PCANTester(object):
                 firmwareBytes = (value).to_bytes(8, byteorder='little')
                 firmwareString = firmwareBytes.decode('utf-8', 'strict')
                 if firmwareString.count('\0') < 4:
-                    logging.info(f'Firmware version: {firmwareString}')
+                    fv=firmwareString.split('\0')[0]
+                    logging.info(f'Firmware version: {fv}')
                 else:
                     logging.info(f'Firmware version: {value}')
         return error
