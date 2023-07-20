@@ -301,7 +301,7 @@ class PCANTester(object):
 
     def StageTest2(self):
         getMessagessDict = {
-            'Get_messages_1':[11,'Measurements Get'],
+            'Get_messages_1':[43,'Measurements Get'],
             'Get_configuration_1' :[7,'\nConfigurations'],
             'Get_Protection_1' :[8,'\nProtection'],
             'Get_Setpoints_1' :[16,'\nSetpoints'],
@@ -319,7 +319,8 @@ class PCANTester(object):
             'Setpoint_B_1' :[4,tableSetPointsControl],
             'Setpoint_C_1' :[4,tableSetPointsControl],
             'Setpoint_A_1' :[3 ,tableSetPointsControl],
-            'Setpoint_All_1': [ 4,tableSetPointsControl]
+            'Setpoint_All_1': [ 4,tableSetPointsControl],
+            'Setpoint_Ramp_And_Slew_1': [ 4,tableRampAndSlew]
         }
 
         for signame,value in setpointsDict.items():
@@ -377,6 +378,9 @@ class PCANTester(object):
 
             dummyTable ={'SS_Faults_Reset': 0}
             return self.SetpointMessages('Fault_Message_Reset', 1, dummyTable)
+        else:
+            logging.info('No Fault')
+            return 0
 
 
     def StageTest7(self):
