@@ -33,562 +33,642 @@ NS_ :
 
 BS_:
 
-BU_:
+BU_: PPS_Second_2 Client_PC PPS_First_1
 
 
-BO_ 75 Get_messages_43: 8 Vector__XXX
- SG_ GM_C_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_C_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+BO_ 75 Get_messages_43: 8 PPS_First_1
+ SG_ GM_C_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 74 Get_messages_42: 8 Vector__XXX
- SG_ GM_C_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_C_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 74 Get_messages_42: 8 PPS_First_1
+ SG_ GM_C_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 73 Get_messages_41: 8 Vector__XXX
- SG_ GM_C_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_C_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+BO_ 73 Get_messages_41: 8 PPS_First_1
+ SG_ GM_C_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 72 Get_messages_40: 8 Vector__XXX
- SG_ GM_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_C_Power_Factor_Angle : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 72 Get_messages_40: 8 PPS_First_1
+ SG_ GM_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Power_Factor_Angle : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 71 Get_messages_39: 8 Vector__XXX
- SG_ GM_C_Power_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_C_Peak_Current_Recoded : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 71 Get_messages_39: 8 PPS_First_1
+ SG_ GM_C_Power_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Peak_Current_Recoded : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 70 Get_messages_38: 8 Vector__XXX
- SG_ GM_C_Peak_Current : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 70 Get_messages_38: 8 PPS_First_1
+ SG_ GM_C_Peak_Current : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 69 Get_messages_37: 8 Vector__XXX
- SG_ GM_C_Kilowatt_Hour : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ GM_C_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
+BO_ 69 Get_messages_37: 8 PPS_First_1
+ SG_ GM_C_Kilowatt_Hour : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 68 Get_messages_36: 8 Vector__XXX
- SG_ GM_C_Distortion_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_C_Displacement_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 68 Get_messages_36: 8 PPS_First_1
+ SG_ GM_C_Distortion_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Displacement_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 67 Get_messages_35: 8 Vector__XXX
- SG_ GM_C_Current_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_C_Current_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
+BO_ 67 Get_messages_35: 8 PPS_First_1
+ SG_ GM_C_Current_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Current_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 66 Get_messages_34: 8 Vector__XXX
- SG_ GM_C_Current_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_C_Crest_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+BO_ 66 Get_messages_34: 8 PPS_First_1
+ SG_ GM_C_Current_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Crest_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 65 Get_messages_33: 8 Vector__XXX
- SG_ GM_C_Active_Power : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+BO_ 65 Get_messages_33: 8 PPS_First_1
+ SG_ GM_C_Active_Power : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 64 Get_messages_32: 8 Vector__XXX
- SG_ GM_B_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_B_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+BO_ 64 Get_messages_32: 8 PPS_First_1
+ SG_ GM_B_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 63 Get_messages_31: 8 Vector__XXX
- SG_ GM_B_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
+BO_ 63 Get_messages_31: 8 PPS_First_1
+ SG_ GM_B_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
-BO_ 62 Get_messages_30: 8 Vector__XXX
- SG_ GM_B_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_B_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 61 Get_messages_29: 8 Vector__XXX
- SG_ GM_B_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 60 Get_messages_28: 8 Vector__XXX
- SG_ GM_B_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 59 Get_messages_27: 8 Vector__XXX
- SG_ GM_B_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
-
-BO_ 58 Get_messages_26: 8 Vector__XXX
- SG_ GM_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ GM_B_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 57 Get_messages_25: 8 Vector__XXX
- SG_ GM_B_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 56 Get_messages_24: 8 Vector__XXX
- SG_ GM_B_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_B_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 55 Get_messages_23: 8 Vector__XXX
- SG_ GM_B_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_B_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 54 Get_messages_22: 8 Vector__XXX
- SG_ GM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 53 Get_messages_21: 8 Vector__XXX
- SG_ GM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 52 Get_messages_20: 8 Vector__XXX
- SG_ GM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 51 Get_messages_19: 8 Vector__XXX
- SG_ GM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 50 Get_messages_18: 8 Vector__XXX
- SG_ GM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 49 Get_messages_17: 8 Vector__XXX
- SG_ GM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 48 Get_messages_16: 8 Vector__XXX
- SG_ GM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
-
-BO_ 47 Get_messages_15: 8 Vector__XXX
- SG_ GM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ GM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 46 Get_messages_14: 8 Vector__XXX
- SG_ GM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 243 Fault_Message_Fault: 8 Vector__XXX
- SG_ GS_Fault : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 242 Fault_Message_Index: 8 Vector__XXX
- SG_ GS_Faults_Index : 0|64@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 241 Fault_Message_Reset: 8 Vector__XXX
- SG_ SS_Faults_Reset : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 250 Firmware_Message: 8 Vector__XXX
- SG_ Firmware_Version : 0|64@1+ (1,0) [0|65535] "" Vector__XXX
-
-BO_ 14 Periodic_Measurements_14: 8 Vector__XXX
- SG_ PM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 13 Periodic_Measurements_13: 8 Vector__XXX
- SG_ PM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 12 Periodic_Measurements_12: 8 Vector__XXX
- SG_ PM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 11 Periodic_Measurements_11: 8 Vector__XXX
- SG_ PM_C_VoltageLL_DC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_VoltageLL_ACDC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_VoltageLL_AC m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_THD m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Voltage_DC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_ACDC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Voltage_AC m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_C_Power_Factor_Angle m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Power_Factor m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Peak_Current_Recoded m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Peak_Current m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_KWH_Elapsed_Time m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Kilowatt_Hour m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ PM_C_Frequency m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_C_Distortion_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Displacement_Factor m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Current_THD m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Current_DC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_Current_ACDC m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_C_Crest_Factor m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_C_Active_Power m0 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ Multiplex_Periodic_Test M : 0|8@1- (1,0) [-128|127] "" Vector__XXX
-
-BO_ 10 Periodic_Measurements_10: 8 Vector__XXX
- SG_ PM_B_Crest_Factor m32 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_VoltageLL_DC m25 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_VoltageLL_ACDC m24 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_VoltageLL_AC m23 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_THD m22 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Voltage_DC m21 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_ACDC m20 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Voltage_AC m19 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_B_Power_Factor_Angle m18 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Power_Factor m17 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Peak_Current_Recoded m16 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Peak_Current m9 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_B_KWH_Elapsed_Time m8 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Kilowatt_Hour m7 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ PM_B_Frequency m6 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_B_Distortion_Factor m5 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Displacement_Factor m4 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Current_THD m3 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_B_Current_DC m2 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_B_Current_ACDC m1 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ Multiplex_Periodic_Test M : 32|8@1- (1,0) [-128|127] "" Vector__XXX
- SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 162 SCPI_READ_MESSAGE: 8 Vector__XXX
- SG_ SCPI_Read : 0|32@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 161 SCPI_INDEX_MESSAGE: 8 Vector__XXX
- SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 160 SCPI_WRITE_MESSAGE: 8 Vector__XXX
- SG_ SCPI_Write : 0|64@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 371 Protection_Setpoint_3: 8 Vector__XXX
- SG_ SPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 372 Protection_Setpoint_4: 8 Vector__XXX
- SG_ SPP_Peak_Voltage_Mode : 32|8@1+ (1,0) [0|10] "" Vector__XXX
- SG_ SPP_Peak_Voltage_Margin : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 373 Protection_Setpoint_RMS_5: 8 Vector__XXX
- SG_ SPP_RMS_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SPP_RMS_Current_Enable : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 374 Protection_Setpoint_RMS_6: 8 Vector__XXX
- SG_ SPP_RMS_Power_Enable : 32|8@1+ (1,0) [0|10] "" Vector__XXX
- SG_ SPP_RMS_KVA_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 375 Protection_Setpoint_RMS_7: 8 Vector__XXX
- SG_ SPP_RMS_Power_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 376 Protection_Setpoint_RMS_8: 8 Vector__XXX
- SG_ SPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 370 Protection_Setpoint_2: 8 Vector__XXX
- SG_ SPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] "" Vector__XXX
- SG_ SPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 369 Protection_Setpoint_1: 8 Vector__XXX
- SG_ SPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 291 Setpoint_Ramp_And_Slew_4: 8 Vector__XXX
- SG_ SC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 290 Setpoint_Ramp_And_Slew_3: 8 Vector__XXX
- SG_ SC_Slew_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 289 Setpoint_Ramp_And_Slew_2: 8 Vector__XXX
- SG_ SC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 288 Setpoint_Ramp_And_Slew_1: 8 Vector__XXX
- SG_ SC_Slew_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 342 Setpoint_Unit_Settings_6: 8 Vector__XXX
-
-BO_ 341 Setpoint_Unit_Settings_5: 8 Vector__XXX
- SG_ SC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 339 Setpoint_Unit_Settings_3: 8 Vector__XXX
- SG_ SC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 340 Setpoint_Unit_Settings_4: 8 Vector__XXX
- SG_ SC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s" Vector__XXX
-
-BO_ 338 Setpoint_Unit_Settings_2: 8 Vector__XXX
- SG_ SC_Form : 16|8@1+ (1,0) [1|255] "" Vector__XXX
- SG_ SC_CSC_Fault_on_Saturation : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ SC_CSC_Enable : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 337 Setpoint_Unit_Settings_1: 8 Vector__XXX
- SG_ SC_Range : 24|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ SC_Phase_Rotation : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ SC_Output_Impedance_Mode : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ SC_Mode : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 272 Setpoint_C_4: 8 Vector__XXX
- SG_ SP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 268 Setpoint_B_4: 8 Vector__XXX
- SG_ SP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 271 Setpoint_C_3: 8 Vector__XXX
- SG_ SP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 270 Setpoint_C_2: 8 Vector__XXX
- SG_ SP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 269 Setpoint_C_1: 8 Vector__XXX
- SG_ SP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 267 Setpoint_B_3: 8 Vector__XXX
- SG_ SP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 266 Setpoint_B_2: 8 Vector__XXX
- SG_ SP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 265 Setpoint_B_1: 8 Vector__XXX
- SG_ SP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 264 Setpoint_A_4: 8 Vector__XXX
- SG_ SP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 260 Setpoint_All_4: 8 Vector__XXX
- SG_ SP_ALL_Voltage_DC : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 263 Setpoint_A_3: 8 Vector__XXX
- SG_ SP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 259 Setpoint_All_3: 8 Vector__XXX
- SG_ SP_ALL_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_ALL_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 258 Setpoint_All_2: 8 Vector__XXX
- SG_ SP_ALL_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_ALL_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 262 Setpoint_A_2: 8 Vector__XXX
- SG_ SP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 257 Setpoint_All_1: 8 Vector__XXX
- SG_ SP_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_ALL_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 261 Setpoint_A_1: 8 Vector__XXX
- SG_ SP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ SP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 96 Get_Setpoints_16: 8 Vector__XXX
- SG_ GP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 95 Get_Setpoints_15: 8 Vector__XXX
- SG_ GP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 91 Get_Setpoints_11: 8 Vector__XXX
- SG_ GP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 92 Get_Setpoints_12: 8 Vector__XXX
- SG_ GP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 93 Get_Setpoints_13: 8 Vector__XXX
- SG_ GP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 94 Get_Setpoints_14: 8 Vector__XXX
- SG_ GP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 83 Get_Setpoints_3: 8 Vector__XXX
- SG_ GP_ALL_Power_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_ALL_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 84 Get_Setpoints_4: 8 Vector__XXX
- SG_ GP_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 85 Get_Setpoints_5: 8 Vector__XXX
- SG_ GP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 86 Get_Setpoints_6: 8 Vector__XXX
- SG_ GP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 87 Get_Setpoints_7: 8 Vector__XXX
- SG_ GP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 88 Get_Setpoints_8: 8 Vector__XXX
- SG_ GP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 89 Get_Setpoints_9: 8 Vector__XXX
- SG_ GP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 90 Get_Setpoints_10: 8 Vector__XXX
- SG_ GP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 82 Get_Setpoints_2: 8 Vector__XXX
- SG_ GP_ALL_KVA_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 81 Get_Setpoints_1: 8 Vector__XXX
- SG_ GP_ALL_Current_Limit : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 102 Get_Protection_6: 8 Vector__XXX
- SG_ GPP_RMS_Power_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 103 Get_Protection_7: 8 Vector__XXX
- SG_ GPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 104 Get_Protection_8: 8 Vector__XXX
- SG_ GPP_RMS_Power_Enable : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 101 Get_Protection_5: 8 Vector__XXX
- SG_ GPP_RMS_KVA_Level : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GPP_RMS_Current_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 100 Get_Protection_4: 8 Vector__XXX
- SG_ GPP_RMS_Current_Enable : 8|8@1+ (1,0) [0|10] "" Vector__XXX
- SG_ GPP_Peak_Voltage_Mode : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 99 Get_Protection_3: 8 Vector__XXX
- SG_ GPP_Peak_Voltage_Margin : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 98 Get_Protection_2: 8 Vector__XXX
- SG_ GPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] "" Vector__XXX
- SG_ GPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 97 Get_Protection_1: 8 Vector__XXX
- SG_ GPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] "" Vector__XXX
-
-BO_ 310 Get_configuration_7: 8 Vector__XXX
- SG_ GC_Form : 0|8@1+ (1,0) [1|255] "" Vector__XXX
-
-BO_ 308 Get_configuration_5: 8 Vector__XXX
- SG_ GC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 309 Get_configuration_6: 8 Vector__XXX
- SG_ GC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 307 Get_configuration_4: 8 Vector__XXX
- SG_ GC_Slew_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 306 Get_configuration_3: 8 Vector__XXX
- SG_ GC_Slew_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s" Vector__XXX
-
-BO_ 305 Get_configuration_2: 8 Vector__XXX
- SG_ GC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 304 Get_configuration_1: 8 Vector__XXX
- SG_ GC_Range : 48|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GC_Phase_Rotation : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GC_Output_Impedance_Mode : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GC_Mode : 24|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GC_CSC_Fault_on_Saturation : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GC_CSC_Enable : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 38 Get_messages_6: 8 Vector__XXX
- SG_ GM_ALL_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_ALL_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 39 Get_messages_7: 8 Vector__XXX
- SG_ GM_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ GM_ALL_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 40 Get_messages_8: 8 Vector__XXX
- SG_ GM_ALL_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
-
-BO_ 41 Get_messages_9: 8 Vector__XXX
- SG_ GM_ALL_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 42 Get_messages_10: 8 Vector__XXX
- SG_ GM_ALL_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 45 Get_messages_13: 8 Vector__XXX
- SG_ GM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 44 Get_messages_12: 8 Vector__XXX
- SG_ GM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 43 Get_messages_11: 8 Vector__XXX
- SG_ GM_ALL_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 37 Get_messages_5: 8 Vector__XXX
- SG_ GM_ALL_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_ALL_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 36 Get_messages_4: 8 Vector__XXX
- SG_ GM_ALL_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 35 Get_messages_3: 8 Vector__XXX
- SG_ GM_ALL_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_ALL_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 34 Get_messages_2: 8 Vector__XXX
- SG_ GM_ALL_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 33 Get_messages_1: 8 Vector__XXX
- SG_ GM_ALL_Voltage_DC : 32|1@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ GM_ALL_Voltage_AC : 0|1@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 0 Confirmation_Message: 8 Vector__XXX
- SG_ ACK_Signal : 0|16@1+ (1,0) [0|15] "" Vector__XXX
-
-BO_ 3 Periodic_Measurements_3: 8 Vector__XXX
- SG_ PM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 4 Periodic_Measurements_4: 8 Vector__XXX
- SG_ PM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 5 Periodic_Measurements_5: 8 Vector__XXX
- SG_ PM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 6 Periodic_Measurements_6: 8 Vector__XXX
- SG_ PM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
-
-BO_ 7 Periodic_Measurements_7: 8 Vector__XXX
- SG_ PM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
-
-BO_ 8 Periodic_Measurements_8: 8 Vector__XXX
- SG_ PM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 9 Periodic_Measurements_9: 8 Vector__XXX
- SG_ PM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
-
-BO_ 2 Periodic_Measurements_2: 8 Vector__XXX
- SG_ PM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
-BO_ 1 Periodic_Measurements_1: 8 Vector__XXX
- SG_ Multiplex_Periodic_Test M : 0|8@1- (1,0) [-128|127] "" Vector__XXX
- SG_ PM_ALL_VoltageLL_DC m33 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_VoltageLL_ACDC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_VoltageLL_AC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_Voltage_THD m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Voltage_DC m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_Voltage_ACDC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_Voltage_AC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
- SG_ PM_ALL_Power_Factor_Angle m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Power_Factor m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Peak_Current_Recoded m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Peak_Current m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_ALL_KWH_Elapsed_Time m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Kilowatt_Hour m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
- SG_ PM_ALL_Frequency m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
- SG_ PM_ALL_Distortion_Factor m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Displacement_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Current_THD m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Current_DC m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_ALL_Current_ACDC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ PM_ALL_Crest_Factor m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ PM_ALL_Active_Power m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
-
+BO_ 62 Get_messages_30: 8 PPS_First_1
+ SG_ GM_B_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 61 Get_messages_29: 8 PPS_First_1
+ SG_ GM_B_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 60 Get_messages_28: 8 PPS_First_1
+ SG_ GM_B_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 59 Get_messages_27: 8 PPS_First_1
+ SG_ GM_B_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 58 Get_messages_26: 8 PPS_First_1
+ SG_ GM_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 57 Get_messages_25: 8 PPS_First_1
+ SG_ GM_B_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 56 Get_messages_24: 8 PPS_First_1
+ SG_ GM_B_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 55 Get_messages_23: 8 PPS_First_1
+ SG_ GM_B_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 54 Get_messages_22: 8 PPS_First_1
+ SG_ GM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 53 Get_messages_21: 8 PPS_First_1
+ SG_ GM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 52 Get_messages_20: 8 PPS_First_1
+ SG_ GM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 51 Get_messages_19: 8 PPS_First_1
+ SG_ GM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 50 Get_messages_18: 8 PPS_First_1
+ SG_ GM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 49 Get_messages_17: 8 PPS_First_1
+ SG_ GM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 48 Get_messages_16: 8 PPS_Second_2
+ SG_ GM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 47 Get_messages_15: 8 PPS_First_1
+ SG_ GM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 46 Get_messages_14: 8 PPS_First_1
+ SG_ GM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 243 Fault_Message_Fault: 8 PPS_First_1
+ SG_ GS_Fault : 0|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+
+BO_ 242 Fault_Message_Index: 8 PPS_First_1
+ SG_ GS_Faults_Index : 0|64@1+ (1,0) [0|0] ""  PPS_First_1,Client_PC
+
+BO_ 241 Fault_Message_Reset: 8 Client_PC
+ SG_ SS_Faults_Reset : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 250 Firmware_Message: 8 PPS_First_1
+ SG_ Firmware_Version : 0|64@1+ (1,0) [0|65535] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 14 Periodic_Measurements_14: 8 PPS_First_1
+ SG_ PM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 13 Periodic_Measurements_13: 8 PPS_First_1
+ SG_ PM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 12 Periodic_Measurements_12: 8 PPS_First_1
+ SG_ PM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 11 Periodic_Measurements_11: 8 PPS_First_1
+ SG_ PM_C_VoltageLL_DC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_VoltageLL_ACDC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_VoltageLL_AC m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_THD m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Voltage_DC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_ACDC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_AC m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Power_Factor_Angle m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Power_Factor m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Peak_Current_Recoded m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Peak_Current m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_KWH_Elapsed_Time m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Kilowatt_Hour m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_C_Frequency m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_C_Distortion_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Displacement_Factor m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Current_THD m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Current_DC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_Current_ACDC m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_Crest_Factor m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Active_Power m0 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ Multiplex_Periodic_Test_3 M : 0|8@1- (1,0) [-128|127] ""  Client_PC
+
+BO_ 10 Periodic_Measurements_10: 8 PPS_First_1
+ SG_ PM_B_Crest_Factor m32 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_VoltageLL_DC m25 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_VoltageLL_ACDC m24 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_VoltageLL_AC m23 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_THD m22 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Voltage_DC m21 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_ACDC m20 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_AC m19 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Power_Factor_Angle m18 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Power_Factor m17 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Peak_Current_Recoded m16 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Peak_Current m9 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_B_KWH_Elapsed_Time m8 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Kilowatt_Hour m7 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_B_Frequency m6 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_B_Distortion_Factor m5 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Displacement_Factor m4 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Current_THD m3 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Current_DC m2 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_B_Current_ACDC m1 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ Multiplex_Periodic_Test_2 M : 32|8@1- (1,0) [-128|127] ""  Client_PC
+ SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 162 SCPI_READ_MESSAGE: 8 Client_PC
+ SG_ SCPI_Read : 0|32@1+ (1,0) [0|0] ""  PPS_First_1
+
+BO_ 161 SCPI_INDEX_MESSAGE: 8 PPS_First_1
+ SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|0] ""  Client_PC
+
+BO_ 160 SCPI_WRITE_MESSAGE: 8 Client_PC
+ SG_ SCPI_Write : 0|64@1+ (1,0) [0|0] ""  PPS_First_1
+
+BO_ 371 Protection_Setpoint_3: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 372 Protection_Setpoint_4: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Mode : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Voltage_Margin : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 373 Protection_Setpoint_RMS_5: 8 Client_PC
+ SG_ SPP_RMS_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_RMS_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+
+BO_ 374 Protection_Setpoint_RMS_6: 8 Client_PC
+ SG_ SPP_RMS_Power_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_RMS_KVA_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 375 Protection_Setpoint_RMS_7: 8 Client_PC
+ SG_ SPP_RMS_Power_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 376 Protection_Setpoint_RMS_8: 8 Client_PC
+ SG_ SPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 370 Protection_Setpoint_2: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 369 Protection_Setpoint_1: 8 Client_PC
+ SG_ SPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+
+BO_ 291 Setpoint_Ramp_And_Slew_4: 8 Client_PC
+ SG_ SC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 290 Setpoint_Ramp_And_Slew_3: 8 Client_PC
+ SG_ SC_Slew_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 289 Setpoint_Ramp_And_Slew_2: 8 Client_PC
+ SG_ SC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 288 Setpoint_Ramp_And_Slew_1: 8 Client_PC
+ SG_ SC_Slew_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 342 Setpoint_Unit_Settings_6: 8 Client_PC
+
+BO_ 341 Setpoint_Unit_Settings_5: 8 Client_PC
+ SG_ SC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 339 Setpoint_Unit_Settings_3: 8 Client_PC
+ SG_ SC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 340 Setpoint_Unit_Settings_4: 8 Client_PC
+ SG_ SC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_First_1
+
+BO_ 338 Setpoint_Unit_Settings_2: 8 Client_PC
+ SG_ SC_Form : 16|8@1+ (1,0) [1|255] ""  PPS_First_1
+ SG_ SC_CSC_Fault_on_Saturation : 8|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_CSC_Enable : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 337 Setpoint_Unit_Settings_1: 8 Client_PC
+ SG_ SC_Range : 24|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Phase_Rotation : 16|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Output_Impedance_Mode : 8|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Mode : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 272 Setpoint_C_4: 8 Client_PC
+ SG_ SP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 268 Setpoint_B_4: 8 Client_PC
+ SG_ SP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 271 Setpoint_C_3: 8 Client_PC
+ SG_ SP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 270 Setpoint_C_2: 8 Client_PC
+ SG_ SP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 269 Setpoint_C_1: 8 Client_PC
+ SG_ SP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 267 Setpoint_B_3: 8 Client_PC
+ SG_ SP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 266 Setpoint_B_2: 8 Client_PC
+ SG_ SP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 265 Setpoint_B_1: 8 Client_PC
+ SG_ SP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 264 Setpoint_A_4: 8 Client_PC
+ SG_ SP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 260 Setpoint_All_4: 8 Client_PC
+ SG_ SP_ALL_Voltage_DC : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] ""  PPS_First_1
+
+BO_ 263 Setpoint_A_3: 8 Client_PC
+ SG_ SP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 259 Setpoint_All_3: 8 Client_PC
+ SG_ SP_ALL_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_ALL_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 258 Setpoint_All_2: 8 Client_PC
+ SG_ SP_ALL_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_ALL_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 262 Setpoint_A_2: 8 Client_PC
+ SG_ SP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 257 Setpoint_All_1: 8 Client_PC
+ SG_ SP_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_ALL_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 261 Setpoint_A_1: 8 Client_PC
+ SG_ SP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 96 Get_Setpoints_16: 8 PPS_First_1
+ SG_ GP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 95 Get_Setpoints_15: 8 PPS_First_1
+ SG_ GP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 91 Get_Setpoints_11: 8 PPS_First_1
+ SG_ GP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 92 Get_Setpoints_12: 8 PPS_First_1
+ SG_ GP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 93 Get_Setpoints_13: 8 PPS_First_1
+ SG_ GP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 94 Get_Setpoints_14: 8 PPS_First_1
+ SG_ GP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 83 Get_Setpoints_3: 8 PPS_First_1
+ SG_ GP_ALL_Power_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_ALL_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 84 Get_Setpoints_4: 8 PPS_First_1
+ SG_ GP_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 85 Get_Setpoints_5: 8 PPS_First_1
+ SG_ GP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 86 Get_Setpoints_6: 8 PPS_First_1
+ SG_ GP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 87 Get_Setpoints_7: 8 PPS_First_1
+ SG_ GP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 88 Get_Setpoints_8: 8 PPS_First_1
+ SG_ GP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 89 Get_Setpoints_9: 8 PPS_First_1
+ SG_ GP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 90 Get_Setpoints_10: 8 PPS_First_1
+ SG_ GP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 82 Get_Setpoints_2: 8 PPS_First_1
+ SG_ GP_ALL_KVA_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 81 Get_Setpoints_1: 8 PPS_First_1
+ SG_ GP_ALL_Current_Limit : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] ""  PPS_First_1,Client_PC
+
+BO_ 102 Get_Protection_6: 8 PPS_First_1
+ SG_ GPP_RMS_Power_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 103 Get_Protection_7: 8 PPS_First_1
+ SG_ GPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 104 Get_Protection_8: 8 PPS_First_1
+ SG_ GPP_RMS_Power_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 101 Get_Protection_5: 8 PPS_First_1
+ SG_ GPP_RMS_KVA_Level : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_RMS_Current_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 100 Get_Protection_4: 8 PPS_First_1
+ SG_ GPP_RMS_Current_Enable : 8|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Voltage_Mode : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 99 Get_Protection_3: 8 PPS_First_1
+ SG_ GPP_Peak_Voltage_Margin : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 98 Get_Protection_2: 8 PPS_First_1
+ SG_ GPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 97 Get_Protection_1: 8 PPS_First_1
+ SG_ GPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 310 Get_configuration_7: 8 PPS_First_1
+ SG_ GC_Form : 0|8@1+ (1,0) [1|255] ""  PPS_First_1,Client_PC
+
+BO_ 308 Get_configuration_5: 8 PPS_First_1
+ SG_ GC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 309 Get_configuration_6: 8 PPS_First_1
+ SG_ GC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 307 Get_configuration_4: 8 PPS_First_1
+ SG_ GC_Slew_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 306 Get_configuration_3: 8 PPS_First_1
+ SG_ GC_Slew_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_First_1,Client_PC
+
+BO_ 305 Get_configuration_2: 8 PPS_First_1
+ SG_ GC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+ SG_ GC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 304 Get_configuration_1: 8 PPS_First_1
+ SG_ GC_Range : 48|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+ SG_ GC_Phase_Rotation : 40|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+ SG_ GC_Output_Impedance_Mode : 32|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+ SG_ GC_Mode : 24|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+ SG_ GC_CSC_Fault_on_Saturation : 8|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+ SG_ GC_CSC_Enable : 0|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+
+BO_ 38 Get_messages_6: 8 PPS_First_1
+ SG_ GM_ALL_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 39 Get_messages_7: 8 PPS_First_1
+ SG_ GM_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 40 Get_messages_8: 8 PPS_First_1
+ SG_ GM_ALL_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 41 Get_messages_9: 8 PPS_First_1
+ SG_ GM_ALL_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 42 Get_messages_10: 8 PPS_First_1
+ SG_ GM_ALL_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 45 Get_messages_13: 8 PPS_First_1
+ SG_ GM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 44 Get_messages_12: 8 PPS_First_1
+ SG_ GM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 43 Get_messages_11: 8 PPS_First_1
+ SG_ GM_ALL_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 37 Get_messages_5: 8 PPS_First_1
+ SG_ GM_ALL_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 36 Get_messages_4: 8 PPS_First_1
+ SG_ GM_ALL_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 35 Get_messages_3: 8 PPS_First_1
+ SG_ GM_ALL_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 34 Get_messages_2: 8 PPS_First_1
+ SG_ GM_ALL_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 33 Get_messages_1: 8 PPS_First_1
+ SG_ GM_ALL_Voltage_DC : 32|1@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Voltage_AC : 0|1@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 0 Confirmation_Message: 8 PPS_First_1
+ SG_ ACK_Signal : 0|16@1+ (1,0) [0|15] ""  Client_PC
+
+BO_ 3 Periodic_Measurements_3: 8 PPS_Second_2
+ SG_ PM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+
+BO_ 4 Periodic_Measurements_4: 8 PPS_First_1
+ SG_ PM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 5 Periodic_Measurements_5: 8 PPS_First_1
+ SG_ PM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 6 Periodic_Measurements_6: 8 PPS_First_1
+ SG_ PM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+
+BO_ 7 Periodic_Measurements_7: 8 PPS_First_1
+ SG_ PM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+
+BO_ 8 Periodic_Measurements_8: 8 PPS_First_1
+ SG_ PM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 9 Periodic_Measurements_9: 8 PPS_First_1
+ SG_ PM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 2 Periodic_Measurements_2: 8 PPS_First_1
+ SG_ PM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 1 Periodic_Measurements_1: 8 PPS_First_1
+ SG_ Multiplex_Periodic_Test_4 M : 0|8@1- (1,0) [-128|127] ""  Client_PC
+ SG_ PM_ALL_VoltageLL_DC m33 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_VoltageLL_ACDC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_VoltageLL_AC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_THD m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Voltage_DC m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_ACDC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_AC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Power_Factor_Angle m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Power_Factor m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Peak_Current_Recoded m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Peak_Current m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_KWH_Elapsed_Time m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Kilowatt_Hour m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_ALL_Frequency m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_ALL_Distortion_Factor m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Displacement_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Current_THD m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Current_DC m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_Current_ACDC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_Crest_Factor m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Active_Power m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_TX_BU_ 75 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 74 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 73 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 72 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 71 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 70 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 69 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 68 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 67 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 66 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 65 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 64 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 63 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 62 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 61 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 60 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 59 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 58 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 57 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 56 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 55 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 54 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 53 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 52 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 51 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 50 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 49 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 48 : PPS_First_1,PPS_Second_2;
+BO_TX_BU_ 47 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 46 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 243 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 242 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 250 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 161 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 96 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 95 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 91 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 92 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 93 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 94 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 83 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 84 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 85 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 86 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 87 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 88 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 89 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 90 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 82 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 81 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 102 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 103 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 104 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 101 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 100 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 99 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 98 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 97 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 310 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 308 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 309 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 307 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 306 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 305 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 304 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 38 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 39 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 40 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 41 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 42 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 45 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 44 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 43 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 37 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 36 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 35 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 34 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 33 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 0 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 3 : PPS_First_1,PPS_Second_2;
 
 
 EV_ PPST: 0 [0|16] "" 5 1 DUMMY_NODE_VECTOR3 Vector__XXX;

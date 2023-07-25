@@ -348,6 +348,9 @@ class PCANTester(object):
         logging.info(f'StageTest5')
         error = self.RequestGetMessages('Firmware_Message',1)
         for signame,value in self.canMesageReceived.items():
+                if type(value) != int:
+                    logging.info(f'Value fail: {value}')
+                    return 1
                 firmwareBytes = (value).to_bytes(8, byteorder='little')
                 firmwareString = firmwareBytes.decode('utf-8', 'strict')
                 if firmwareString.count('\0') < 4:
