@@ -11,14 +11,15 @@ To run the Python CAN test program, you'll need the following:
 - CAN USB interface and necessary drivers
 
 ### Steps to run CAN Test Program
-1. Install Python for Windows. Make sure to check "Add python.exe to PATH"
+1. Install Python for Windows. Make sure to check "Add python.exe to PATH":
    ![imagen](https://github.com/PPST-Inc/CANFD_Examples/assets/20909874/947cdb7b-8d3c-4bd8-a477-be91968bdd63)
 
 2. Open a Windows Console and run the command:\
 `pip install cantools==38.0.2`
-3. Connect one of the USB/CAN adapters to the unit and the other to the PC
-4. Interconnect both CAN adapters with a CAN BUS cable.
-5. Load to the unit the file "01_FullTestCAN.dbc", located in the example folder.\
+3. Download and install the PEAK Device Driver for Windows from www.peak-system.com.
+4. Connect one of the USB/CAN adapters to the unit and the other to the PC.
+5. Interconnect both CAN adapters with a CAN BUS cable.
+6. Load to the unit the file "01_FullTestCAN.dbc", located in the example folder.\
    Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
 7. Set the **NODE NAME** to **PPS_First_1**
 8. Enable the CANFD interface by clicking on the swith
