@@ -9,7 +9,11 @@
 #
 ######################################################################
 
+import sys
+
 from PCANBasic import *        ## PCAN-Basic library import
+
+import cantools                 ## CAN BUS tools library
 
 import traceback                ## Error-Tracing library
 
@@ -20,17 +24,17 @@ import threading                ## Threading-based Timer library
 
 import logging
 
-import cantools
-
-import sys
-
 from pprint import pprint
 
 from struct import *
 
+from importlib.metadata import version
+if version('cantools') != '38.0.2':
+  raise Exception("Please, install cantools 38.0.2 ussing the command \'pip install cantools==38.0.2\'") 
+
 ###*****************************************************************
 ### Can Database Import
-db = cantools.database.load_file('updatedcanfdtest.dbc')
+db = cantools.database.load_file('CANDabase.dbc')
 
 ### Can Hardware setup
 testBaudrate = PCAN_BAUD_1M
