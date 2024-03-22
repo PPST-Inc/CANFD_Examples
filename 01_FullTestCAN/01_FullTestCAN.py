@@ -9,11 +9,13 @@
 #
 ######################################################################
 
+import os
 import sys
 
 from PCANBasic import *        ## PCAN-Basic library import
 
 import cantools                 ## CAN BUS tools library
+from cantools.database.can.signal import *
 
 import traceback                ## Error-Tracing library
 
@@ -34,7 +36,10 @@ if version('cantools') != '38.0.2':
 
 ###*****************************************************************
 ### Can Database Import
-db = cantools.database.load_file('CANDabase.dbc')
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+db = cantools.database.load_file(os.path.join(__location__,'01_FullTestCAN.dbc'))
 
 ### Can Hardware setup
 testBaudrate = PCAN_BAUD_1M
@@ -125,10 +130,11 @@ m_objPCANBasic = PCANBasic()
 ###*****************************************************************
 ### Logger file configuration
 loggerFileName = 'can_test_log.txt'
-logging.FileHandler(loggerFileName,"w")
+loggerFileNamePath = os.path.join(__location__,loggerFileName)
+logging.FileHandler(loggerFileNamePath,"w")
 
 logging.basicConfig(
-    filename=loggerFileName,
+    filename=loggerFileNamePath,
     encoding='utf-8',
     format='%(message)s',#:%(asctime)s:%(created)f %(levelname)s:
     datefmt='%I:%M:%S',
@@ -227,9 +233,9 @@ class TimerRepeater(object):
 
 
 ###*****************************************************************
-### PCAN Tester app
+### Full Test CAN app
 ###*****************************************************************
-class PCANTester(object):
+class FullTestCAN(object):
     ## Constructor
     ##
     def __init__(self):
@@ -433,7 +439,14 @@ class PCANTester(object):
 
             pprint(f'{a_message.name} {countString}')
             for signame,value in self.canMesageReceived.items():
-                logging.info(f'{a_message.name} {deltaTime:0.0f} ms - {signame}: {round(value,2)}' )
+                if isinstance(value, NamedSignalValue):
+                    show_value = value.name
+                elif isinstance(value, float):
+                    show_value = round(value, 2)
+                else:
+                    show_value = value
+
+                logging.info(f'{a_message.name} {deltaTime:0.0f} ms - {signame}: {show_value}' )
     
         self.StopTimer()
         return testStage2Result
@@ -754,42 +767,43 @@ class PCANTester(object):
 ###*    Run Test
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Test Start')
-basicExl = PCANTester()
+
+objFullTestCAN = FullTestCAN()
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 1 Start')
-stageResult = basicExl.StageTest1()
+stageResult = objFullTestCAN.StageTest1()
 logging.info(f'###*    Stage 1 end at {stageResult} {ErrorString(stageResult)}\n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 2 Start')
 logging.info(f'###*    Reading all get messages avaiable in can database file\n')
-stageResult = basicExl.StageTest2()
+stageResult = objFullTestCAN.StageTest2()
 if stageResult != 0:
     stageResultText = ''
     logging.info(f'###*    Stage 2 end at {stageResult} {ErrorString(stageResult)}\n')
-    basicExl.Destroy()
+    objFullTestCAN.Destroy()
     exit()
 logging.info(f'###*    Stage end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 3 Start')
-stageResult = basicExl.StageTest3()
+stageResult = objFullTestCAN.StageTest3()
 logging.info(f'###*    Stage 3 end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 4 Start')
-stageResult = basicExl.StageTest4()
+stageResult = objFullTestCAN.StageTest4()
 logging.info(f'###*    Stage 4 end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 5 Start')
-stageResult = basicExl.StageTest5()
+stageResult = objFullTestCAN.StageTest5()
 logging.info(f'###*    Stage 5 end at {stageResult} {ErrorString(stageResult)} \n')
 
 logging.info(f'###*****************************************************************')
 logging.info(f'###*    Stage 6 Start')
-stageResult = basicExl.StageTest6()
+stageResult = objFullTestCAN.StageTest6()
 logging.info(f'###*    Stage 6 end at {stageResult} {ErrorString(stageResult)} \n')
 
 

@@ -1,0 +1,1832 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: PPS_Second_2 Client_PC PPS_First_1
+
+
+BO_ 75 Get_messages_43: 8 PPS_First_1
+ SG_ GM_C_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 74 Get_messages_42: 8 PPS_First_1
+ SG_ GM_C_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 73 Get_messages_41: 8 PPS_First_1
+ SG_ GM_C_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 72 Get_messages_40: 8 PPS_First_1
+ SG_ GM_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Power_Factor_Angle : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 71 Get_messages_39: 8 PPS_First_1
+ SG_ GM_C_Power_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Peak_Current_Recoded : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 70 Get_messages_38: 8 PPS_First_1
+ SG_ GM_C_Peak_Current : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 69 Get_messages_37: 8 PPS_First_1
+ SG_ GM_C_Kilowatt_Hour : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 68 Get_messages_36: 8 PPS_First_1
+ SG_ GM_C_Distortion_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Displacement_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 67 Get_messages_35: 8 PPS_First_1
+ SG_ GM_C_Current_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Current_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 66 Get_messages_34: 8 PPS_First_1
+ SG_ GM_C_Current_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_C_Crest_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 65 Get_messages_33: 8 PPS_First_1
+ SG_ GM_C_Active_Power : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 64 Get_messages_32: 8 PPS_First_1
+ SG_ GM_B_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 63 Get_messages_31: 8 PPS_First_1
+ SG_ GM_B_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 62 Get_messages_30: 8 PPS_First_1
+ SG_ GM_B_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 61 Get_messages_29: 8 PPS_First_1
+ SG_ GM_B_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 60 Get_messages_28: 8 PPS_First_1
+ SG_ GM_B_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 59 Get_messages_27: 8 PPS_First_1
+ SG_ GM_B_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 58 Get_messages_26: 8 PPS_First_1
+ SG_ GM_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 57 Get_messages_25: 8 PPS_First_1
+ SG_ GM_B_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 56 Get_messages_24: 8 PPS_First_1
+ SG_ GM_B_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 55 Get_messages_23: 8 PPS_First_1
+ SG_ GM_B_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_B_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 54 Get_messages_22: 8 PPS_First_1
+ SG_ GM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 53 Get_messages_21: 8 PPS_First_1
+ SG_ GM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 52 Get_messages_20: 8 PPS_First_1
+ SG_ GM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 51 Get_messages_19: 8 PPS_First_1
+ SG_ GM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 50 Get_messages_18: 8 PPS_First_1
+ SG_ GM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 49 Get_messages_17: 8 PPS_First_1
+ SG_ GM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 48 Get_messages_16: 8 PPS_Second_2
+ SG_ GM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 47 Get_messages_15: 8 PPS_First_1
+ SG_ GM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 46 Get_messages_14: 8 PPS_First_1
+ SG_ GM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 243 Fault_Message_Fault: 8 PPS_First_1
+ SG_ GS_Fault : 0|8@1+ (1,0) [0|255] ""  PPS_First_1,Client_PC
+
+BO_ 242 Fault_Message_Index: 8 PPS_First_1
+ SG_ GS_Faults_Index : 0|64@1+ (1,0) [0|0] ""  PPS_First_1,Client_PC
+
+BO_ 241 Fault_Message_Reset: 8 Client_PC
+ SG_ SS_Faults_Reset : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 250 Firmware_Message: 8 PPS_First_1
+ SG_ Firmware_Version : 0|64@1+ (1,0) [0|65535] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 14 Periodic_Measurements_14: 8 PPS_First_1
+ SG_ PM_A_VoltageLL_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 13 Periodic_Measurements_13: 8 PPS_First_1
+ SG_ PM_A_VoltageLL_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_A_VoltageLL_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 12 Periodic_Measurements_12: 8 PPS_First_1
+ SG_ PM_A_Voltage_THD : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 11 Periodic_Measurements_11: 8 PPS_First_1
+ SG_ PM_C_VoltageLL_DC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_VoltageLL_ACDC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_VoltageLL_AC m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_THD m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Voltage_DC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_ACDC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Voltage_AC m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_C_Power_Factor_Angle m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  Client_PC
+ SG_ PM_C_Power_Factor m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Peak_Current_Recoded m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_Peak_Current m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_KWH_Elapsed_Time m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  Client_PC
+ SG_ PM_C_Kilowatt_Hour m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_C_Frequency m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_C_Distortion_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Displacement_Factor m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Current_THD m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Current_DC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_Current_ACDC m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_C_Crest_Factor m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_C_Active_Power m0 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
+ SG_ Multiplex_Periodic_Test_3 M : 0|8@1- (1,0) [-128|127] ""  Client_PC
+
+BO_ 10 Periodic_Measurements_10: 8 PPS_First_1
+ SG_ PM_B_Crest_Factor m32 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_VoltageLL_DC m25 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_VoltageLL_ACDC m24 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_VoltageLL_AC m23 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_THD m22 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Voltage_DC m21 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_ACDC m20 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Voltage_AC m19 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_B_Power_Factor_Angle m18 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  Client_PC
+ SG_ PM_B_Power_Factor m17 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Peak_Current_Recoded m16 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_B_Peak_Current m9 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_B_KWH_Elapsed_Time m8 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  Client_PC
+ SG_ PM_B_Kilowatt_Hour m7 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_B_Frequency m6 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_B_Distortion_Factor m5 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Displacement_Factor m4 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Current_THD m3 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_B_Current_DC m2 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_B_Current_ACDC m1 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ Multiplex_Periodic_Test_2 M : 32|8@1- (1,0) [-128|127] ""  Client_PC
+ SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
+
+BO_ 162 SCPI_READ_MESSAGE: 8 Client_PC
+ SG_ SCPI_Read : 0|32@1+ (1,0) [0|0] ""  PPS_First_1
+
+BO_ 161 SCPI_INDEX_MESSAGE: 8 PPS_First_1
+ SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|0] ""  Client_PC
+
+BO_ 160 SCPI_WRITE_MESSAGE: 8 Client_PC
+ SG_ SCPI_Write : 0|64@1+ (1,0) [0|0] ""  PPS_First_1
+
+BO_ 371 Protection_Setpoint_3: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1
+
+BO_ 372 Protection_Setpoint_4: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Mode : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Voltage_Margin : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1
+
+BO_ 373 Protection_Setpoint_RMS_5: 8 Client_PC
+ SG_ SPP_RMS_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1
+ SG_ SPP_RMS_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+
+BO_ 374 Protection_Setpoint_RMS_6: 8 Client_PC
+ SG_ SPP_RMS_Power_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_RMS_KVA_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_Second_2,PPS_First_1
+
+BO_ 375 Protection_Setpoint_RMS_7: 8 Client_PC
+ SG_ SPP_RMS_Power_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1
+
+BO_ 376 Protection_Setpoint_RMS_8: 8 Client_PC
+ SG_ SPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1
+
+BO_ 370 Protection_Setpoint_2: 8 Client_PC
+ SG_ SPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1
+
+BO_ 369 Protection_Setpoint_1: 8 Client_PC
+ SG_ SPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1
+ SG_ SPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1
+
+BO_ 291 Setpoint_Ramp_And_Slew_4: 8 Client_PC
+ SG_ SC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms"  PPS_First_1
+
+BO_ 290 Setpoint_Ramp_And_Slew_3: 8 Client_PC
+ SG_ SC_Slew_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms"  PPS_First_1
+
+BO_ 289 Setpoint_Ramp_And_Slew_2: 8 Client_PC
+ SG_ SC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg/ms"  PPS_First_1
+
+BO_ 288 Setpoint_Ramp_And_Slew_1: 8 Client_PC
+ SG_ SC_Slew_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz/ms"  PPS_First_1
+
+BO_ 342 Setpoint_Unit_Settings_6: 8 Client_PC
+
+BO_ 341 Setpoint_Unit_Settings_5: 8 Client_PC
+ SG_ SC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+
+BO_ 339 Setpoint_Unit_Settings_3: 8 Client_PC
+ SG_ SC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+ SG_ SC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1
+
+BO_ 340 Setpoint_Unit_Settings_4: 8 Client_PC
+ SG_ SC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_First_1
+
+BO_ 338 Setpoint_Unit_Settings_2: 8 Client_PC
+ SG_ SC_Form : 16|8@1+ (1,0) [1|255] ""  PPS_First_1
+ SG_ SC_CSC_Fault_on_Saturation : 8|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_CSC_Enable : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 337 Setpoint_Unit_Settings_1: 8 Client_PC
+ SG_ SC_Range : 24|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Phase_Rotation : 16|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Output_Impedance_Mode : 8|8@1+ (1,0) [0|255] ""  PPS_First_1
+ SG_ SC_Mode : 0|8@1+ (1,0) [0|255] ""  PPS_First_1
+
+BO_ 272 Setpoint_C_4: 8 Client_PC
+ SG_ SP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+
+BO_ 268 Setpoint_B_4: 8 Client_PC
+ SG_ SP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+
+BO_ 271 Setpoint_C_3: 8 Client_PC
+ SG_ SP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+ SG_ SP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1
+
+BO_ 270 Setpoint_C_2: 8 Client_PC
+ SG_ SP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1
+ SG_ SP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1
+
+BO_ 269 Setpoint_C_1: 8 Client_PC
+ SG_ SP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1
+ SG_ SP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1
+
+BO_ 267 Setpoint_B_3: 8 Client_PC
+ SG_ SP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+ SG_ SP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1
+
+BO_ 266 Setpoint_B_2: 8 Client_PC
+ SG_ SP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1
+ SG_ SP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1
+
+BO_ 265 Setpoint_B_1: 8 Client_PC
+ SG_ SP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1
+ SG_ SP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1
+
+BO_ 264 Setpoint_A_4: 8 Client_PC
+ SG_ SP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+
+BO_ 260 Setpoint_All_4: 8 Client_PC
+ SG_ SP_ALL_Voltage_DC : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+ SG_ SP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] ""  PPS_First_1
+
+BO_ 263 Setpoint_A_3: 8 Client_PC
+ SG_ SP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+ SG_ SP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1
+
+BO_ 259 Setpoint_All_3: 8 Client_PC
+ SG_ SP_ALL_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1
+ SG_ SP_ALL_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1
+
+BO_ 258 Setpoint_All_2: 8 Client_PC
+ SG_ SP_ALL_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1
+ SG_ SP_ALL_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1
+
+BO_ 262 Setpoint_A_2: 8 Client_PC
+ SG_ SP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1
+ SG_ SP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1
+
+BO_ 257 Setpoint_All_1: 8 Client_PC
+ SG_ SP_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1
+ SG_ SP_ALL_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1
+
+BO_ 261 Setpoint_A_1: 8 Client_PC
+ SG_ SP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1
+ SG_ SP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1
+
+BO_ 96 Get_Setpoints_16: 8 PPS_First_1
+ SG_ GP_C_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+
+BO_ 95 Get_Setpoints_15: 8 PPS_First_1
+ SG_ GP_C_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+ SG_ GP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1,Client_PC
+
+BO_ 91 Get_Setpoints_11: 8 PPS_First_1
+ SG_ GP_B_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+ SG_ GP_B_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1,Client_PC
+
+BO_ 92 Get_Setpoints_12: 8 PPS_First_1
+ SG_ GP_B_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+
+BO_ 93 Get_Setpoints_13: 8 PPS_First_1
+ SG_ GP_C_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1,Client_PC
+ SG_ GP_C_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1,Client_PC
+
+BO_ 94 Get_Setpoints_14: 8 PPS_First_1
+ SG_ GP_C_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+ SG_ GP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1,Client_PC
+
+BO_ 83 Get_Setpoints_3: 8 PPS_First_1
+ SG_ GP_ALL_Power_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1,Client_PC
+ SG_ GP_ALL_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+
+BO_ 84 Get_Setpoints_4: 8 PPS_First_1
+ SG_ GP_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+ SG_ GP_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+
+BO_ 85 Get_Setpoints_5: 8 PPS_First_1
+ SG_ GP_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1,Client_PC
+ SG_ GP_A_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1,Client_PC
+
+BO_ 86 Get_Setpoints_6: 8 PPS_First_1
+ SG_ GP_A_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+ SG_ GP_A_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1,Client_PC
+
+BO_ 87 Get_Setpoints_7: 8 PPS_First_1
+ SG_ GP_A_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+ SG_ GP_A_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_First_1,Client_PC
+
+BO_ 88 Get_Setpoints_8: 8 PPS_First_1
+ SG_ GP_A_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_First_1,Client_PC
+
+BO_ 89 Get_Setpoints_9: 8 PPS_First_1
+ SG_ GP_B_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1,Client_PC
+ SG_ GP_B_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1,Client_PC
+
+BO_ 90 Get_Setpoints_10: 8 PPS_First_1
+ SG_ GP_B_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+ SG_ GP_B_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1,Client_PC
+
+BO_ 82 Get_Setpoints_2: 8 PPS_First_1
+ SG_ GP_ALL_KVA_Limit : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_First_1,Client_PC
+ SG_ GP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_First_1,Client_PC
+
+BO_ 81 Get_Setpoints_1: 8 PPS_First_1
+ SG_ GP_ALL_Current_Limit : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_First_1,Client_PC
+ SG_ GP_ALL_Enable_Output : 0|8@1+ (1,0) [0|10] ""  PPS_First_1,Client_PC
+
+BO_ 102 Get_Protection_6: 8 PPS_First_1
+ SG_ GPP_RMS_Power_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 103 Get_Protection_7: 8 PPS_First_1
+ SG_ GPP_RMS_Trip_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 104 Get_Protection_8: 8 PPS_First_1
+ SG_ GPP_RMS_Power_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 101 Get_Protection_5: 8 PPS_First_1
+ SG_ GPP_RMS_KVA_Level : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_RMS_Current_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 100 Get_Protection_4: 8 PPS_First_1
+ SG_ GPP_RMS_Current_Enable : 8|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Voltage_Mode : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 99 Get_Protection_3: 8 PPS_First_1
+ SG_ GPP_Peak_Voltage_Margin : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 98 Get_Protection_2: 8 PPS_First_1
+ SG_ GPP_Peak_Voltage_Enable : 32|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 97 Get_Protection_1: 8 PPS_First_1
+ SG_ GPP_Peak_Current_Level : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GPP_Peak_Current_Enable : 0|8@1+ (1,0) [0|10] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 310 Get_configuration_7: 8 PPS_First_1
+ SG_ GC_Form : 0|8@1+ (1,0) [1|255] ""  PPS_First_1,Client_PC
+
+BO_ 308 Get_configuration_5: 8 PPS_First_1
+ SG_ GC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms"  PPS_First_1,Client_PC
+
+BO_ 309 Get_configuration_6: 8 PPS_First_1
+ SG_ GC_Update_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+
+BO_ 307 Get_configuration_4: 8 PPS_First_1
+ SG_ GC_Slew_Voltage_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms"  PPS_First_1,Client_PC
+ SG_ GC_Slew_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg/ms"  PPS_First_1,Client_PC
+
+BO_ 306 Get_configuration_3: 8 PPS_First_1
+ SG_ GC_Slew_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz/ms"  PPS_First_1,Client_PC
+ SG_ GC_Ramp_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_First_1,Client_PC
+
+BO_ 305 Get_configuration_2: 8 PPS_First_1
+ SG_ GC_Output_Disable_Phase : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_First_1,Client_PC
+ SG_ GC_CSC_Max_Gain : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_First_1,Client_PC
+
+BO_ 304 Get_configuration_1: 8 PPS_First_1
+ SG_ GC_Range : 4|4@1+ (1,0) [0|15] ""  PPS_First_1,Client_PC
+ SG_ GC_Phase_Rotation : 2|1@1+ (1,0) [0|1] ""  PPS_First_1,Client_PC
+ SG_ GC_Output_Impedance_Mode : 12|4@1+ (1,0) [0|15] ""  PPS_First_1,Client_PC
+ SG_ GC_Mode : 8|4@1+ (1,0) [0|15] ""  PPS_First_1,Client_PC
+ SG_ GC_CSC_Fault_on_Saturation : 1|1@1+ (1,0) [0|1] ""  PPS_First_1,Client_PC
+ SG_ GC_CSC_Enable : 0|1@1+ (1,0) [0|1] ""  PPS_First_1,Client_PC
+
+BO_ 38 Get_messages_6: 8 PPS_First_1
+ SG_ GM_ALL_VoltageLL_AC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Voltage_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 39 Get_messages_7: 8 PPS_First_1
+ SG_ GM_ALL_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 40 Get_messages_8: 8 PPS_First_1
+ SG_ GM_ALL_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 41 Get_messages_9: 8 PPS_First_1
+ SG_ GM_ALL_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 42 Get_messages_10: 8 PPS_First_1
+ SG_ GM_ALL_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 45 Get_messages_13: 8 PPS_First_1
+ SG_ GM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 44 Get_messages_12: 8 PPS_First_1
+ SG_ GM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 43 Get_messages_11: 8 PPS_First_1
+ SG_ GM_ALL_Voltage_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 37 Get_messages_5: 8 PPS_First_1
+ SG_ GM_ALL_VoltageLL_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_VoltageLL_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 36 Get_messages_4: 8 PPS_First_1
+ SG_ GM_ALL_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 35 Get_messages_3: 8 PPS_First_1
+ SG_ GM_ALL_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 34 Get_messages_2: 8 PPS_First_1
+ SG_ GM_ALL_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 33 Get_messages_1: 8 PPS_First_1
+ SG_ GM_ALL_Voltage_DC : 32|1@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+ SG_ GM_ALL_Voltage_AC : 0|1@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
+
+BO_ 0 Confirmation_Message: 8 PPS_First_1
+ SG_ ACK_Signal : 0|16@1+ (1,0) [0|15] ""  Client_PC
+
+BO_ 3 Periodic_Measurements_3: 8 PPS_Second_2
+ SG_ PM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_A_Current_ACDC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+
+BO_ 4 Periodic_Measurements_4: 8 PPS_First_1
+ SG_ PM_A_Displacement_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Current_THD : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 5 Periodic_Measurements_5: 8 PPS_First_1
+ SG_ PM_A_Frequency : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_A_Distortion_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 6 Periodic_Measurements_6: 8 PPS_First_1
+ SG_ PM_A_KWH_Elapsed_Time : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  Client_PC
+ SG_ PM_A_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+
+BO_ 7 Periodic_Measurements_7: 8 PPS_First_1
+ SG_ PM_A_Peak_Current_Recoded : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Peak_Current : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+
+BO_ 8 Periodic_Measurements_8: 8 PPS_First_1
+ SG_ PM_A_Power_Factor_Angle : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  Client_PC
+ SG_ PM_A_Power_Factor : 0|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+
+BO_ 9 Periodic_Measurements_9: 8 PPS_First_1
+ SG_ PM_A_Voltage_ACDC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_A_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+
+BO_ 2 Periodic_Measurements_2: 8 PPS_First_1
+ SG_ PM_A_Crest_Factor : 32|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_A_Active_Power : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
+
+BO_ 1 Periodic_Measurements_1: 8 PPS_First_1
+ SG_ Multiplex_Periodic_Test_4 M : 0|8@1- (1,0) [-128|127] ""  Client_PC
+ SG_ PM_ALL_VoltageLL_DC m33 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_VoltageLL_ACDC m32 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_VoltageLL_AC m25 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_THD m24 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Voltage_DC m23 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_ACDC m22 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Voltage_AC m21 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC
+ SG_ PM_ALL_Power_Factor_Angle m20 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg"  Client_PC
+ SG_ PM_ALL_Power_Factor m19 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Peak_Current_Recoded m18 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_Peak_Current m17 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_KWH_Elapsed_Time m16 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  Client_PC
+ SG_ PM_ALL_Kilowatt_Hour m9 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  Client_PC
+ SG_ PM_ALL_Frequency m8 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  Client_PC
+ SG_ PM_ALL_Distortion_Factor m7 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Displacement_Factor m6 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Current_THD m5 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Current_DC m4 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_Current_ACDC m3 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC
+ SG_ PM_ALL_Crest_Factor m2 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC
+ SG_ PM_ALL_Active_Power m1 : 16|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
+
+BO_TX_BU_ 75 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 74 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 73 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 72 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 71 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 70 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 69 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 68 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 67 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 66 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 65 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 64 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 63 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 62 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 61 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 60 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 59 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 58 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 57 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 56 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 55 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 54 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 53 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 52 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 51 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 50 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 49 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 48 : PPS_First_1,PPS_Second_2;
+BO_TX_BU_ 47 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 46 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 243 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 242 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 250 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 161 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 96 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 95 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 91 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 92 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 93 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 94 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 83 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 84 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 85 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 86 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 87 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 88 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 89 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 90 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 82 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 81 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 102 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 103 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 104 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 101 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 100 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 99 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 98 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 97 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 310 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 308 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 309 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 307 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 306 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 305 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 304 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 38 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 39 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 40 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 41 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 42 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 45 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 44 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 43 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 37 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 36 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 35 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 34 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 33 : PPS_Second_2,Client_PC,PPS_First_1;
+BO_TX_BU_ 0 : PPS_Second_2,PPS_First_1;
+BO_TX_BU_ 3 : PPS_First_1,PPS_Second_2;
+
+
+EV_ PPST: 0 [0|16] "" 5 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+CM_ SG_ 75 GM_C_VoltageLL_DC "This signal returns the measured RMS Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:ACDC3?";
+CM_ SG_ 75 GM_C_VoltageLL_ACDC "This signal returns the measured RMS Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:ACDC3?";
+CM_ SG_ 74 GM_C_VoltageLL_AC "This signal returns the measured RMS Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:AC3?";
+CM_ SG_ 74 GM_C_Voltage_THD "This signal returns the measured THD voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC3:THD?";
+CM_ SG_ 73 GM_C_Voltage_DC "This signal returns the measured DC voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:DC3?";
+CM_ SG_ 73 GM_C_Voltage_ACDC "This signal returns the measured RMS voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC3?";
+CM_ SG_ 72 GM_C_Voltage_AC "This signal returns the measured RMS voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:AC3?";
+CM_ SG_ 72 GM_C_Power_Factor_Angle "This signal returns the measured power factor angle for phase C.";
+CM_ SG_ 71 GM_C_Power_Factor "This signal returns the measured power factor for phase C.
+SCPI equivalent:
+  MEASure:PF3?";
+CM_ SG_ 71 GM_C_Peak_Current_Recoded "This signal returns the recorded peak current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:PEAK3:HOLD?";
+CM_ SG_ 70 GM_C_Peak_Current "This signal returns the measured peak current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:PEAK3?";
+CM_ SG_ 70 GM_C_KWH_Elapsed_Time "This signal returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 69 GM_C_Kilowatt_Hour "This signal returns the accumulated energy measurement for phase C in kWh.
+SCPI equivalent:
+  MEASure:KWHour3?";
+CM_ SG_ 69 GM_C_Frequency "This signal returns the measured frequency for phase C.
+SCPI equivalent:
+  MEASure:FREQuency3?";
+CM_ SG_ 68 GM_C_Distortion_Factor "This signal returns the measured distortion factor for phase C.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 68 GM_C_Displacement_Factor "This signal returns the measured displacement factor for phase C.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 67 GM_C_Current_THD "This signal returns the measured THD current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:ACDC3:THD?";
+CM_ SG_ 67 GM_C_Current_DC "This signal returns the measured DC current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:DC3?";
+CM_ SG_ 66 GM_C_Current_ACDC "This signal returns the measured RMS current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:ACDC3?";
+CM_ SG_ 66 GM_C_Crest_Factor "This signal returns the measured current crest factor for phase C.
+SCPI equivalent:
+  MEASure:CURRent:CREST3?";
+CM_ SG_ 65 GM_C_Active_Power "This signal returns the measured true power for phase C in kW.
+SCPI equivalent:
+  MEASure:POWer3?";
+CM_ SG_ 65 GM_B_VoltageLL_DC "This signal returns the measured DC Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:DC2?";
+CM_ SG_ 64 GM_B_VoltageLL_ACDC "This signal returns the measured RMS Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:ACDC2?";
+CM_ SG_ 64 GM_B_VoltageLL_AC "This signal returns the measured RMS Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:AC2?";
+CM_ SG_ 63 GM_B_Voltage_THD "This signal returns the measured THD voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC2:THD?";
+CM_ SG_ 63 GM_B_Voltage_DC "This signal returns the measured DC voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:DC2?";
+CM_ SG_ 62 GM_B_Voltage_ACDC "This signal returns the measured RMS voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC2?";
+CM_ SG_ 62 GM_B_Voltage_AC "Get measurement voltage line to neutral AC B";
+CM_ SG_ 61 GM_B_Power_Factor_Angle "This signal returns the measured power factor angle for phase B.";
+CM_ SG_ 61 GM_B_Power_Factor "This signal returns the measured power factor for phase B.
+SCPI equivalent:
+  MEASure:PF2?";
+CM_ SG_ 60 GM_B_Peak_Current_Recoded "This signal returns the recorded peak current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:PEAK2:HOLD?";
+CM_ SG_ 60 GM_B_Peak_Current "This signal returns the measured peak current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:PEAK2?";
+CM_ SG_ 59 GM_B_KWH_Elapsed_Time "This signal returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 59 GM_B_Kilowatt_Hour "This signal returns the accumulated energy measurement for phase B in kWh.
+SCPI equivalent:
+  MEASure:KWHour2?";
+CM_ SG_ 58 GM_B_Frequency "This signal returns the measured frequency for phase B.
+SCPI equivalent:
+  MEASure:FREQuency2?";
+CM_ SG_ 58 GM_B_Distortion_Factor "This signal returns the measured distortion factor for phase B.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 57 GM_B_Displacement_Factor "This signal returns the measured displacement factor for phase B.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 57 GM_B_Current_THD "This signal returns the measured THD current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:ACDC2:THD?";
+CM_ SG_ 56 GM_B_Current_DC "This signal returns the measured DC current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:DC2?";
+CM_ SG_ 56 GM_B_Current_ACDC "This signal returns the measured RMS current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:ACDC2?";
+CM_ SG_ 55 GM_B_Crest_Factor "This signal returns the measured current crest factor for phase B.
+SCPI equivalent:
+  MEASure:CURRent:CREST2?";
+CM_ SG_ 55 GM_B_Active_Power "This signal returns the measured true power for phase B in kW.
+SCPI equivalent:
+  MEASure:POWer2?";
+CM_ SG_ 54 GM_A_VoltageLL_DC "This signal returns the measured DC Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:DC1?";
+CM_ SG_ 53 GM_A_VoltageLL_ACDC "This signal returns the measured RMS Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:ACDC1?";
+CM_ SG_ 53 GM_A_VoltageLL_AC "This signal returns the measured RMS Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:AC1?";
+CM_ SG_ 52 GM_A_Voltage_THD "This signal returns the measured THD voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1:THD?";
+CM_ SG_ 52 GM_A_Voltage_DC "This signal returns the measured DC voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:DC1?";
+CM_ SG_ 51 GM_A_Voltage_ACDC "This signal returns the measured RMS voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1?";
+CM_ SG_ 51 GM_A_Voltage_AC "This signal returns the measured RMS voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:AC1?";
+CM_ SG_ 50 GM_A_Power_Factor_Angle "This signal returns the measured power factor angle for phase A.";
+CM_ SG_ 50 GM_A_Power_Factor "This signal returns the measured power factor for phase A.
+SCPI equivalent:
+  MEASure:PF1?";
+CM_ SG_ 49 GM_A_Peak_Current_Recoded "This signal returns the recorded peak current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1:HOLD?";
+CM_ SG_ 49 GM_A_Peak_Current "This signal returns the measured peak current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1?";
+CM_ SG_ 48 GM_A_KWH_Elapsed_Time "This signal returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 48 GM_A_Kilowatt_Hour "This signal returns the accumulated energy measurement for phase A in kWh.
+SCPI equivalent:
+  MEASure:KWHour1?";
+CM_ SG_ 47 GM_A_Frequency "This signal returns the measured frequency for phase A.
+SCPI equivalent:
+  MEASure:FREQuency1?";
+CM_ SG_ 47 GM_A_Distortion_Factor "This signal returns the measured distortion factor for phase A.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 46 GM_A_Displacement_Factor "This signal returns the measured displacement factor for phase A.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 46 GM_A_Current_THD "This signal returns the measured THD current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1:THD?";
+CM_ SG_ 243 GS_Fault "This signals returns if there are Faults present.
+SCPI equivalent:
+  STATus:FAULT?";
+CM_ SG_ 242 GS_Faults_Index "Signal to query fault in nodes 64 bits";
+CM_ SG_ 241 SS_Faults_Reset "This signals resert Faults.
+SCPI equivalent:
+  STATus:FAULT:RESET";
+CM_ SG_ 250 Firmware_Version "Firmware version";
+CM_ SG_ 14 PM_A_VoltageLL_DC "This signal periodically returns the measured DC Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:DC1?";
+CM_ SG_ 13 PM_A_VoltageLL_ACDC "This signal periodically returns the measured RMS Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:ACDC1?";
+CM_ SG_ 13 PM_A_VoltageLL_AC "This signal periodically returns the measured RMS Line-to-Line voltage for phase A.
+SCPI equivalent:
+  MEASure:VLL:AC1?";
+CM_ SG_ 12 PM_A_Voltage_THD "This signal periodically returns the measured THD voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1:THD?";
+CM_ SG_ 12 PM_A_Voltage_DC "This signal periodically returns the measured DC voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:DC1?";
+CM_ SG_ 11 PM_C_VoltageLL_DC "This signal periodically returns the measured DC Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:DC3?";
+CM_ SG_ 11 PM_C_VoltageLL_ACDC "This signal periodically returns the measured RMS Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:ACDC3?";
+CM_ SG_ 11 PM_C_VoltageLL_AC "This signal periodically returns the measured RMS Line-to-Line voltage for phase C.
+SCPI equivalent:
+  MEASure:VLL:AC3?";
+CM_ SG_ 11 PM_C_Voltage_THD "This signal periodically returns the measured THD voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1:THD?";
+CM_ SG_ 11 PM_C_Voltage_DC "This signal periodically returns the measured DC voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:DC3?";
+CM_ SG_ 11 PM_C_Voltage_ACDC "This signal periodically returns the measured RMS voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC3?";
+CM_ SG_ 11 PM_C_Voltage_AC "This signal periodically returns the measured RMS voltage for phase C.
+SCPI equivalent:
+  MEASure:VOLTage:AC3?";
+CM_ SG_ 11 PM_C_Power_Factor_Angle "This signal periodically returns the measured power factor angle for phase C.";
+CM_ SG_ 11 PM_C_Power_Factor "This signal periodically returns the measured power factor for phase C.
+SCPI equivalent:
+  MEASure:PF3?";
+CM_ SG_ 11 PM_C_Peak_Current_Recoded "This signal periodically returns the recorded peak current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1:HOLD?";
+CM_ SG_ 11 PM_C_Peak_Current "This signal periodically returns the measured peak current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:PEAK3?";
+CM_ SG_ 11 PM_C_KWH_Elapsed_Time "This signal periodically returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 11 PM_C_Kilowatt_Hour "This signal periodically returns the accumulated energy measurement for phase C in kWh.
+SCPI equivalent:
+  MEASure:KWHour3?";
+CM_ SG_ 11 PM_C_Frequency "This signal periodically returns the measured frequency for phase C.
+SCPI equivalent:
+  MEASure:FREQuency3?";
+CM_ SG_ 11 PM_C_Distortion_Factor "This signal periodically returns the measured distortion factor for phase C.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 11 PM_C_Displacement_Factor "This signal periodically returns the measured displacement factor for phase C.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 11 PM_C_Current_THD "This signal periodically returns the measured THD current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1:THD?";
+CM_ SG_ 11 PM_C_Current_DC "This signal periodically returns the measured DC current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:DC3?";
+CM_ SG_ 11 PM_C_Current_ACDC "This signal periodically returns the measured RMS current for phase C.
+SCPI equivalent:
+  MEASure:CURRent:ACDC3?";
+CM_ SG_ 11 PM_C_Crest_Factor "This signal periodically returns the measured current crest factor for phase C.
+SCPI equivalent:
+  MEASure:CURRent:CREST3?";
+CM_ SG_ 11 PM_C_Active_Power "This signal periodically returns the measured true power for phase C in kW.
+SCPI equivalent:
+  MEASure:POWer3?";
+CM_ SG_ 10 PM_B_Crest_Factor "This signal periodically returns the measured current crest factor for phase B.
+SCPI equivalent:
+  MEASure:CURRent:CREST2?";
+CM_ SG_ 10 PM_B_VoltageLL_DC "This signal periodically returns the measured DC Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:DC2?";
+CM_ SG_ 10 PM_B_VoltageLL_ACDC "This signal periodically returns the measured RMS Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:ACDC2?";
+CM_ SG_ 10 PM_B_VoltageLL_AC "This signal periodically returns the measured RMS Line-to-Line voltage for phase B.
+SCPI equivalent:
+  MEASure:VLL:AC2?";
+CM_ SG_ 10 PM_B_Voltage_THD "This signal periodically returns the measured THD voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1:THD?";
+CM_ SG_ 10 PM_B_Voltage_DC "This signal periodically returns the measured DC voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:DC2?";
+CM_ SG_ 10 PM_B_Voltage_ACDC "This signal periodically returns the measured RMS voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC2?";
+CM_ SG_ 10 PM_B_Voltage_AC "This signal periodically returns the measured RMS voltage for phase B.
+SCPI equivalent:
+  MEASure:VOLTage:AC2?";
+CM_ SG_ 10 PM_B_Power_Factor_Angle "This signal periodically returns the measured power factor angle for phase B.";
+CM_ SG_ 10 PM_B_Power_Factor "This signal periodically returns the measured power factor for phase B.
+SCPI equivalent:
+  MEASure:PF2?";
+CM_ SG_ 10 PM_B_Peak_Current_Recoded "This signal periodically returns the recorded peak current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1:HOLD?";
+CM_ SG_ 10 PM_B_Peak_Current "This signal periodically returns the measured peak current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:PEAK2?";
+CM_ SG_ 10 PM_B_KWH_Elapsed_Time "This signal periodically returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 10 PM_B_Kilowatt_Hour "This signal periodically returns the accumulated energy measurement for phase B in kWh.
+SCPI equivalent:
+  MEASure:KWHour2?";
+CM_ SG_ 10 PM_B_Frequency "This signal periodically returns the measured frequency for phase B.
+SCPI equivalent:
+  MEASure:FREQuency2?";
+CM_ SG_ 10 PM_B_Distortion_Factor "This signal periodically returns the measured distortion factor for phase B.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 10 PM_B_Displacement_Factor "This signal periodically returns the measured displacement factor for phase B.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 10 PM_B_Current_THD "This signal periodically returns the measured THD current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1:THD?";
+CM_ SG_ 10 PM_B_Current_DC "This signal periodically returns the measured DC current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:DC2?";
+CM_ SG_ 10 PM_B_Current_ACDC "This signal periodically returns the measured RMS current for phase B.
+SCPI equivalent:
+  MEASure:CURRent:ACDC2?";
+CM_ SG_ 10 PM_B_Active_Power "This signal periodically returns the measured true power for phase B in kW.
+SCPI equivalent:
+  MEASure:POWer2?";
+CM_ SG_ 162 SCPI_Read "SCPI Read";
+CM_ SG_ 161 SCPI_Read_Index "SCPI Read Index";
+CM_ SG_ 160 SCPI_Write "SCPI Write";
+CM_ SG_ 371 SPP_Peak_Voltage_Level "This signal sets the programmable peak voltage protection level.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:LEVel";
+CM_ SG_ 372 SPP_Peak_Voltage_Mode "This signal sets the programmable peak voltage protection mode.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:MODE";
+CM_ SG_ 372 SPP_Peak_Voltage_Margin "This signal sets the programmable peak voltage protection margin.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:MARGin";
+CM_ SG_ 373 SPP_RMS_Current_Level "This signal sets the programmable RMS current protection level.
+SCPI equivalent:
+  SOURce:PROTect:RMS:CURRent:LEVel";
+CM_ SG_ 373 SPP_RMS_Current_Enable "This signal sets the programmable RMS current protection state.
+SCPI equivalent:
+  SOURce:PROTect:RMS:CURRent:STATe";
+CM_ SG_ 374 SPP_RMS_Power_Enable "This signal sets the programmable power protection state.
+SCPI equivalent:
+  SOURce:PROTect:RMS:POWer:STATe";
+CM_ SG_ 374 SPP_RMS_KVA_Level "This signal sets the programmable apparent power protection level in kVA.
+SCPI equivalent:
+  SOURce:PROTect:RMS:KVA:LEVel";
+CM_ SG_ 375 SPP_RMS_Power_Level "This signal sets the programmable true power protection level in kW.
+SCPI equivalent:
+  SOURce:PROTect:RMS:POWer:LEVel";
+CM_ SG_ 376 SPP_RMS_Trip_Time "This signal sets the programmable protection trip delay in 100 msecs increments, i.e. as setting of 5 means 500 msec.
+SCPI equivalent:
+  SOURce:PROTect:TDELAY";
+CM_ SG_ 370 SPP_Peak_Voltage_Enable "This signal sets the programmable peak voltage protection state.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:STATe";
+CM_ SG_ 370 SPP_Peak_Current_Limit "This signal sets the programmable peak current limit.
+SCPI equivalent:
+  SOURce:PEAK:CURRent:LIMit";
+CM_ SG_ 369 SPP_Peak_Current_Level "This signal sets the programmable peak current protection level.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:CURRent:LEVel";
+CM_ SG_ 369 SPP_Peak_Current_Enable "This signal sets the programmable peak current protection state.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:CURRent:STATe";
+CM_ SG_ 291 SC_Slew_Voltage_DC "This signal set the Voltage DC Slew Rate setting value.
+SCPI equivalent:
+  SOURce:VOLTage:DC:SLEW";
+CM_ SG_ 290 SC_Slew_Voltage_AC "This signal set the Voltage AC Slew Rate setting value.
+SCPI equivalent:
+  SOURce:VOLTage:AC:SLEW";
+CM_ SG_ 289 SC_Slew_Phase "This signal set the Phase Slew Rate setting value.
+SCPI equivalent:
+  SOURce:PHASe:SLEW";
+CM_ SG_ 288 SC_Slew_Frequency "This signal set the Frequency Slew Rate setting value.
+SCPI equivalent:
+  SOURce:FREQuency:SLEW";
+CM_ SG_ 341 SC_Update_Phase "This signal set the Update Phase setting value.
+SCPI equivalent:
+  SOURce:UPDATEPHase";
+CM_ SG_ 339 SC_Output_Disable_Phase "This signal set the Output Disable Phase setting value.
+SCPI equivalent:
+  OUTPut:DISABLEPHase";
+CM_ SG_ 339 SC_CSC_Max_Gain "This signal set the Maximum CSC gain setting value.
+SCPI equivalent:
+  SOURce:CSC:MAXgain";
+CM_ SG_ 340 SC_Ramp_Time "This signal queries the Ramp Time setting value.
+SCPI equivalent:
+  SOURce:RAMP";
+CM_ SG_ 338 SC_Form "This signal set the Form setting value.
+SCPI equivalent:
+  SOURce:FORM";
+CM_ SG_ 338 SC_CSC_Fault_on_Saturation "This signal set thet CSC (Continuous self calibration)  fault on saturation setting value.
+SCPI equivalent:
+  SOURce:CSC:SATuratefault";
+CM_ SG_ 338 SC_CSC_Enable "This signal set the CSC (Continuous self calibration) setting value.
+SCPI equivalent:
+  SOURce:CSC";
+CM_ SG_ 337 SC_Range "This signal set the Range setting value.
+SCPI equivalent:
+  SOURce:RANGe";
+CM_ SG_ 337 SC_Phase_Rotation "This signal queries the Phase Rotation setting value.
+SCPI equivalent:
+  SOURce:PHASe:ROTation";
+CM_ SG_ 337 SC_Output_Impedance_Mode "This signal set the Output Impedance Mode setting value.
+SCPI equivalent:
+  SOURce:IMPEDance:MODE";
+CM_ SG_ 337 SC_Mode "This signal set the Voltage Mode setting value.
+SCPI equivalent:
+  SOURce:VOLTage:MODE";
+CM_ SG_ 272 SP_C_Voltage_DC "This signal sets DC voltage for phase C.
+SCPI equivalent:
+  SOURce:VOLTage:DC3";
+CM_ SG_ 268 SP_B_Voltage_DC "This signal sets DC voltage for phase B.
+SCPI equivalent:
+  SOURce:VOLTage:DC2";
+CM_ SG_ 271 SP_C_Voltage_AC "This signal sets AC voltage for phase C.
+SCPI equivalent:
+  SOURce:VOLTage:AC3";
+CM_ SG_ 271 SP_C_Power_Limit "This signal sets the programmable true power limit in kW for phase C.
+SCPI equivalent:
+  SOURce:POWer:LIMit3";
+CM_ SG_ 270 SP_C_Phase "This signal sets the phase angle for phase C.
+SCPI equivalent:
+  SOURce:PHASe3";
+CM_ SG_ 270 SP_C_KVA_Limit "This signal sets the programmable apparent power limit in kVA for phase C.
+SCPI equivalent:
+  SOURce:KVA:LIMit3";
+CM_ SG_ 269 SP_C_Frequency "This signal sets the output frequency for phase C.
+SCPI equivalent:
+  SOURce:FREQuency3";
+CM_ SG_ 269 SP_C_Current_Limit "This signal sets the programmable current level for phase C.
+SCPI equivalent:
+  SOURce:CURRent:LIMit3";
+CM_ SG_ 267 SP_B_Voltage_AC "This signal sets AC voltage for phase B.
+SCPI equivalent:
+  SOURce:VOLTage:AC2";
+CM_ SG_ 267 SP_B_Power_Limit "This signal sets the programmable true power limit in kW for phase B.
+SCPI equivalent:
+  SOURce:POWer:LIMit2";
+CM_ SG_ 266 SP_B_Phase "This signal sets the phase angle for phase B.
+SCPI equivalent:
+  SOURce:PHASe2";
+CM_ SG_ 266 SP_B_KVA_Limit "This signal sets the programmable apparent power limit in kVA for phase B.
+SCPI equivalent:
+  SOURce:KVA:LIMit2";
+CM_ SG_ 265 SP_B_Frequency "This signal sets the output frequency for phase B.
+SCPI equivalent:
+  SOURce:FREQuency2";
+CM_ SG_ 265 SP_B_Current_Limit "This signal sets the programmable current level for phase B.
+SCPI equivalent:
+  SOURce:CURRent:LIMit2";
+CM_ SG_ 264 SP_A_Voltage_DC "This signal sets DC voltage for phase A.
+SCPI equivalent:
+  SOURce:VOLTage:DC1";
+CM_ SG_ 260 SP_ALL_Voltage_DC "This signal sets DC voltage for all phases.
+SCPI equivalent:
+  SOURce:VOLTage:DC";
+CM_ SG_ 260 SP_ALL_Enable_Output "This signal Enables or Disables power output.
+When enabled, all output relays are closed.
+When disabled, all output relays are open.
+SCPI equivalent:
+  OUTPut:STATe";
+CM_ SG_ 263 SP_A_Voltage_AC "This signal sets AC voltage for phase A.
+SCPI equivalent:
+  SOURce:VOLTage:AC1";
+CM_ SG_ 263 SP_A_Power_Limit "This signal sets the programmable true power limit in kW for phase A.
+SCPI equivalent:
+  SOURce:POWer:LIMit1";
+CM_ SG_ 259 SP_ALL_Voltage_AC "This signal sets AC voltage for all phases.
+SCPI equivalent:
+  SOURce:VOLTage:AC";
+CM_ SG_ 259 SP_ALL_Power_Limit "This signal sets the programmable true power limit in kW for all phases.
+SCPI equivalent:
+  SOURce:POWer:LIMit";
+CM_ SG_ 258 SP_ALL_Phase "This signal sets the phase angle for all phases.
+SCPI equivalent:
+  SOURce:PHASe";
+CM_ SG_ 258 SP_ALL_KVA_Limit "This signal sets the programmable apparent power limit in kVA for all phases.
+SCPI equivalent:
+  SOURce:KVA:LIMit";
+CM_ SG_ 262 SP_A_Phase "This signal sets the phase angle for phase A.
+SCPI equivalent:
+  SOURce:PHASe1";
+CM_ SG_ 262 SP_A_KVA_Limit "This signal sets the programmable apparent power limit in kVA for phase A.
+SCPI equivalent:
+  SOURce:KVA:LIMit1";
+CM_ SG_ 257 SP_ALL_Frequency "This signal sets the output frequency for all phases.
+SCPI equivalent:
+  SOURce:FREQuency";
+CM_ SG_ 257 SP_ALL_Current_Limit "This signal sets the programmable current level for all phases.
+SCPI equivalent:
+  SOURce:CURRent:LIMit";
+CM_ SG_ 261 SP_A_Frequency "This signal sets the output frequency for phase A.
+SCPI equivalent:
+  SOURce:FREQuency1";
+CM_ SG_ 261 SP_A_Current_Limit "This signal sets the programmable current level for phase A.
+SCPI equivalent:
+  SOURce:CURRent:LIMit1";
+CM_ SG_ 96 GP_C_Voltage_DC "This signal returns the DC voltage setpoint for phase C.
+SCPI equivalent:
+  SOURce:VOLTage:DC3?";
+CM_ SG_ 95 GP_C_Voltage_AC "This signal returns the AC voltage setpoint for phase C.
+SCPI equivalent:
+  SOURce:VOLTage:AC3?";
+CM_ SG_ 95 GP_C_Power_Limit "This signal gets the programmable true power limit in kW for phase C.
+SCPI equivalent:
+  SOURce:POWer:LIMit3?";
+CM_ SG_ 91 GP_B_Voltage_AC "This signal returns the AC voltage setpoint for phase B.
+SCPI equivalent:
+  SOURce:VOLTage:AC2?";
+CM_ SG_ 91 GP_B_Power_Limit "This signal gets the programmable true power limit in kW for phase B.
+SCPI equivalent:
+  SOURce:POWer:LIMit2?";
+CM_ SG_ 92 GP_B_Voltage_DC "This signal returns the DC voltage setpoint for phase B.
+SCPI equivalent:
+  SOURce:VOLTage:DC2?";
+CM_ SG_ 93 GP_C_Frequency "This signal gets the output frequency set for phase C.
+SCPI equivalent:
+  SOURce:FREQuency3?";
+CM_ SG_ 93 GP_C_Current_Limit "This signal gets the programmable current level for phase C.
+SCPI equivalent:
+  SOURce:CURRent:LIMit3?";
+CM_ SG_ 94 GP_C_Phase "This signal gets the phase angle for phase C.
+SCPI equivalent:
+  SOURce:PHASe3?";
+CM_ SG_ 94 GP_C_KVA_Limit "This signal gets the programmable apparent power limit in kVA for phase C.
+SCPI equivalent:
+  SOURce:KVA:LIMit3?";
+CM_ SG_ 83 GP_ALL_Power_Limit "This signal gets the programmable true power limit in kW for all phase.
+SCPI equivalent:
+  SOURce:POWer:LIMit?";
+CM_ SG_ 83 GP_ALL_Phase "This signal gets the phase angle for all phase.
+SCPI equivalent:
+  SOURce:PHASe?";
+CM_ SG_ 84 GP_ALL_Voltage_DC "This signal returns the DC voltage setpoint for all phase.
+SCPI equivalent:
+  SOURce:VOLTage:DC?";
+CM_ SG_ 84 GP_ALL_Voltage_AC "This signal returns the AC voltage setpoint for all phase.
+SCPI equivalent:
+  SOURce:VOLTage:AC?";
+CM_ SG_ 85 GP_A_Frequency "This signal gets the output frequency set for phase A.
+SCPI equivalent:
+  SOURce:FREQuency1?";
+CM_ SG_ 85 GP_A_Current_Limit "This signal gets the programmable current level for phase A.
+SCPI equivalent:
+  SOURce:CURRent:LIMit1?";
+CM_ SG_ 86 GP_A_Phase "This signal gets the phase angle for phase A.
+SCPI equivalent:
+  SOURce:PHASe1?";
+CM_ SG_ 86 GP_A_KVA_Limit "This signal gets the programmable apparent power limit in kVA for phase A.
+SCPI equivalent:
+  SOURce:KVA:LIMit1?";
+CM_ SG_ 87 GP_A_Voltage_AC "This signal returns the AC voltage setpoint for phase A.
+SCPI equivalent:
+  SOURce:VOLTage:AC1?";
+CM_ SG_ 87 GP_A_Power_Limit "This signal gets the programmable true power limit in kW for phase A.
+SCPI equivalent:
+  SOURce:POWer:LIMit1?";
+CM_ SG_ 88 GP_A_Voltage_DC "This signal returns the DC voltage setpoint for phase A.
+SCPI equivalent:
+  SOURce:VOLTage:DC1?";
+CM_ SG_ 89 GP_B_Frequency "This signal gets the output frequency set for phase B.
+SCPI equivalent:
+  SOURce:FREQuency2?";
+CM_ SG_ 89 GP_B_Current_Limit "This signal gets the programmable current level for phase B.
+SCPI equivalent:
+  SOURce:CURRent:LIMit2?";
+CM_ SG_ 90 GP_B_Phase "This signal gets the phase angle for phase B.
+SCPI equivalent:
+  SOURce:PHASe2?";
+CM_ SG_ 90 GP_B_KVA_Limit "This signal gets the programmable apparent power limit in kVA for phase B.
+SCPI equivalent:
+  SOURce:KVA:LIMit2?";
+CM_ SG_ 82 GP_ALL_KVA_Limit "This signal gets the programmable apparent power limit in kVA for all phase.
+SCPI equivalent:
+  SOURce:KVA:LIMit?";
+CM_ SG_ 82 GP_ALL_Frequency "This signal gets the output frequency set for all phase.
+SCPI equivalent:
+  SOURce:FREQuency?";
+CM_ SG_ 81 GP_ALL_Current_Limit "This signal gets the programmable current level for all phase.
+SCPI equivalent:
+  SOURce:CURRent:LIMit?";
+CM_ SG_ 81 GP_ALL_Enable_Output "This signal returns power output state.
+SCPI equivalent:
+  OUTPut:STATe?";
+CM_ SG_ 102 GPP_RMS_Power_Level "This signal gets the programmable true power protection level in kW.
+SCPI equivalent:
+  SOURce:PROTect:RMS:POWer:LEVel?";
+CM_ SG_ 103 GPP_RMS_Trip_Time "This signal gets the programmable protection trip delay. Delay value  in 100 msecs increments, i.e. as setting of 5 means 500 msec.
+SCPI equivalent:
+  SOURce:PROTect:TDELAY?";
+CM_ SG_ 104 GPP_RMS_Power_Enable "This signal gets the programmable power protection state.
+SCPI equivalent:
+  SOURce:PROTect:RMS:POWer:STATe?";
+CM_ SG_ 101 GPP_RMS_KVA_Level "This signal gets the programmable apparent power protection level in kVA.
+SCPI equivalent:
+  SOURce:PROTect:RMS:KVA:LEVel?";
+CM_ SG_ 101 GPP_RMS_Current_Level "This signal gets the programmable RMS current protection level.
+SCPI equivalent:
+  SOURce:PROTect:RMS:CURRent:LEVel?";
+CM_ SG_ 100 GPP_RMS_Current_Enable "This signal gets the programmable RMS current protection state.
+SCPI equivalent:
+  SOURce:PROTect:RMS:CURRent:STATe?";
+CM_ SG_ 100 GPP_Peak_Voltage_Mode "This signal gets the programmable peak voltage protection mode.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:MODE?";
+CM_ SG_ 99 GPP_Peak_Voltage_Margin "This signal gets the programmable peak voltage protection margin.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:MARGin?";
+CM_ SG_ 99 GPP_Peak_Voltage_Level "This signal gets the programmable peak voltage protection level.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:LEVel?";
+CM_ SG_ 98 GPP_Peak_Voltage_Enable "This signal gets the programmable peak voltage protection state.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:VOLTage:STATe?";
+CM_ SG_ 98 GPP_Peak_Current_Limit "This signal gets the programmable peak current limit.
+SCPI equivalent:
+  SOURce:PEAK:CURRent:LIMit?";
+CM_ SG_ 97 GPP_Peak_Current_Level "This signal gets the programmable peak current protection level.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:CURRent:LEVel?";
+CM_ SG_ 97 GPP_Peak_Current_Enable "This signal gets the programmable peak current protection state.
+SCPI equivalent:
+  SOURce:PROTect:PEAK:CURRent:STATe?";
+CM_ SG_ 310 GC_Form "This signal queries the Form setting value.
+SCPI equivalent:
+   SOURce:FORM?";
+CM_ SG_ 308 GC_Slew_Voltage_DC "This signal queries the Voltage DC Slew Rate setting value.
+SCPI equivalent:
+  SOURce:VOLTage:DC:SLEW?";
+CM_ SG_ 309 GC_Update_Phase "This signal queries the Update Phase setting value.
+SCPI equivalent:
+  SOURce:UPDATEPHase?";
+CM_ SG_ 307 GC_Slew_Voltage_AC "This signal queries the Voltage AC Slew Rate setting value.
+SCPI equivalent:
+  SOURce:VOLTage:AC:SLEW?";
+CM_ SG_ 307 GC_Slew_Phase "This signal queries the Phase Slew Rate setting value.
+SCPI equivalent:
+  SOURce:PHASe:SLEW?";
+CM_ SG_ 306 GC_Slew_Frequency "This signal queries the Frequency Slew Rate setting value.
+SCPI equivalent:
+  SOURce:FREQuency:SLEW?";
+CM_ SG_ 306 GC_Ramp_Time "This signal queries the Ramp Time setting value.
+SCPI equivalent:
+  SOURce:RAMP?";
+CM_ SG_ 305 GC_Output_Disable_Phase "This signal queries the Output Disable Phase setting value.
+SCPI equivalent:
+  OUTPut:DISABLEPHase?";
+CM_ SG_ 305 GC_CSC_Max_Gain "This signal queries thet CSC (Continuous self calibration)  fault on saturation setting value.
+SCPI equivalent:
+  SOURce:CSC:SATuratefault?";
+CM_ SG_ 304 GC_Range "This signal queries the Range setting value.
+SCPI equivalent:
+  SOURce:RANGe?";
+CM_ SG_ 304 GC_Phase_Rotation "This signal queries the Phase Rotation setting value.
+SCPI equivalent:
+  SOURce:PHASe:ROTation?";
+CM_ SG_ 304 GC_Output_Impedance_Mode "This signal queries the Output Impedance Mode setting value.
+SCPI equivalent:
+  SOURce:IMPEDance:MODE?";
+CM_ SG_ 304 GC_Mode "This signal queries the Voltage Mode setting value.
+SCPI equivalent:
+  SOURce:VOLTage:MODE?";
+CM_ SG_ 304 GC_CSC_Fault_on_Saturation "This signal queries the CSC (Continuous self calibration) setting value.
+SCPI equivalent:
+  SOURce:CSC?";
+CM_ SG_ 304 GC_CSC_Enable "This signal queries the Firmware version.
+SCPI equivalent:
+  SYSTem:FW:FRONTPANEL:VERsion?";
+CM_ SG_ 38 GM_ALL_VoltageLL_AC "This signal returns the measured RMS Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:AC?";
+CM_ SG_ 38 GM_ALL_Voltage_THD "This signal returns the measured THD voltage.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC:THD?";
+CM_ SG_ 39 GM_ALL_Frequency "This signal returns the measured frequency.
+SCPI equivalent:
+  MEASure:FREQuency?";
+CM_ SG_ 39 GM_ALL_Distortion_Factor "This signal returns the measured distortion factor.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 40 GM_ALL_KWH_Elapsed_Time "This signal returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 40 GM_ALL_Kilowatt_Hour "This signal returns the accumulated energy measurement for phase A in kWh.
+SCPI equivalent:
+  MEASure:KWHour?";
+CM_ SG_ 41 GM_ALL_Peak_Current_Recoded "This signal returns the recorded peak current.
+SCPI equivalent:
+  MEASure:CURRent:PEAK:HOLD?";
+CM_ SG_ 41 GM_ALL_Peak_Current "This signal returns the measured peak current.
+SCPI equivalent:
+  MEASure:CURRent:PEAK?";
+CM_ SG_ 42 GM_ALL_Power_Factor_Angle "This signal returns the measured power factor.
+SCPI equivalent:
+  MEASure:PF?";
+CM_ SG_ 42 GM_ALL_Power_Factor "This signal returns the measured power factor.
+SCPI equivalent:
+  MEASure:PF?";
+CM_ SG_ 45 GM_A_Current_DC "This signal returns the measured DC current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:DC1?";
+CM_ SG_ 45 GM_A_Current_ACDC "This signal returns the measured RMS current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1?";
+CM_ SG_ 44 GM_A_Crest_Factor "This signal returns the measured current crest factor for phase A.
+SCPI equivalent:
+  MEASure:CURRent:CREST1?";
+CM_ SG_ 44 GM_A_Active_Power "This signal returns the measured true power for phase A in kW.
+SCPI equivalent:
+  MEASure:POWer1?";
+CM_ SG_ 43 GM_ALL_Voltage_ACDC "This signal returns the measured RMS voltage.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC?";
+CM_ SG_ 37 GM_ALL_VoltageLL_DC "This signal returns the measured DC Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:DC?";
+CM_ SG_ 37 GM_ALL_VoltageLL_ACDC "This signal returns the measured RMS Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:ACDC?";
+CM_ SG_ 36 GM_ALL_Displacement_Factor "This signal returns the measured displacement factor.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 36 GM_ALL_Current_THD "This signal returns the measured THD current.
+SCPI equivalent:
+  MEASure:CURRent:ACDC:THD?";
+CM_ SG_ 35 GM_ALL_Current_DC "This signal returns the measured DC current.
+SCPI equivalent:
+  MEASure:CURRent:DC?";
+CM_ SG_ 35 GM_ALL_Current_ACDC "This signal returns the measured RMS current.
+SCPI equivalent:
+  MEASure:CURRent:ACDC?";
+CM_ SG_ 34 GM_ALL_Crest_Factor "This signal returns the measured current crest factor.
+SCPI equivalent:
+  MEASure:CURRent:CREST?";
+CM_ SG_ 34 GM_ALL_Active_Power "This signal returns the true power in kW.
+SCPI equivalent:
+  MEASure:POWer?";
+CM_ SG_ 33 GM_ALL_Voltage_DC "This signal returns the measured DC voltage.
+SCPI equivalent:
+  MEASure:VOLTage:DC?";
+CM_ SG_ 33 GM_ALL_Voltage_AC "This signal returns the measured RMS voltage.
+SCPI equivalent:
+  MEASure:VOLTage:AC?";
+CM_ SG_ 0 ACK_Signal "Acknowledge signal";
+CM_ SG_ 3 PM_A_Current_DC "This signal periodically returns the measured DC current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:DC1?";
+CM_ SG_ 3 PM_A_Current_ACDC "This signal periodically returns the measured RMS current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1?";
+CM_ SG_ 4 PM_A_Displacement_Factor "This signal periodically returns the measured displacement factor for phase A.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 4 PM_A_Current_THD "This signal periodically returns the measured THD current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1:THD?";
+CM_ SG_ 5 PM_A_Frequency "This signal periodically returns the measured frequency for phase A.
+SCPI equivalent:
+  MEASure:FREQuency1?";
+CM_ SG_ 5 PM_A_Distortion_Factor "This signal periodically returns the measured distortion factor for phase A.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 6 PM_A_KWH_Elapsed_Time "This signal periodically returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 6 PM_A_Kilowatt_Hour "This signal periodically returns the accumulated energy measurement for phase A in kWh.
+SCPI equivalent:
+  MEASure:KWHour1?";
+CM_ SG_ 7 PM_A_Peak_Current_Recoded "This signal periodically returns the recorded peak current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1:HOLD?";
+CM_ SG_ 7 PM_A_Peak_Current "This signal periodically returns the measured peak current for phase A.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1?";
+CM_ SG_ 8 PM_A_Power_Factor_Angle "This signal periodically returns the measured power factor angle for phase A.";
+CM_ SG_ 8 PM_A_Power_Factor "This signal periodically returns the measured power factor for phase A.
+SCPI equivalent:
+  MEASure:PF1?";
+CM_ SG_ 9 PM_A_Voltage_ACDC "This signal periodically returns the measured RMS voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1?";
+CM_ SG_ 9 PM_A_Voltage_AC "This signal periodically returns the measured RMS voltage for phase A.
+SCPI equivalent:
+  MEASure:VOLTage:AC1?";
+CM_ SG_ 2 PM_A_Crest_Factor "This signal periodically returns the measured current crest factor for phase A.
+SCPI equivalent:
+  MEASure:CURRent:CREST1?";
+CM_ SG_ 2 PM_A_Active_Power "This signal periodically returns the measured true power for phase A in kW.
+SCPI equivalent:
+  MEASure:POWer1?";
+CM_ SG_ 1 PM_ALL_VoltageLL_DC "This signal periodically returns the measured DC Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:DC?";
+CM_ SG_ 1 PM_ALL_VoltageLL_ACDC "This signal periodically returns the measured RMS Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:ACDC?";
+CM_ SG_ 1 PM_ALL_VoltageLL_AC "This signal periodically returns the measured RMS Line-to-Line voltage.
+SCPI equivalent:
+  MEASure:VLL:AC?";
+CM_ SG_ 1 PM_ALL_Voltage_THD "This signal periodically returns the measured THD voltage.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC1:THD?";
+CM_ SG_ 1 PM_ALL_Voltage_DC "This signal periodically returns the measured DC voltage.
+SCPI equivalent:
+  MEASure:VOLTage:DC?";
+CM_ SG_ 1 PM_ALL_Voltage_ACDC "This signal periodically returns the measured RMS voltage.
+SCPI equivalent:
+  MEASure:VOLTage:ACDC?";
+CM_ SG_ 1 PM_ALL_Voltage_AC "This signal periodically returns the measured RMS voltage.
+SCPI equivalent:
+  MEASure:VOLTage:AC?";
+CM_ SG_ 1 PM_ALL_Power_Factor_Angle "This signal periodically returns the measured power factor angle.";
+CM_ SG_ 1 PM_ALL_Power_Factor "This signal periodically returns the measured power factor.
+SCPI equivalent:
+  MEASure:PF?";
+CM_ SG_ 1 PM_ALL_Peak_Current_Recoded "This signal periodically returns the recorded peak current.
+SCPI equivalent:
+  MEASure:CURRent:PEAK1:HOLD?";
+CM_ SG_ 1 PM_ALL_Peak_Current "This signal periodically returns the measured peak current.
+SCPI equivalent:
+  MEASure:CURRent:PEAK?";
+CM_ SG_ 1 PM_ALL_KWH_Elapsed_Time "This signal periodically returns the accumulated energy measurement time in seconds.
+SCPI equivalent:
+  MEASure:KWHour:ETIMe?";
+CM_ SG_ 1 PM_ALL_Kilowatt_Hour "This signal periodically returns the accumulated energy measurement in kWh.
+SCPI equivalent:
+  MEASure:KWHour?";
+CM_ SG_ 1 PM_ALL_Frequency "This signal periodically returns the measured frequency.
+SCPI equivalent:
+  MEASure:FREQuency?";
+CM_ SG_ 1 PM_ALL_Distortion_Factor "This signal periodically returns the measured distortion factor.
+Is calculated from the measured of power factor and displacement factor:
+  Power_Factor/Displacement_Factor";
+CM_ SG_ 1 PM_ALL_Displacement_Factor "This signal periodically returns the measured displacement factor.
+Is calculated from the measured of Power Factor:
+  cos(Power_Factor * PI/180)";
+CM_ SG_ 1 PM_ALL_Current_THD "This signal periodically returns the measured THD current.
+SCPI equivalent:
+  MEASure:CURRent:ACDC1:THD?";
+CM_ SG_ 1 PM_ALL_Current_DC "This signal periodically returns the measured DC current.
+SCPI equivalent:
+  MEASure:CURRent:DC?";
+CM_ SG_ 1 PM_ALL_Current_ACDC "This signal periodically returns the measured RMS current.
+SCPI equivalent:
+  MEASure:CURRent:ACDC?";
+CM_ SG_ 1 PM_ALL_Crest_Factor "This signal periodically returns the measured current crest factor.
+SCPI equivalent:
+  MEASure:CURRent:CREST?";
+CM_ SG_ 1 PM_ALL_Active_Power "This signal periodically returns the measured true power in kW.
+SCPI equivalent:
+  MEASure:POWer3?";
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ EV_  "Mode" ENUM  "CAN (SJA1000)","CAN","ISO CAN FD","Non-ISO CAN FD";
+BA_DEF_ EV_  "Data_Bit_Rate" INT 1000000 10000000;
+BA_DEF_ EV_  "Nominal_Bit_Rate" INT 5000 1000000;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "CANFD_BRS" "1";
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_DEF_DEF_  "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_  "Mode" "CAN (SJA1000)";
+BA_DEF_DEF_  "Data_Bit_Rate" 2000000;
+BA_DEF_DEF_  "Nominal_Bit_Rate" 1000000;
+BA_ "BusType" "CAN FD";
+BA_ "DBName" "PPST";
+BA_ "Mode" EV_ PPST 0;
+VAL_ 243 GS_Fault 1 "Faults present" 0 "No faults present" ;
+VAL_ 372 SPP_Peak_Voltage_Mode 2 "Margin and level" 1 "Level" 0 "Margin" ;
+VAL_ 373 SPP_RMS_Current_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 374 SPP_RMS_Power_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 370 SPP_Peak_Voltage_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 369 SPP_Peak_Current_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 338 SC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outputs" 3 "Three" 2 "Split" 1 "Single" ;
+VAL_ 338 SC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
+VAL_ 338 SC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 337 SC_Range 1 "High range" 0 "Low range" ;
+VAL_ 337 SC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
+VAL_ 337 SC_Output_Impedance_Mode 1 "RMS mode" 0 "Real mode" ;
+VAL_ 337 SC_Mode 2 "AC+DC mode" 1 "DC mode" 0 "AC mode" ;
+VAL_ 260 SP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
+VAL_ 81 GP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
+VAL_ 104 GPP_RMS_Power_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 100 GPP_RMS_Current_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 100 GPP_Peak_Voltage_Mode 2 "Margin and level" 1 "Level" 0 "Margin" ;
+VAL_ 98 GPP_Peak_Voltage_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 97 GPP_Peak_Current_Enable 1 "Enabled" 0 "Disabled" ;
+VAL_ 310 GC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outputs" 3 "Three" 2 "Split" 1 "Single" ;
+VAL_ 304 GC_Range 1 "High range" 0 "Low range" ;
+VAL_ 304 GC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
+VAL_ 304 GC_Output_Impedance_Mode 1 "RMS mode" 0 "Real mode" ;
+VAL_ 304 GC_Mode 2 "AC+DC mode" 1 "DC mode" 0 "AC mode" ;
+VAL_ 304 GC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
+VAL_ 304 GC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
+SIG_VALTYPE_ 75 GM_C_VoltageLL_DC : 1;
+SIG_VALTYPE_ 75 GM_C_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 74 GM_C_VoltageLL_AC : 1;
+SIG_VALTYPE_ 74 GM_C_Voltage_THD : 1;
+SIG_VALTYPE_ 73 GM_C_Voltage_DC : 1;
+SIG_VALTYPE_ 73 GM_C_Voltage_ACDC : 1;
+SIG_VALTYPE_ 72 GM_C_Voltage_AC : 1;
+SIG_VALTYPE_ 72 GM_C_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 71 GM_C_Power_Factor : 1;
+SIG_VALTYPE_ 71 GM_C_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 70 GM_C_Peak_Current : 1;
+SIG_VALTYPE_ 70 GM_C_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 69 GM_C_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 69 GM_C_Frequency : 1;
+SIG_VALTYPE_ 68 GM_C_Distortion_Factor : 1;
+SIG_VALTYPE_ 68 GM_C_Displacement_Factor : 1;
+SIG_VALTYPE_ 67 GM_C_Current_THD : 1;
+SIG_VALTYPE_ 67 GM_C_Current_DC : 1;
+SIG_VALTYPE_ 66 GM_C_Current_ACDC : 1;
+SIG_VALTYPE_ 66 GM_C_Crest_Factor : 1;
+SIG_VALTYPE_ 65 GM_C_Active_Power : 1;
+SIG_VALTYPE_ 65 GM_B_VoltageLL_DC : 1;
+SIG_VALTYPE_ 64 GM_B_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 64 GM_B_VoltageLL_AC : 1;
+SIG_VALTYPE_ 63 GM_B_Voltage_THD : 1;
+SIG_VALTYPE_ 63 GM_B_Voltage_DC : 1;
+SIG_VALTYPE_ 62 GM_B_Voltage_ACDC : 1;
+SIG_VALTYPE_ 62 GM_B_Voltage_AC : 1;
+SIG_VALTYPE_ 61 GM_B_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 61 GM_B_Power_Factor : 1;
+SIG_VALTYPE_ 60 GM_B_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 60 GM_B_Peak_Current : 1;
+SIG_VALTYPE_ 59 GM_B_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 59 GM_B_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 58 GM_B_Frequency : 1;
+SIG_VALTYPE_ 58 GM_B_Distortion_Factor : 1;
+SIG_VALTYPE_ 57 GM_B_Displacement_Factor : 1;
+SIG_VALTYPE_ 57 GM_B_Current_THD : 1;
+SIG_VALTYPE_ 56 GM_B_Current_DC : 1;
+SIG_VALTYPE_ 56 GM_B_Current_ACDC : 1;
+SIG_VALTYPE_ 55 GM_B_Crest_Factor : 1;
+SIG_VALTYPE_ 55 GM_B_Active_Power : 1;
+SIG_VALTYPE_ 54 GM_A_VoltageLL_DC : 1;
+SIG_VALTYPE_ 53 GM_A_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 53 GM_A_VoltageLL_AC : 1;
+SIG_VALTYPE_ 52 GM_A_Voltage_THD : 1;
+SIG_VALTYPE_ 52 GM_A_Voltage_DC : 1;
+SIG_VALTYPE_ 51 GM_A_Voltage_ACDC : 1;
+SIG_VALTYPE_ 51 GM_A_Voltage_AC : 1;
+SIG_VALTYPE_ 50 GM_A_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 50 GM_A_Power_Factor : 1;
+SIG_VALTYPE_ 49 GM_A_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 49 GM_A_Peak_Current : 1;
+SIG_VALTYPE_ 48 GM_A_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 48 GM_A_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 47 GM_A_Frequency : 1;
+SIG_VALTYPE_ 47 GM_A_Distortion_Factor : 1;
+SIG_VALTYPE_ 46 GM_A_Displacement_Factor : 1;
+SIG_VALTYPE_ 46 GM_A_Current_THD : 1;
+SIG_VALTYPE_ 14 PM_A_VoltageLL_DC : 1;
+SIG_VALTYPE_ 13 PM_A_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 13 PM_A_VoltageLL_AC : 1;
+SIG_VALTYPE_ 12 PM_A_Voltage_THD : 1;
+SIG_VALTYPE_ 12 PM_A_Voltage_DC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_DC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_VoltageLL_AC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_THD : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_DC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_Voltage_AC : 1;
+SIG_VALTYPE_ 11 PM_C_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 11 PM_C_Power_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 11 PM_C_Peak_Current : 1;
+SIG_VALTYPE_ 11 PM_C_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 11 PM_C_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 11 PM_C_Frequency : 1;
+SIG_VALTYPE_ 11 PM_C_Distortion_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Displacement_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Current_THD : 1;
+SIG_VALTYPE_ 11 PM_C_Current_DC : 1;
+SIG_VALTYPE_ 11 PM_C_Current_ACDC : 1;
+SIG_VALTYPE_ 11 PM_C_Crest_Factor : 1;
+SIG_VALTYPE_ 11 PM_C_Active_Power : 1;
+SIG_VALTYPE_ 10 PM_B_Crest_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_DC : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_VoltageLL_AC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_THD : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_DC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_Voltage_AC : 1;
+SIG_VALTYPE_ 10 PM_B_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 10 PM_B_Power_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 10 PM_B_Peak_Current : 1;
+SIG_VALTYPE_ 10 PM_B_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 10 PM_B_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 10 PM_B_Frequency : 1;
+SIG_VALTYPE_ 10 PM_B_Distortion_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Displacement_Factor : 1;
+SIG_VALTYPE_ 10 PM_B_Current_THD : 1;
+SIG_VALTYPE_ 10 PM_B_Current_DC : 1;
+SIG_VALTYPE_ 10 PM_B_Current_ACDC : 1;
+SIG_VALTYPE_ 10 PM_B_Active_Power : 1;
+SIG_VALTYPE_ 371 SPP_Peak_Voltage_Level : 1;
+SIG_VALTYPE_ 372 SPP_Peak_Voltage_Margin : 1;
+SIG_VALTYPE_ 373 SPP_RMS_Current_Level : 1;
+SIG_VALTYPE_ 374 SPP_RMS_KVA_Level : 1;
+SIG_VALTYPE_ 375 SPP_RMS_Power_Level : 1;
+SIG_VALTYPE_ 376 SPP_RMS_Trip_Time : 1;
+SIG_VALTYPE_ 370 SPP_Peak_Current_Limit : 1;
+SIG_VALTYPE_ 369 SPP_Peak_Current_Level : 1;
+SIG_VALTYPE_ 291 SC_Slew_Voltage_DC : 1;
+SIG_VALTYPE_ 290 SC_Slew_Voltage_AC : 1;
+SIG_VALTYPE_ 289 SC_Slew_Phase : 1;
+SIG_VALTYPE_ 288 SC_Slew_Frequency : 1;
+SIG_VALTYPE_ 341 SC_Update_Phase : 1;
+SIG_VALTYPE_ 339 SC_Output_Disable_Phase : 1;
+SIG_VALTYPE_ 339 SC_CSC_Max_Gain : 1;
+SIG_VALTYPE_ 340 SC_Ramp_Time : 1;
+SIG_VALTYPE_ 272 SP_C_Voltage_DC : 1;
+SIG_VALTYPE_ 268 SP_B_Voltage_DC : 1;
+SIG_VALTYPE_ 271 SP_C_Voltage_AC : 1;
+SIG_VALTYPE_ 271 SP_C_Power_Limit : 1;
+SIG_VALTYPE_ 270 SP_C_Phase : 1;
+SIG_VALTYPE_ 270 SP_C_KVA_Limit : 1;
+SIG_VALTYPE_ 269 SP_C_Frequency : 1;
+SIG_VALTYPE_ 269 SP_C_Current_Limit : 1;
+SIG_VALTYPE_ 267 SP_B_Voltage_AC : 1;
+SIG_VALTYPE_ 267 SP_B_Power_Limit : 1;
+SIG_VALTYPE_ 266 SP_B_Phase : 1;
+SIG_VALTYPE_ 266 SP_B_KVA_Limit : 1;
+SIG_VALTYPE_ 265 SP_B_Frequency : 1;
+SIG_VALTYPE_ 265 SP_B_Current_Limit : 1;
+SIG_VALTYPE_ 264 SP_A_Voltage_DC : 1;
+SIG_VALTYPE_ 260 SP_ALL_Voltage_DC : 1;
+SIG_VALTYPE_ 263 SP_A_Voltage_AC : 1;
+SIG_VALTYPE_ 263 SP_A_Power_Limit : 1;
+SIG_VALTYPE_ 259 SP_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 259 SP_ALL_Power_Limit : 1;
+SIG_VALTYPE_ 258 SP_ALL_Phase : 1;
+SIG_VALTYPE_ 258 SP_ALL_KVA_Limit : 1;
+SIG_VALTYPE_ 262 SP_A_Phase : 1;
+SIG_VALTYPE_ 262 SP_A_KVA_Limit : 1;
+SIG_VALTYPE_ 257 SP_ALL_Frequency : 1;
+SIG_VALTYPE_ 257 SP_ALL_Current_Limit : 1;
+SIG_VALTYPE_ 261 SP_A_Frequency : 1;
+SIG_VALTYPE_ 261 SP_A_Current_Limit : 1;
+SIG_VALTYPE_ 96 GP_C_Voltage_DC : 1;
+SIG_VALTYPE_ 95 GP_C_Voltage_AC : 1;
+SIG_VALTYPE_ 95 GP_C_Power_Limit : 1;
+SIG_VALTYPE_ 91 GP_B_Voltage_AC : 1;
+SIG_VALTYPE_ 91 GP_B_Power_Limit : 1;
+SIG_VALTYPE_ 92 GP_B_Voltage_DC : 1;
+SIG_VALTYPE_ 93 GP_C_Frequency : 1;
+SIG_VALTYPE_ 93 GP_C_Current_Limit : 1;
+SIG_VALTYPE_ 94 GP_C_Phase : 1;
+SIG_VALTYPE_ 94 GP_C_KVA_Limit : 1;
+SIG_VALTYPE_ 83 GP_ALL_Power_Limit : 1;
+SIG_VALTYPE_ 83 GP_ALL_Phase : 1;
+SIG_VALTYPE_ 84 GP_ALL_Voltage_DC : 1;
+SIG_VALTYPE_ 84 GP_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 85 GP_A_Frequency : 1;
+SIG_VALTYPE_ 85 GP_A_Current_Limit : 1;
+SIG_VALTYPE_ 86 GP_A_Phase : 1;
+SIG_VALTYPE_ 86 GP_A_KVA_Limit : 1;
+SIG_VALTYPE_ 87 GP_A_Voltage_AC : 1;
+SIG_VALTYPE_ 87 GP_A_Power_Limit : 1;
+SIG_VALTYPE_ 88 GP_A_Voltage_DC : 1;
+SIG_VALTYPE_ 89 GP_B_Frequency : 1;
+SIG_VALTYPE_ 89 GP_B_Current_Limit : 1;
+SIG_VALTYPE_ 90 GP_B_Phase : 1;
+SIG_VALTYPE_ 90 GP_B_KVA_Limit : 1;
+SIG_VALTYPE_ 82 GP_ALL_KVA_Limit : 1;
+SIG_VALTYPE_ 82 GP_ALL_Frequency : 1;
+SIG_VALTYPE_ 81 GP_ALL_Current_Limit : 1;
+SIG_VALTYPE_ 102 GPP_RMS_Power_Level : 1;
+SIG_VALTYPE_ 103 GPP_RMS_Trip_Time : 1;
+SIG_VALTYPE_ 101 GPP_RMS_KVA_Level : 1;
+SIG_VALTYPE_ 101 GPP_RMS_Current_Level : 1;
+SIG_VALTYPE_ 99 GPP_Peak_Voltage_Margin : 1;
+SIG_VALTYPE_ 99 GPP_Peak_Voltage_Level : 1;
+SIG_VALTYPE_ 98 GPP_Peak_Current_Limit : 1;
+SIG_VALTYPE_ 97 GPP_Peak_Current_Level : 1;
+SIG_VALTYPE_ 308 GC_Slew_Voltage_DC : 1;
+SIG_VALTYPE_ 309 GC_Update_Phase : 1;
+SIG_VALTYPE_ 307 GC_Slew_Voltage_AC : 1;
+SIG_VALTYPE_ 307 GC_Slew_Phase : 1;
+SIG_VALTYPE_ 306 GC_Slew_Frequency : 1;
+SIG_VALTYPE_ 306 GC_Ramp_Time : 1;
+SIG_VALTYPE_ 305 GC_Output_Disable_Phase : 1;
+SIG_VALTYPE_ 305 GC_CSC_Max_Gain : 1;
+SIG_VALTYPE_ 38 GM_ALL_VoltageLL_AC : 1;
+SIG_VALTYPE_ 38 GM_ALL_Voltage_THD : 1;
+SIG_VALTYPE_ 39 GM_ALL_Frequency : 1;
+SIG_VALTYPE_ 39 GM_ALL_Distortion_Factor : 1;
+SIG_VALTYPE_ 40 GM_ALL_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 40 GM_ALL_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 41 GM_ALL_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 41 GM_ALL_Peak_Current : 1;
+SIG_VALTYPE_ 42 GM_ALL_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 42 GM_ALL_Power_Factor : 1;
+SIG_VALTYPE_ 45 GM_A_Current_DC : 1;
+SIG_VALTYPE_ 45 GM_A_Current_ACDC : 1;
+SIG_VALTYPE_ 44 GM_A_Crest_Factor : 1;
+SIG_VALTYPE_ 44 GM_A_Active_Power : 1;
+SIG_VALTYPE_ 43 GM_ALL_Voltage_ACDC : 1;
+SIG_VALTYPE_ 37 GM_ALL_VoltageLL_DC : 1;
+SIG_VALTYPE_ 37 GM_ALL_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 36 GM_ALL_Displacement_Factor : 1;
+SIG_VALTYPE_ 36 GM_ALL_Current_THD : 1;
+SIG_VALTYPE_ 35 GM_ALL_Current_DC : 1;
+SIG_VALTYPE_ 35 GM_ALL_Current_ACDC : 1;
+SIG_VALTYPE_ 34 GM_ALL_Crest_Factor : 1;
+SIG_VALTYPE_ 34 GM_ALL_Active_Power : 1;
+SIG_VALTYPE_ 3 PM_A_Current_DC : 1;
+SIG_VALTYPE_ 3 PM_A_Current_ACDC : 1;
+SIG_VALTYPE_ 4 PM_A_Displacement_Factor : 1;
+SIG_VALTYPE_ 4 PM_A_Current_THD : 1;
+SIG_VALTYPE_ 5 PM_A_Frequency : 1;
+SIG_VALTYPE_ 5 PM_A_Distortion_Factor : 1;
+SIG_VALTYPE_ 6 PM_A_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 6 PM_A_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 7 PM_A_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 7 PM_A_Peak_Current : 1;
+SIG_VALTYPE_ 8 PM_A_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 8 PM_A_Power_Factor : 1;
+SIG_VALTYPE_ 9 PM_A_Voltage_ACDC : 1;
+SIG_VALTYPE_ 9 PM_A_Voltage_AC : 1;
+SIG_VALTYPE_ 2 PM_A_Crest_Factor : 1;
+SIG_VALTYPE_ 2 PM_A_Active_Power : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_VoltageLL_AC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_THD : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Power_Factor_Angle : 1;
+SIG_VALTYPE_ 1 PM_ALL_Power_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Peak_Current_Recoded : 1;
+SIG_VALTYPE_ 1 PM_ALL_Peak_Current : 1;
+SIG_VALTYPE_ 1 PM_ALL_KWH_Elapsed_Time : 1;
+SIG_VALTYPE_ 1 PM_ALL_Kilowatt_Hour : 1;
+SIG_VALTYPE_ 1 PM_ALL_Frequency : 1;
+SIG_VALTYPE_ 1 PM_ALL_Distortion_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Displacement_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_THD : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_DC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Current_ACDC : 1;
+SIG_VALTYPE_ 1 PM_ALL_Crest_Factor : 1;
+SIG_VALTYPE_ 1 PM_ALL_Active_Power : 1;
+
