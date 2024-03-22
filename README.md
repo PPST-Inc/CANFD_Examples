@@ -18,7 +18,8 @@ To run the Python CAN test program, you'll need the following:
 `pip install cantools==38.0.2`
 3. Connect one of the USB/CAN adapters to the unit and the other to the PC
 4. Interconnect both CAN adapters with a CAN BUS cable.
-5. Load the file "updatedcanfdtest.dbc" in the example folder. Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
-6. Set the **NODE NAME** to **PPS_First_1**
-7. Enable the CANFD interface by clicking on the swith
-8. Open a Windows Console in the example folder and run the example executing: `python.exe .\PCANTester.py`
+5. Load to the unit the file "01_FullTestCAN.dbc", located in the example folder.\
+   Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
+7. Set the **NODE NAME** to **PPS_First_1**
+8. Enable the CANFD interface by clicking on the swith
+9. Open a Windows Console in the example folder and run the example executing: `python.exe .\01_FullTestCAN.py`
