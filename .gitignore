@@ -1,4 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# VSCode settings
+.vscode
+
+# Python chache
 __pycache__/
 
-can_test_log.txt
+# Output files
+01_FullTestCAN/can_test_log.txt
