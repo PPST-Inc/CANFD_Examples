@@ -227,13 +227,13 @@ BO_ 10 Periodic_Measurements_10: 8 PPS_First_1
  SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
 
 BO_ 162 SCPI_READ_MESSAGE: 8 Client_PC
- SG_ SCPI_Read : 0|32@1+ (1,0) [0|0] ""  PPS_First_1
+ SG_ SCPI_Read : 0|16@1+ (1,0) [0|65535] ""  PPS_First_1
 
 BO_ 161 SCPI_INDEX_MESSAGE: 8 PPS_First_1
- SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|0] ""  Client_PC
+ SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  Client_PC
 
 BO_ 160 SCPI_WRITE_MESSAGE: 8 Client_PC
- SG_ SCPI_Write : 0|64@1+ (1,0) [0|0] ""  PPS_First_1
+ SG_ SCPI_Write : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  PPS_First_1
 
 BO_ 371 Protection_Setpoint_3: 8 Client_PC
  SG_ SPP_Peak_Voltage_Level : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1
@@ -531,7 +531,7 @@ BO_ 33 Get_messages_1: 8 PPS_First_1
  SG_ GM_ALL_Voltage_AC : 0|1@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Second_2,PPS_First_1,Client_PC
 
 BO_ 0 Confirmation_Message: 8 PPS_First_1
- SG_ ACK_Signal : 0|16@1+ (1,0) [0|15] ""  Client_PC
+ SG_ ACK_Signal : 0|32@1- (1,0) [-2147483648|2147483647] ""  Client_PC
 
 BO_ 3 Periodic_Measurements_3: 8 PPS_Second_2
  SG_ PM_A_Current_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC

@@ -1,5 +1,5 @@
 ######################################################################
-#  PCAN-Test 
+#  PCAN-Test
 #
 #
 #  ------------------------------------------------------------------
@@ -32,14 +32,14 @@ from struct import *
 
 from importlib.metadata import version
 if version('cantools') != '38.0.2':
-  raise Exception("Please, install cantools 38.0.2 ussing the command \'pip install cantools==38.0.2\'") 
+  raise Exception("Please, install cantools 38.0.2 ussing the command \'pip install cantools==38.0.2\'")
 
 ###*****************************************************************
 ### Can Database Import
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+FULLTESTCAN_DBC_PATH = os.path.join(SCRIPT_DIR,'01_FullTestCAN.dbc')
 
-db = cantools.database.load_file(os.path.join(__location__,'01_FullTestCAN.dbc'))
+db = cantools.database.load_file(FULLTESTCAN_DBC_PATH)
 
 ### Can Hardware setup
 testBaudrate = PCAN_BAUD_1M
@@ -55,7 +55,7 @@ tableSetPointsControl ={
     'SP_ALL_Voltage_AC': 6.32,
     'SP_ALL_Voltage_DC': 5.28,
     'SP_ALL_Phase': 0,
-    
+
 
     'SP_A_Current_Limit': 18.365,
     'SP_B_Current_Limit': 0.0,
@@ -124,13 +124,13 @@ tableProtections = {
 }
 
 ###*****************************************************************
-### PCANBasic Object 
+### PCANBasic Object
 m_objPCANBasic = PCANBasic()
 
 ###*****************************************************************
 ### Logger file configuration
 loggerFileName = 'can_test_log.txt'
-loggerFileNamePath = os.path.join(__location__,loggerFileName)
+loggerFileNamePath = os.path.join(SCRIPT_DIR,loggerFileName)
 logging.FileHandler(loggerFileNamePath,"w")
 
 logging.basicConfig(
@@ -342,7 +342,6 @@ class FullTestCAN(object):
 
     def StageTest4(self):
 
-        self.CommandTest("\n")# clean buffer
         commandList = [
             "MEASure:ALL1?\n",
             "MEASure:FREQ1?\n",
@@ -373,10 +372,10 @@ class FullTestCAN(object):
     def StageTest6(self):
         result = self.RequestGetMessages('Fault_Message_Fault',1)
         if result != 0 : return result
-        for signame,valFlag in self.canMesageReceived.items(): 
+        for signame,valFlag in self.canMesageReceived.items():
             faultFlag = valFlag
         hexVec= []
-        if faultFlag == 1: 
+        if faultFlag == 1:
             logging.info('There is a Fault ')
             for indexVal in range(5):
                 self.canMsgWrt.DATA[0]=indexVal
@@ -403,7 +402,7 @@ class FullTestCAN(object):
             if error !=0 :  return error
         return error
 
-    def RequestGetMessages(self, name, nMessages): 
+    def RequestGetMessages(self, name, nMessages):
         try:
             firstMessage = db.get_message_by_name(name)
         except KeyError:
@@ -411,7 +410,7 @@ class FullTestCAN(object):
             return 3
         self.processMessageFunction = self.ProcessRequestAnswer
         self.InitializeTimer()
-        
+
         for i in range(nMessages):
             a_message = db.get_message_by_frame_id(firstMessage.frame_id+i)
             self.canMsgWrt.ID  = a_message.frame_id
@@ -447,7 +446,7 @@ class FullTestCAN(object):
                     show_value = value
 
                 logging.info(f'{a_message.name} {deltaTime:0.0f} ms - {signame}: {show_value}' )
-    
+
         self.StopTimer()
         return testStage2Result
 
@@ -458,7 +457,7 @@ class FullTestCAN(object):
         except KeyError:
             logging.info(f'Failed getting messages from data base')
             return 3
-        
+
         self.processMessageFunction = self.ProcessSetpointAnswer
         self.InitializeTimer()
         for i in range(nMessages):
@@ -648,8 +647,8 @@ class FullTestCAN(object):
                 break
 
     def InitializeCan(self):
-        m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4, 
-                                    'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8, 
+        m_NonPnPHandles = {'PCAN_ISABUS1':PCAN_ISABUS1, 'PCAN_ISABUS2':PCAN_ISABUS2, 'PCAN_ISABUS3':PCAN_ISABUS3, 'PCAN_ISABUS4':PCAN_ISABUS4,
+                                    'PCAN_ISABUS5':PCAN_ISABUS5, 'PCAN_ISABUS6':PCAN_ISABUS6, 'PCAN_ISABUS7':PCAN_ISABUS7, 'PCAN_ISABUS8':PCAN_ISABUS8,
                                     'PCAN_DNGBUS1':PCAN_DNGBUS1}
 
         m_BAUDRATES = {'1 MBit/sec':PCAN_BAUD_1M, '800 kBit/sec':PCAN_BAUD_800K, '500 kBit/sec':PCAN_BAUD_500K, '250 kBit/sec':PCAN_BAUD_250K,
@@ -660,17 +659,17 @@ class FullTestCAN(object):
         m_HWTYPES = {'ISA-82C200':PCAN_TYPE_ISA, 'ISA-SJA1000':PCAN_TYPE_ISA_SJA, 'ISA-PHYTEC':PCAN_TYPE_ISA_PHYTEC, 'DNG-82C200':PCAN_TYPE_DNG,
                             'DNG-82C200 EPP':PCAN_TYPE_DNG_EPP, 'DNG-SJA1000':PCAN_TYPE_DNG_SJA, 'DNG-SJA1000 EPP':PCAN_TYPE_DNG_SJA_EPP}
 
-        m_IOPORTS = {'0100':0x100, '0120':0x120, '0140':0x140, '0200':0x200, '0220':0x220, '0240':0x240, '0260':0x260, '0278':0x278, 
+        m_IOPORTS = {'0100':0x100, '0120':0x120, '0140':0x140, '0200':0x200, '0220':0x220, '0240':0x240, '0260':0x260, '0278':0x278,
                             '0280':0x280, '02A0':0x2A0, '02C0':0x2C0, '02E0':0x2E0, '02E8':0x2E8, '02F8':0x2F8, '0300':0x300, '0320':0x320,
                             '0340':0x340, '0360':0x360, '0378':0x378, '0380':0x380, '03BC':0x3BC, '03E0':0x3E0, '03E8':0x3E8, '03F8':0x3F8}
 
         m_INTERRUPTS = {'3':3, '4':4, '5':5, '7':7, '9':9, '10':10, '11':11, '12':12, '15':15}
-    
+
         baudrate = testBaudrate
         hwtype = testHardwareType
         ioport = 0x100
         interrupt = 3
-        
+
         result =  m_objPCANBasic.GetValue(PCAN_NONEBUS, PCAN_ATTACHED_CHANNELS)
 
         if  (result[0] == PCAN_ERROR_OK):
@@ -748,10 +747,10 @@ class FullTestCAN(object):
             except KeyError:
                 return
 
-    def ProcessMessage(self, *args):        
-        with self._lock:       
+    def ProcessMessage(self, *args):
+        with self._lock:
             theMsg = args[0][0]
-            itsTimeStamp = args[0][1]    
+            itsTimeStamp = args[0][1]
 
             newMsg = TPCANMsgFD()
             newMsg.ID = theMsg.ID
