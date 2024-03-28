@@ -1236,14 +1236,14 @@ VAL_ 3221225472 SC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outpu
 VAL_ 3221225472 SC_Range 1 "High range" 0 "Low range" ;
 VAL_ 3221225472 SC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 SC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
-VAL_ 3221225472 SC_Output_Impedance_Mode 1 "RMS mode" 0 "Real mode" ;
+VAL_ 3221225472 SC_Output_Impedance_Mode 1 "RMS" 0 "Real time" ;
 VAL_ 3221225472 GC_Mode 2 "AC+DC mode" 1 "DC mode" 0 "AC mode" ;
 VAL_ 3221225472 GC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outputs" 3 "Three" 2 "Split" 1 "Single" ;
 VAL_ 3221225472 GC_Range 1 "High range" 0 "Low range" ;
 VAL_ 3221225472 GC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
-VAL_ 3221225472 GC_Output_Impedance_Mode 1 "RMS mode" 0 "Real mode" ;
+VAL_ 3221225472 GC_Output_Impedance_Mode 1 "RMS" 0 "Real time" ;
 SIG_VALTYPE_ 3221225472 PM_ALL_Frequency : 1;
 SIG_VALTYPE_ 3221225472 PM_ALL_Voltage_AC : 1;
 SIG_VALTYPE_ 3221225472 PM_ALL_Voltage_ACDC : 1;
