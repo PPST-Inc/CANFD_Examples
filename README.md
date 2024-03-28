@@ -10,7 +10,7 @@ To run the Python CAN test program, you'll need the following:
 - A CAN-DB database file
 - CAN USB interface and necessary drivers
 
-### Steps to run CAN Test Program
+### Steps to run CAN Exampoles
 1. Install Python for Windows. Make sure to check "Add python.exe to PATH":
    ![imagen](https://github.com/PPST-Inc/CANFD_Examples/assets/20909874/947cdb7b-8d3c-4bd8-a477-be91968bdd63)
 
@@ -19,8 +19,15 @@ To run the Python CAN test program, you'll need the following:
 3. Download and install the PEAK Device Driver for Windows from www.peak-system.com.
 4. Connect one of the USB/CAN adapters to the unit and the other to the PC.
 5. Interconnect both CAN adapters with a CAN BUS cable.
-6. Load to the unit the file "01_FullTestCAN.dbc", located in the example folder.\
+#### 01_FullTestCAN:
+1. Load the file "01_FullTestCAN.dbc" to the Unit, located in the example folder.\
    Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
-7. Set the **NODE NAME** to **PPS_First_1**
-8. Enable the CANFD interface by clicking on the swith
-9. Open a Windows Console in the example folder and run the example executing: `python.exe .\01_FullTestCAN.py`
+2. Set the **NODE NAME** to: **PPS_First_1**
+3. Enable the CANFD interface by clicking on the switch.
+4. Open a Windows Console in the example folder `01_FullTestCAN` and run the example executing: `python.exe .\01_FullTestCAN.py`.
+#### 02_SCPI_WriteAndRead:
+1. Load the file "02_SCPI_WriteAndRead.dbc" to the Unit.\
+   Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
+2. Set the **NODE NAME** to: **PPS_Device**
+3. Enable the CANFD interface by clicking on the switch.
+4. Open a Windows Console in the example folder `02_SCPI_WriteAndRead` and run the example executing: `python.exe .\02_SCPI_WriteAndRead.py`.
