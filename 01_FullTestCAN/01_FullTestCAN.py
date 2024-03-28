@@ -518,10 +518,10 @@ class FullTestCAN(object):
         return 1
 
     def ReadCommand(self):
-        self.readIndexMessageID = db.get_message_by_name('SCPI_INDEX_MESSAGE').frame_id
-        self.readIndexMessageSignal = db.get_message_by_name('SCPI_INDEX_MESSAGE').signals[0]
+        self.readIndexMessageID = db.get_message_by_name('SCPI_Read_Response_Message').frame_id
+        self.readIndexMessageSignal = db.get_message_by_name('SCPI_Read_Response_Message').get_signal_by_name('SCPI_Read_Response')
         try:
-            readMessage = db.get_message_by_name('SCPI_READ_MESSAGE')
+            readMessage = db.get_message_by_name('SCPI_Read_Request_Message')
         except KeyError:
             logging.info(f'Failed getting messages from data base')
             return 3
@@ -573,7 +573,7 @@ class FullTestCAN(object):
 
     def WriteCommand(self,commandStr):
         try:
-            writeMessage = db.get_message_by_name('SCPI_WRITE_MESSAGE')
+            writeMessage = db.get_message_by_name('SCPI_Write_Message')
         except KeyError:
             logging.info(f'Failed getting messages from data base')
             return 3

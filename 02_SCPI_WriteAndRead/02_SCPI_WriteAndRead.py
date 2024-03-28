@@ -269,7 +269,7 @@ class SCPI_WriteAndRead():
         return res
 
     def WriteSCPICommand(self, scpi_cmd):
-        """Write a SCPI command using the Message 'SCPI_WRITE_MESSAGE'
+        """Write a SCPI command using the Message 'SCPI_Write_Message'
 
         To send the SCPI command this function convert the string in a list of
         bytearray, each item with size of the Signal 'SCPI_Write'. Sends all
@@ -283,7 +283,7 @@ class SCPI_WriteAndRead():
         if not scpi_cmd.endswith("\n"):
             scpi_cmd += "\n"
 
-        message_write = self.database.get_message_by_name('SCPI_WRITE_MESSAGE')
+        message_write = self.database.get_message_by_name('SCPI_Write_Message')
         signal = message_write.get_signal_by_name('SCPI_Write')
         length = signal.length // 8
 
@@ -379,26 +379,26 @@ class SCPI_WriteAndRead():
         return stsResult, ack_status
 
     def ReadSCPIResponse(self):
-        """Read the SCPI command response using the Message 'SCPI_INDEX_MESSAGE'
+        """Read the SCPI command response using the Message 'SCPI_Read_Response_Message'
 
         To Read the SCPI command response we have to request a series of chunk
-        sending the message 'SCPI_READ_MESSAGE' with a index value on the Signal
-        'SCPI_Read', and read the response chunk for each request sent.
+        sending the message 'SCPI_Read_Request_Message' with a index value on the Signal
+        'SCPI_Read_Request', and read the response chunk for each request sent.
 
         If the response length is 20 characters and response chunk is 8 bytes
         we need to request three messages. Starting from the first 8 characters
-        sending 'index = 0', read the response chunk sent in message 'SCPI_INDEX_MESSAGE'
+        sending 'index = 0', read the response chunk sent in message 'SCPI_Read_Response_Message'
         and then request the next 8 characters by sending 'index = 8', and so on
         until we get the end of the response.
 
         Returns:
           A tuple of TPCANStatus error code, ACK_Signal value and a String
         """
-        message_scpi_index = self.database.get_message_by_name('SCPI_INDEX_MESSAGE')
-        signal_scpi_index = message_scpi_index.get_signal_by_name('SCPI_Read_Index')
+        message_scpi_index = self.database.get_message_by_name('SCPI_Read_Response_Message')
+        signal_scpi_index = message_scpi_index.get_signal_by_name('SCPI_Read_Response')
         length = signal_scpi_index.length // 8
 
-        message_scpi_read = self.database.get_message_by_name('SCPI_READ_MESSAGE')
+        message_scpi_read = self.database.get_message_by_name('SCPI_Read_Request_Message')
 
         msgCanMessage = TPCANMsg()
         msgCanMessage.ID = message_scpi_read.frame_id
@@ -413,7 +413,7 @@ class SCPI_WriteAndRead():
 
         while not termination_found and index_to_read < MAX_RESPONSE_SIZE:
 
-            data = message_scpi_read.encode({'SCPI_Read': index_to_read})
+            data = message_scpi_read.encode({'SCPI_Read_Request': index_to_read})
             for i in range(len(data)):
                 msgCanMessage.DATA[i] = data[i]
 
@@ -442,16 +442,16 @@ class SCPI_WriteAndRead():
         return stsResult,ack_value,scpi_response_string
 
     def ReadSCPIMessage(self):
-        """Read a chunk response from the Message 'SCPI_INDEX_MESSAGE'
+        """Read a chunk response from the Message 'SCPI_Read_Response_Message'
 
-        Expect to read the message 'SCPI_INDEX_MESSAGE' with the response chunk,
+        Expect to read the message 'SCPI_Read_Response_Message' with the response chunk,
         if an error occurs requesting the response we will receive a message of
         'Confirmation_Message' with 'ACK_Signal' values distinct of '0'
 
         Returns:
           A tuple of TPCANStatus error code, ACK_Signal value and a String
         """
-        message_scpi_index = self.database.get_message_by_name('SCPI_INDEX_MESSAGE')
+        message_scpi_index = self.database.get_message_by_name('SCPI_Read_Response_Message')
         message_confirmation = self.database.get_message_by_name('Confirmation_Message')
 
         read_string = ""

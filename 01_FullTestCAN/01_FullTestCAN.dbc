@@ -226,13 +226,13 @@ BO_ 10 Periodic_Measurements_10: 8 PPS_First_1
  SG_ Multiplex_Periodic_Test_2 M : 32|8@1- (1,0) [-128|127] ""  Client_PC
  SG_ PM_B_Active_Power m0 : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW"  Client_PC
 
-BO_ 162 SCPI_READ_MESSAGE: 8 Client_PC
- SG_ SCPI_Read : 0|16@1+ (1,0) [0|65535] ""  PPS_First_1
+BO_ 162 SCPI_Read_Request_Message: 8 Client_PC
+ SG_ SCPI_Read_Request : 0|16@1+ (1,0) [0|65535] ""  PPS_First_1
 
-BO_ 161 SCPI_INDEX_MESSAGE: 8 PPS_First_1
- SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  Client_PC
+BO_ 161 SCPI_Read_Response_Message: 8 PPS_First_1
+ SG_ SCPI_Read_Response : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  Client_PC
 
-BO_ 160 SCPI_WRITE_MESSAGE: 8 Client_PC
+BO_ 160 SCPI_Write_Message: 8 Client_PC
  SG_ SCPI_Write : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  PPS_First_1
 
 BO_ 371 Protection_Setpoint_3: 8 Client_PC
@@ -987,9 +987,9 @@ SCPI equivalent:
 CM_ SG_ 10 PM_B_Active_Power "This signal periodically returns the measured true power for phase B in kW.
 SCPI equivalent:
   MEASure:POWer2?";
-CM_ SG_ 162 SCPI_Read "SCPI Read";
-CM_ SG_ 161 SCPI_Read_Index "SCPI Read Index";
-CM_ SG_ 160 SCPI_Write "SCPI Write";
+CM_ SG_ 162 SCPI_Read_Request "This signal request a string chunk of the SCPI response, sending a value as index for the read buffer.";
+CM_ SG_ 161 SCPI_Read_Response "This signal response a string chunk of the SCPI response if there are any.";
+CM_ SG_ 160 SCPI_Write "This signal can be used to write a SCPI command string.";
 CM_ SG_ 371 SPP_Peak_Voltage_Level "This signal sets the programmable peak voltage protection level.
 SCPI equivalent:
   SOURce:PROTect:PEAK:VOLTage:LEVel";

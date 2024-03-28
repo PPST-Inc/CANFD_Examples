@@ -324,14 +324,14 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ GC_Slew_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms" Vector__XXX
  SG_ GC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms" Vector__XXX
 
-BO_ 259 SCPI_WRITE_MESSAGE: 8 Client_PC
+BO_ 257 SCPI_Write_Message: 8 Client_PC
  SG_ SCPI_Write : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  PPS_Device
 
-BO_ 258 SCPI_READ_MESSAGE: 4 Client_PC
- SG_ SCPI_Read : 0|16@1+ (1,0) [0|65535] ""  PPS_Device
+BO_ 258 SCPI_Read_Request_Message: 4 Client_PC
+ SG_ SCPI_Read_Request : 0|16@1+ (1,0) [0|65535] ""  PPS_Device
 
-BO_ 257 SCPI_INDEX_MESSAGE: 8 PPS_Device
- SG_ SCPI_Read_Index : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  Client_PC
+BO_ 259 SCPI_Read_Response_Message: 8 PPS_Device
+ SG_ SCPI_Read_Response : 0|64@1+ (1,0) [0|1.84467440737096E+019] ""  Client_PC
 
 BO_ 256 Confirmation_Message: 4 PPS_Device
  SG_ ACK_Signal : 0|32@1- (1,0) [-2147483648|2147483647] ""  Client_PC
@@ -1183,9 +1183,9 @@ SCPI equivalent:
 CM_ SG_ 3221225472 GC_Slew_Voltage_DC "This signal queries the Voltage DC Slew Rate setting value.
 SCPI equivalent:
   SOURce:VOLTage:DC:SLEW?";
-CM_ SG_ 259 SCPI_Write "SCPI Write";
-CM_ SG_ 258 SCPI_Read "SCPI Read";
-CM_ SG_ 257 SCPI_Read_Index "SCPI Read Index";
+CM_ SG_ 257 SCPI_Write "This signal can be used to write a SCPI command string.";
+CM_ SG_ 258 SCPI_Read_Request "This signal request a string chunk of the SCPI response, sending a value as index for the read buffer.";
+CM_ SG_ 259 SCPI_Read_Response "This signal response a string chunk of the SCPI response if there are any.";
 CM_ SG_ 256 ACK_Signal "Acknowledge signal";
 BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
 BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
