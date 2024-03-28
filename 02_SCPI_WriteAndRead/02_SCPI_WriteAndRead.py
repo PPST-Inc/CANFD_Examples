@@ -138,7 +138,7 @@ class SCPI_WriteAndRead():
 
     def ShowCurrentConfiguration(self):
         """
-        Shows/prints the configured paramters
+        Shows/prints the configured parameters
         """
         print("Parameter values used")
         print("----------------------")
@@ -182,7 +182,7 @@ class SCPI_WriteAndRead():
 
     def FormatChannelName(self, handle, isFD=False):
         """
-        Gets the formated text for a PCAN-Basic channel handle
+        Gets the formatted text for a PCAN-Basic channel handle
 
         Parameters:
             handle = PCAN-Basic Handle to format
