@@ -1,0 +1,14 @@
+Parameter values used
+----------------------
+* PCANHandle: PCAN_USB 1 (51h)
+* IsFD: False
+* Bitrate: 1 MBit/sec
+
+Successfully initialized.
+Press <Enter> to start...
+Write SCPI: "SYSTem:COMMunicate:LAN:VISA?"
+Response read: "TCPIP::AFX-15858768672::INSTR"
+Write SCPI: "SOURce:VOLTage:AC 10"
+Write SCPI: "*STB?"
+Response read: "0"
+Press <Enter> to quit...
