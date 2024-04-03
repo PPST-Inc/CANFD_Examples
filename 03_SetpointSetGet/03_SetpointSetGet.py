@@ -87,7 +87,7 @@ class SetpointSetGet():
         self.getInput("Press <Enter> to start...")
 
         print("")
-        sendResult = self.SendSetpointVoltageAC(12.34)
+        sendResult = self.SendSetpointFrequency(60)
         if sendResult[0] != PCAN_ERROR_OK or sendResult[1] != 0:
             print("Error sending Setpoint message.")
             if sendResult[0] != PCAN_ERROR_OK:
@@ -97,7 +97,24 @@ class SetpointSetGet():
             return
 
         print("")
-        reqResult = self.RequestMessage('GP_ALL_Voltage_AC_Message')
+        sendResult = self.SendSetpointVoltage(21.34, 5.78)
+        if sendResult[0] != PCAN_ERROR_OK or sendResult[1] != 0:
+            print("Error sending Setpoint message.")
+            if sendResult[0] != PCAN_ERROR_OK:
+                self.ShowStatus(sendResult[0])
+            elif sendResult[1] != 0:
+                print("Error ACK value: " + str(sendResult[1]))
+            return
+
+        print("")
+        reqResult = self.RequestMessage('GP_ALL_Frequency_Message')
+        if reqResult != PCAN_ERROR_OK:
+            print("Error requesting Setpoint message.")
+            self.ShowStatus(reqResult)
+            return
+
+        print("")
+        reqResult = self.RequestMessage('GP_ALL_Voltage_Message')
         if reqResult != PCAN_ERROR_OK:
             print("Error requesting Setpoint message.")
             self.ShowStatus(reqResult)
@@ -249,8 +266,52 @@ class SetpointSetGet():
             res = default
         return res
 
-    def SendSetpointVoltageAC(self, value):
-        """Send a message to set the Setpoint "Voltage AC" with value `value`
+    def SendSetpointFrequency(self, freq):
+        """Send a message to set the Setpoint "Frequency" with value `value`
+
+        After sent the message we wait for the 'Confirmation_Message'
+
+        Returns:
+          A tuple of TPCANStatus error code and ACK_Signal value
+        """
+
+        try:
+            # Get from the database the message 'SP_ALL_Frequency_Message' to send
+            # the signal 'SP_ALL_Voltage_AC'
+            message = self.database.get_message_by_name('SP_ALL_Frequency_Message')
+        except:
+            print("Error trying to get \'SP_ALL_Frequency_Message\'")
+            return
+
+        try:
+            data = message.encode({'SP_ALL_Frequency': freq})
+        except:
+            print("Error encoding message \'SP_ALL_Frequency\'")
+            return
+
+        print("Send message:")
+        print("  " + message.name)
+        print("  signal: " + message.signals[0].name + ": " + str(freq))
+
+        msgCanMessage = TPCANMsg()
+        msgCanMessage.ID = message.frame_id
+        msgCanMessage.LEN = message.length
+        msgCanMessage.MSGTYPE = PCAN_MESSAGE_STANDARD.value
+        for i in range(len(data)):
+            msgCanMessage.DATA[i] = data[i]
+
+        ack_status = -1
+        # Send a message to set the Frequency setpoint
+        stsResult = self.m_objPCANBasic.Write(self.PcanHandle, msgCanMessage)
+        ## Checks if the message was sent
+        if (stsResult != PCAN_ERROR_OK):
+            return stsResult, ack_status
+
+        return self.ReadAckMessage()
+
+    def SendSetpointVoltage(self, volt_ac, volt_dc):
+        """Send a message to set the Setpoint "Voltage AC" with value `volt_ac`
+        and the Setpoint "Voltage DC" with value `volt_dc`
 
         After sent the message we wait for the 'Confirmation_Message'
 
@@ -261,20 +322,22 @@ class SetpointSetGet():
         try:
             # Get from the database the message 'SP_ALL_Voltage_AC_Message' to send
             # the signal 'SP_ALL_Voltage_AC'
-            message = self.database.get_message_by_name('SP_ALL_Voltage_AC_Message')
+            message = self.database.get_message_by_name('SP_ALL_Voltage_Message')
         except:
-            print("Error trying to get \'SP_ALL_Voltage_AC_Message\'")
+            print("Error trying to get \'SP_ALL_Voltage_Message\'")
             return
 
         try:
-            data = message.encode({'SP_ALL_Voltage_AC': value})
+            data = message.encode({'SP_ALL_Voltage_AC': volt_ac,
+                                   'SP_ALL_Voltage_DC': volt_dc})
         except:
             print("Error encoding message \'SP_ALL_Voltage_AC_Message\'")
             return
 
         print("Send message:")
         print("  " + message.name)
-        print("  signal: " + message.signals[0].name + ": " + str(value))
+        print("  signal: " + message.signals[0].name + ": " + str(volt_ac))
+        print("  signal: " + message.signals[0].name + ": " + str(volt_dc))
 
         msgCanMessage = TPCANMsg()
         msgCanMessage.ID = message.frame_id

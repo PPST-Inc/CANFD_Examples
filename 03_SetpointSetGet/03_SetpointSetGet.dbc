@@ -212,9 +212,7 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ GM_C_Kilowatt_Hour : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh" Vector__XXX
  SG_ GM_C_KWH_Elapsed_Time : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "s" Vector__XXX
  SG_ SP_ALL_Enable_Output : 0|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ SP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
  SG_ SP_ALL_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg" Vector__XXX
- SG_ SP_ALL_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
  SG_ SP_ALL_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
  SG_ SP_ALL_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA" Vector__XXX
  SG_ SP_ALL_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW" Vector__XXX
@@ -240,9 +238,7 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ SP_C_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA" Vector__XXX
  SG_ SP_C_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW" Vector__XXX
  SG_ GP_ALL_Enable_Output : 0|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz" Vector__XXX
  SG_ GP_ALL_Phase : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Deg" Vector__XXX
- SG_ GP_ALL_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V" Vector__XXX
  SG_ GP_ALL_Current_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
  SG_ GP_ALL_KVA_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kVA" Vector__XXX
  SG_ GP_ALL_Power_Limit : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "kW" Vector__XXX
@@ -323,19 +319,28 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ GC_Slew_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms" Vector__XXX
  SG_ GC_Slew_Voltage_DC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V/ms" Vector__XXX
 
+BO_ 275 GP_ALL_Frequency_Message: 4 Client_PC
+ SG_ GP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Device,Client_PC
+
+BO_ 274 SP_ALL_Frequency_Message: 4 Client_PC
+ SG_ SP_ALL_Frequency : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "Hz"  PPS_Device
+
 BO_ 288 GM_ALL_Voltage_Message: 8 PPS_Device
  SG_ GM_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Device,Client_PC
  SG_ GM_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Device,Client_PC
 
-BO_ 273 GP_ALL_Voltage_AC_Message: 8 PPS_Device
+BO_ 273 GP_ALL_Voltage_Message: 8 PPS_Device
+ SG_ GP_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  Client_PC,PPS_Device
  SG_ GP_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Device,Client_PC
 
-BO_ 272 SP_ALL_Voltage_AC_Message: 8 Client_PC
+BO_ 272 SP_ALL_Voltage_Message: 8 Client_PC
+ SG_ SP_ALL_Voltage_DC : 32|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Device
  SG_ SP_ALL_Voltage_AC : 0|32@1- (1,0) [-3.4E+038|3.4E+038] "V"  PPS_Device
 
 BO_ 256 Confirmation_Message: 4 PPS_Device
  SG_ ACK_Signal : 0|32@1- (1,0) [-2147483648|2147483647] ""  Client_PC
 
+BO_TX_BU_ 275 : PPS_Device,Client_PC;
 BO_TX_BU_ 288 : Client_PC,PPS_Device;
 BO_TX_BU_ 273 : Client_PC,PPS_Device;
 BO_TX_BU_ 272 : PPS_Device,Client_PC;
@@ -847,15 +852,9 @@ When enabled, all output relays are closed.
 When disabled, all output relays are open.
 SCPI equivalent:
   OUTPut:STATe";
-CM_ SG_ 3221225472 SP_ALL_Frequency "This signal sets the output frequency for all phases.
-SCPI equivalent:
-  SOURce:FREQuency";
 CM_ SG_ 3221225472 SP_ALL_Phase "This signal sets the phase angle for all phases.
 SCPI equivalent:
   SOURce:PHASe";
-CM_ SG_ 3221225472 SP_ALL_Voltage_DC "This signal sets DC voltage for all phases.
-SCPI equivalent:
-  SOURce:VOLTage:DC";
 CM_ SG_ 3221225472 SP_ALL_Current_Limit "This signal sets the programmable current level for all phases.
 SCPI equivalent:
   SOURce:CURRent:LIMit";
@@ -931,15 +930,9 @@ SCPI equivalent:
 CM_ SG_ 3221225472 GP_ALL_Enable_Output "This signal returns power output state.
 SCPI equivalent:
   OUTPut:STATe?";
-CM_ SG_ 3221225472 GP_ALL_Frequency "This signal gets the output frequency sets for all phase.
-SCPI equivalent:
-  SOURce:FREQuency?";
 CM_ SG_ 3221225472 GP_ALL_Phase "This signal gets the phase angle for all phase.
 SCPI equivalent:
   SOURce:PHASe?";
-CM_ SG_ 3221225472 GP_ALL_Voltage_DC "This signal returns the DC voltage setpoint for all phase.
-SCPI equivalent:
-  SOURce:VOLTage:DC?";
 CM_ SG_ 3221225472 GP_ALL_Current_Limit "This signal gets the programmable current level for all phase.
 SCPI equivalent:
   SOURce:CURRent:LIMit?";
@@ -1177,15 +1170,27 @@ SCPI equivalent:
 CM_ SG_ 3221225472 GC_Slew_Voltage_DC "This signal queries the Voltage DC Slew Rate setting value.
 SCPI equivalent:
   SOURce:VOLTage:DC:SLEW?";
+CM_ SG_ 275 GP_ALL_Frequency "This signal gets the output frequency sets for all phase.
+SCPI equivalent:
+  SOURce:FREQuency?";
+CM_ SG_ 274 SP_ALL_Frequency "This signal sets the output frequency for all phases.
+SCPI equivalent:
+  SOURce:FREQuency";
 CM_ SG_ 288 GM_ALL_Voltage_DC "This signal returns the measured DC voltage.
 SCPI equivalent:
   MEASure:VOLTage:DC?";
 CM_ SG_ 288 GM_ALL_Voltage_AC "This signal returns the measured RMS voltage.
 SCPI equivalent:
   MEASure:VOLTage:AC?";
+CM_ SG_ 273 GP_ALL_Voltage_DC "This signal returns the DC voltage setpoint for all phase.
+SCPI equivalent:
+  SOURce:VOLTage:DC?";
 CM_ SG_ 273 GP_ALL_Voltage_AC "This signal returns the AC voltage setpoint for all phase.
 SCPI equivalent:
   SOURce:VOLTage:AC?";
+CM_ SG_ 272 SP_ALL_Voltage_DC "This signal sets DC voltage for all phases.
+SCPI equivalent:
+  SOURce:VOLTage:DC";
 CM_ SG_ 272 SP_ALL_Voltage_AC "This signal sets AC voltage for all phases.
 SCPI equivalent:
   SOURce:VOLTage:AC";
@@ -1413,9 +1418,7 @@ SIG_VALTYPE_ 3221225472 GM_C_Displacement_Factor : 1;
 SIG_VALTYPE_ 3221225472 GM_C_Distortion_Factor : 1;
 SIG_VALTYPE_ 3221225472 GM_C_Kilowatt_Hour : 1;
 SIG_VALTYPE_ 3221225472 GM_C_KWH_Elapsed_Time : 1;
-SIG_VALTYPE_ 3221225472 SP_ALL_Frequency : 1;
 SIG_VALTYPE_ 3221225472 SP_ALL_Phase : 1;
-SIG_VALTYPE_ 3221225472 SP_ALL_Voltage_DC : 1;
 SIG_VALTYPE_ 3221225472 SP_ALL_Current_Limit : 1;
 SIG_VALTYPE_ 3221225472 SP_ALL_KVA_Limit : 1;
 SIG_VALTYPE_ 3221225472 SP_ALL_Power_Limit : 1;
@@ -1440,9 +1443,7 @@ SIG_VALTYPE_ 3221225472 SP_C_Voltage_DC : 1;
 SIG_VALTYPE_ 3221225472 SP_C_Current_Limit : 1;
 SIG_VALTYPE_ 3221225472 SP_C_KVA_Limit : 1;
 SIG_VALTYPE_ 3221225472 SP_C_Power_Limit : 1;
-SIG_VALTYPE_ 3221225472 GP_ALL_Frequency : 1;
 SIG_VALTYPE_ 3221225472 GP_ALL_Phase : 1;
-SIG_VALTYPE_ 3221225472 GP_ALL_Voltage_DC : 1;
 SIG_VALTYPE_ 3221225472 GP_ALL_Current_Limit : 1;
 SIG_VALTYPE_ 3221225472 GP_ALL_KVA_Limit : 1;
 SIG_VALTYPE_ 3221225472 GP_ALL_Power_Limit : 1;
@@ -1499,8 +1500,12 @@ SIG_VALTYPE_ 3221225472 GC_Slew_Frequency : 1;
 SIG_VALTYPE_ 3221225472 GC_Slew_Phase : 1;
 SIG_VALTYPE_ 3221225472 GC_Slew_Voltage_AC : 1;
 SIG_VALTYPE_ 3221225472 GC_Slew_Voltage_DC : 1;
+SIG_VALTYPE_ 275 GP_ALL_Frequency : 1;
+SIG_VALTYPE_ 274 SP_ALL_Frequency : 1;
 SIG_VALTYPE_ 288 GM_ALL_Voltage_DC : 1;
 SIG_VALTYPE_ 288 GM_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 273 GP_ALL_Voltage_DC : 1;
 SIG_VALTYPE_ 273 GP_ALL_Voltage_AC : 1;
+SIG_VALTYPE_ 272 SP_ALL_Voltage_DC : 1;
 SIG_VALTYPE_ 272 SP_ALL_Voltage_AC : 1;
 
