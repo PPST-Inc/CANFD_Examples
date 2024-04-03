@@ -475,11 +475,8 @@ class SCPI_WriteAndRead():
             if stsResult == PCAN_ERROR_OK:
                 msgRead = result[1]
                 if msgRead.ID == message_scpi_index.frame_id:
-                    data = bytearray(msgRead.LEN)
-                    for i in range(msgRead.LEN):
-                        data[i] = msgRead.DATA[i]
-
-                    read_string += data.decode()
+                    # Decode the bytes as String and exit
+                    read_string = str(msgRead.DATA, encoding='utf-8')
                     break
                 elif msgRead.ID == message_confirmation.frame_id:
                     decoded_message = message_confirmation.decode(msgRead.DATA)
