@@ -1,0 +1,35 @@
+Parameter values used
+----------------------
+* PCANHandle: PCAN_USB 1 (51h)
+* IsFD: False
+* Bitrate: 1 MBit/sec
+
+Successfully initialized.
+Press <Enter> to start...
+
+Send message:
+  SP_ALL_Frequency_Message
+  signal: SP_ALL_Frequency: 60
+
+Send message:
+  SP_ALL_Voltage_Message
+  signal: SP_ALL_Voltage_AC: 21.34
+  signal: SP_ALL_Voltage_AC: 5.78
+
+Request message "GP_ALL_Frequency_Message"
+Response message:
+  GP_ALL_Frequency_Message
+  signal: GP_ALL_Frequency: 60.0
+
+Request message "GP_ALL_Voltage_Message"
+Response message:
+  GP_ALL_Voltage_Message
+  signal: GP_ALL_Voltage_AC: 21.34000015258789
+  signal: GP_ALL_Voltage_DC: 5.78000020980835
+
+Request message "GM_ALL_Voltage_Message"
+Response message:
+  GM_ALL_Voltage_Message
+  signal: GM_ALL_Voltage_AC: 21.400325775146484
+  signal: GM_ALL_Voltage_DC: 5.584449768066406
+Press <Enter> to quit...
