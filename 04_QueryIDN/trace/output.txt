@@ -1,0 +1,18 @@
+Parameter values used
+----------------------
+* PCANHandle: PCAN_USB 1 (51h)
+* IsFD: False
+* Bitrate: 1 MBit/sec
+
+Successfully initialized.
+Press <Enter> to start...
+Write SCPI: "*IDN?"
+Response read: "PPSC,3150AFX-2ACG,13315858768672,4.7.23"
+
+Send message:
+  Firmware_Version_Message
+  signal: Firmware_Version:
+Response message:
+  Firmware_Version_Message
+  signal: Firmware_Version: 4.7.23
+Press <Enter> to quit...
