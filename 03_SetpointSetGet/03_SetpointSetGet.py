@@ -13,7 +13,7 @@ if version('cantools') != '38.0.2':
   raise Exception("Please, install cantools 38.0.2 using the command \'pip install cantools==38.0.2\'")
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
-SCPI_WRITEANDREAD_DBC_PATH = os.path.join(SCRIPT_DIR,'03_SetpointSetGet.dbc')
+SETPOINT_SETGET_DBC_PATH = os.path.join(SCRIPT_DIR,'03_SetpointSetGet.dbc')
 
 class SetpointSetGet():
 
@@ -76,7 +76,7 @@ class SetpointSetGet():
 
         ## Load the CAN database
         try:
-            self.database = cantools.db.load_file(SCPI_WRITEANDREAD_DBC_PATH)
+            self.database = cantools.db.load_file(SETPOINT_SETGET_DBC_PATH)
         except:
             print("Can not load the CAN database file.")
             self.getInput("Press <Enter> to quit...")
