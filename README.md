@@ -31,3 +31,9 @@ To run the Python CAN test program, you'll need the following:
 2. Set the **NODE NAME** to: **PPS_Device**
 3. Enable the CANFD interface by clicking on the switch.
 4. Open a Windows Console in the example folder `02_SCPI_WriteAndRead` and run the example executing: `python.exe .\02_SCPI_WriteAndRead.py`.
+#### 03_SetpointSetGet:
+1. Load the file "03_SetpointSetGet.dbc" to the Unit.\
+   Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
+2. Set the **NODE NAME** to: **PPS_Device**
+3. Enable the CANFD interface by clicking on the switch.
+4. Open a Windows Console in the example folder `03_SetpointSetGet` and run the example executing: `python.exe .\03_SetpointSetGet.py`.
