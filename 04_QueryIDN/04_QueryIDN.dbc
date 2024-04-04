@@ -1,7 +1,7 @@
 VERSION ""
 
 
-NS_ : 
+NS_ :
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -1221,32 +1221,32 @@ BA_DEF_DEF_  "Nominal_Bit_Rate" 1000000;
 BA_ "BusType" "CAN FD";
 BA_ "DBName" "PPS";
 VAL_ 3221225472 SC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 GS_Fault 1 "Faults present" 0 "No faults present" ;
+VAL_ 3221225472 GS_Fault 1 "Faults_present" 0 "No_faults_present" ;
 VAL_ 3221225472 SP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 SPP_Peak_Voltage_Enable 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 SPP_Peak_Voltage_Mode 2 "Margin and level" 1 "Level" 0 "Margin" ;
+VAL_ 3221225472 SPP_Peak_Voltage_Mode 2 "Margin_and_level" 1 "Level" 0 "Margin" ;
 VAL_ 3221225472 SPP_Peak_Current_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 SPP_RMS_Current_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 SPP_RMS_Power_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GPP_Peak_Voltage_Enable 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 GPP_Peak_Voltage_Mode 2 "Margin and level" 1 "Level" 0 "Margin" ;
+VAL_ 3221225472 GPP_Peak_Voltage_Mode 2 "Margin_and_level" 1 "Level" 0 "Margin" ;
 VAL_ 3221225472 GPP_Peak_Current_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GPP_RMS_Current_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GPP_RMS_Power_Enable 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 SC_Mode 2 "AC+DC mode" 1 "DC mode" 0 "AC mode" ;
-VAL_ 3221225472 SC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outputs" 3 "Three" 2 "Split" 1 "Single" ;
-VAL_ 3221225472 SC_Range 1 "High range" 0 "Low range" ;
+VAL_ 3221225472 SC_Mode 2 "AC_DC_mode" 1 "DC_mode" 0 "AC_mode" ;
+VAL_ 3221225472 SC_Form 6 "Split_plus_one_output" 5 "Three_outputs" 4 "Two_outputs" 3 "Three" 2 "Split" 1 "Single" ;
+VAL_ 3221225472 SC_Range 1 "High_range" 0 "Low_range" ;
 VAL_ 3221225472 SC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 SC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
-VAL_ 3221225472 SC_Output_Impedance_Mode 1 "RMS" 0 "Real time" ;
-VAL_ 3221225472 GC_Mode 2 "AC+DC mode" 1 "DC mode" 0 "AC mode" ;
-VAL_ 3221225472 GC_Form 6 "Split plus one output" 5 "Three outputs" 4 "Two outputs" 3 "Three" 2 "Split" 1 "Single" ;
-VAL_ 3221225472 GC_Range 1 "High range" 0 "Low range" ;
+VAL_ 3221225472 SC_Phase_Rotation 1 "Positive" 0 "Negative" ;
+VAL_ 3221225472 SC_Output_Impedance_Mode 1 "RMS" 0 "Real_time" ;
+VAL_ 3221225472 GC_Mode 2 "AC_DC_mode" 1 "DC_mode" 0 "AC_mode" ;
+VAL_ 3221225472 GC_Form 6 "Split_plus_one_output" 5 "Three_outputs" 4 "Two_outputs" 3 "Three" 2 "Split" 1 "Single" ;
+VAL_ 3221225472 GC_Range 1 "High_range" 0 "Low_range" ;
 VAL_ 3221225472 GC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GC_CSC_Fault_on_Saturation 1 "Enabled" 0 "Disabled" ;
-VAL_ 3221225472 GC_Phase_Rotation 1 "Positive (phase B leading A)" 0 "Negative (phase B lagging A)" ;
-VAL_ 3221225472 GC_Output_Impedance_Mode 1 "RMS" 0 "Real time" ;
+VAL_ 3221225472 GC_Phase_Rotation 1 "Positive" 0 "Negative" ;
+VAL_ 3221225472 GC_Output_Impedance_Mode 1 "RMS" 0 "Real_time" ;
 SIG_VALTYPE_ 3221225472 PM_ALL_Frequency : 1;
 SIG_VALTYPE_ 3221225472 PM_ALL_Voltage_AC : 1;
 SIG_VALTYPE_ 3221225472 PM_ALL_Voltage_ACDC : 1;
