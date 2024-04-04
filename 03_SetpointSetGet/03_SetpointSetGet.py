@@ -337,7 +337,7 @@ class SetpointSetGet():
         print("Send message:")
         print("  " + message.name)
         print("  signal: " + message.signals[0].name + ": " + str(volt_ac))
-        print("  signal: " + message.signals[0].name + ": " + str(volt_dc))
+        print("  signal: " + message.signals[1].name + ": " + str(volt_dc))
 
         msgCanMessage = TPCANMsg()
         msgCanMessage.ID = message.frame_id

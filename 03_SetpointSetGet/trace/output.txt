@@ -14,7 +14,7 @@ Send message:
 Send message:
   SP_ALL_Voltage_Message
   signal: SP_ALL_Voltage_AC: 21.34
-  signal: SP_ALL_Voltage_AC: 5.78
+  signal: SP_ALL_Voltage_DC: 5.78
 
 Request message "GP_ALL_Frequency_Message"
 Response message:
