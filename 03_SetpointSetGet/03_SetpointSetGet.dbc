@@ -1,7 +1,7 @@
 VERSION ""
 
 
-NS_ :
+NS_ : 
 	NS_DESC_
 	CM_
 	BA_DEF_
@@ -346,7 +346,7 @@ BO_TX_BU_ 273 : Client_PC,PPS_Device;
 BO_TX_BU_ 272 : PPS_Device,Client_PC;
 
 
-EV_ PPS: 0 [0|16] "" 5 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ PPST: 0 [0|16] "" 5 1 DUMMY_NODE_VECTOR3 Vector__XXX;
 
 CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 CM_ SG_ 3221225472 SC_CSC_Enable "This signal sets the CSC (Continuous self calibration) setting value.
@@ -1224,7 +1224,10 @@ BA_DEF_DEF_  "Mode" "CAN (SJA1000)";
 BA_DEF_DEF_  "Data_Bit_Rate" 2000000;
 BA_DEF_DEF_  "Nominal_Bit_Rate" 1000000;
 BA_ "BusType" "CAN FD";
-BA_ "DBName" "PPS";
+BA_ "DBName" "PPST";
+BA_ "Nominal_Bit_Rate" EV_ PPST 1000000;
+BA_ "Data_Bit_Rate" EV_ PPST 2000000;
+BA_ "Mode" EV_ PPST 0;
 VAL_ 3221225472 SC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GS_Fault 1 "Faults_present" 0 "No_faults_present" ;
 VAL_ 3221225472 SP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
