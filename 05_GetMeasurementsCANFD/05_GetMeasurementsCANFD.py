@@ -14,7 +14,6 @@ if version('cantools') != '38.0.2':
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 GET_MEASUREMENTS_CANFD_DBC_PATH = os.path.join(SCRIPT_DIR,'05_GetMeasurementsCANFD.dbc')
-# GET_MEASUREMENTS_CANFD_DBC_PATH = os.path.join(SCRIPT_DIR,'canfd.dbc')
 
 class GetMeasurementsCANFD():
 
