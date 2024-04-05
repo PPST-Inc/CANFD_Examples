@@ -37,3 +37,15 @@ To run the Python CAN test program, you'll need the following:
 2. Set the **NODE NAME** to: **PPS_Device**
 3. Enable the CANFD interface by clicking on the switch.
 4. Open a Windows Console in the example folder `03_SetpointSetGet` and run the example executing: `python.exe .\03_SetpointSetGet.py`.
+#### 04_QueryIDN:
+1. Load the file "04_QueryIDN.dbc" to the Unit.\
+   Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
+2. Set the **NODE NAME** to: **PPS_Device**
+3. Enable the CANFD interface by clicking on the switch.
+4. Open a Windows Console in the example folder `04_QueryIDN` and run the example executing: `python.exe .\04_QueryIDN.py`.
+#### 05_GetMeasurementsCANFD:
+1. Load the file "05_GetMeasurementsCANFD.dbc" to the Unit.\
+   Open the Web interface, go to **SYSTEM -> INTERFACE SETUP -> CANFD CONFIGURATION -> DBC FILE** and click on **UPLOAD**
+2. Set the **NODE NAME** to: **PPS_Device**
+3. Enable the CANFD interface by clicking on the switch.
+4. Open a Windows Console in the example folder `05_GetMeasurementsCANFD` and run the example executing: `python.exe .\05_GetMeasurementsCANFD.py`.
