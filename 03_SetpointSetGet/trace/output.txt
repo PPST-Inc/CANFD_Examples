@@ -30,6 +30,6 @@ Response message:
 Request message "GM_ALL_Voltage_Message"
 Response message:
   GM_ALL_Voltage_Message
-  signal: GM_ALL_Voltage_AC: 21.400325775146484
-  signal: GM_ALL_Voltage_DC: 5.584449768066406
+  signal: GM_ALL_Voltage_AC: 21.341413497924805
+  signal: GM_ALL_Voltage_DC: 5.781116008758545
 Press <Enter> to quit...

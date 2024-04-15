@@ -307,7 +307,13 @@ class SetpointSetGet():
         if (stsResult != PCAN_ERROR_OK):
             return stsResult, ack_status
 
-        return self.ReadAckMessage()
+        stsResult = self.ReadAckMessage()
+        if stsResult[0] == PCAN_ERROR_OK:
+            if stsResult[1] != 0 or stsResult[2] != message.frame_id:
+                print("Error ACK response invalid")
+                return stsResult[0], stsResult[1]
+
+        return stsResult[0], stsResult[1]
 
     def SendSetpointVoltage(self, volt_ac, volt_dc):
         """Send a message to set the Setpoint "Voltage AC" with value `volt_ac`
@@ -353,7 +359,13 @@ class SetpointSetGet():
         if (stsResult != PCAN_ERROR_OK):
             return stsResult, ack_status
 
-        return self.ReadAckMessage()
+        stsResult = self.ReadAckMessage()
+        if stsResult[0] == PCAN_ERROR_OK:
+            if stsResult[1] != 0 or stsResult[2] != message.frame_id:
+                print("Error ACK response invalid")
+                return stsResult[0], stsResult[1]
+
+        return stsResult[0], stsResult[1]
 
     def RequestMessage(self, name):
         """Request a message name `name` and read the response
@@ -433,6 +445,7 @@ class SetpointSetGet():
 
         stsResult = PCAN_ERROR_OK
         ack_status = -1
+        ack_can_id = 0
 
         tries = 100
         while tries > 0:
@@ -454,9 +467,10 @@ class SetpointSetGet():
 
                 decoded = message_confirmation.decode(msgRead.DATA)
                 ack_status = decoded['ACK_Signal']
+                ack_can_id = decoded['ACK_CAN_ID']
                 break
 
-        return stsResult, ack_status
+        return stsResult, ack_status, ack_can_id
 
 ## Starts the program
 SetpointSetGet()

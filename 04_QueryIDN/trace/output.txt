@@ -9,10 +9,8 @@ Press <Enter> to start...
 Write SCPI: "*IDN?"
 Response read: "PPSC,3150AFX-2ACG,13315858768672,4.7.23"
 
-Send message:
-  Firmware_Version_Message
-  signal: Firmware_Version:
+Request message "Firmware_Version_Message"
 Response message:
   Firmware_Version_Message
-  signal: Firmware_Version: 4.7.23
+  signal: Firmware_Version: 4.7.24
 Press <Enter> to quit...

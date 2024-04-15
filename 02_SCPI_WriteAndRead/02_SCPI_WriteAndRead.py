@@ -88,6 +88,13 @@ class SCPI_WriteAndRead():
         print("Successfully initialized.")
         self.getInput("Press <Enter> to start...")
 
+        clrResult = self.SCPIClear()
+        if clrResult[0] != PCAN_ERROR_OK or clrResult[1] != 0:
+            print("Error sending SCPI Clear.")
+            if clrResult[0] != PCAN_ERROR_OK:
+                self.ShowStatus(clrResult[0])
+            return
+
         writeResult = self.WriteSCPICommand("SYSTem:COMMunicate:LAN:VISA?")
         # Check transmission result and ACK receptions
         if writeResult[0] != PCAN_ERROR_OK or writeResult[1] != 0:
@@ -268,6 +275,36 @@ class SCPI_WriteAndRead():
             res = default
         return res
 
+    def SCPIClear(self):
+        """Send a message to clear the buffers 'SCPI_Clear_Message'
+
+        Returns:
+          A tuple of TPCANStatus error code and ACK_Signal value
+        """
+        message_clear = self.database.get_message_by_name('SCPI_Clear_Message')
+
+        msgCanMessage = TPCANMsg()
+        msgCanMessage.ID = message_clear.frame_id
+        msgCanMessage.LEN = message_clear.length
+        msgCanMessage.MSGTYPE = PCAN_MESSAGE_STANDARD.value
+        for i in range(message_clear.length):
+            msgCanMessage.DATA[i] = 0
+
+        ack_status = 0
+
+        stsResult = self.m_objPCANBasic.Write(self.PcanHandle, msgCanMessage)
+        # Checks if the message was sent
+        if (stsResult != PCAN_ERROR_OK):
+            return stsResult,ack_status
+
+        stsResult = self.ReadAckMessage()
+        if stsResult[0] == PCAN_ERROR_OK:
+            if stsResult[1] != 0 or stsResult[2] != message_clear.frame_id:
+                print("Error ACK response invalid")
+                return stsResult[0], stsResult[1]
+
+        return stsResult[0], stsResult[1]
+
     def WriteSCPICommand(self, scpi_cmd):
         """Write a SCPI command using the Message 'SCPI_Write_Message'
 
@@ -306,8 +343,14 @@ class SCPI_WriteAndRead():
             if (stsResult != PCAN_ERROR_OK):
                 return stsResult,ack_status
 
+            stsResult = self.ReadAckMessage()
+            if stsResult[0] == PCAN_ERROR_OK:
+                if stsResult[1] != 0 or stsResult[2] != message_write.frame_id:
+                    print("Error ACK response invalid")
+                    return stsResult[0], stsResult[1]
+
         # Wait for ACK frame from the device
-        return self.ReadAckMessage()
+        return stsResult[0], stsResult[1]
 
     def StringToBytesList(self, string, size):
         """Convert a String in a list of bytes of size `size`
@@ -353,6 +396,7 @@ class SCPI_WriteAndRead():
 
         stsResult = PCAN_ERROR_OK
         ack_status = -1
+        ack_can_id = 0
 
         tries = 100
         while tries > 0:
@@ -374,9 +418,10 @@ class SCPI_WriteAndRead():
 
                 decoded = message_confirmation.decode(msgRead.DATA)
                 ack_status = decoded['ACK_Signal']
+                ack_can_id = decoded['ACK_CAN_ID']
                 break
 
-        return stsResult, ack_status
+        return stsResult, ack_status, ack_can_id
 
     def ReadSCPIResponse(self):
         """Read the SCPI command response using the Message 'SCPI_Read_Response_Message'
