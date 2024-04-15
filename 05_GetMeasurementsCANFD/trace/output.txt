@@ -11,19 +11,19 @@ Request message "Get_Measurements_Message"
 Response message:
   Get_Measurements_Message
   signal: GM_ALL_Frequency: 59.99999237060547
-  signal: GM_ALL_Voltage_ACDC: 11.845935821533203
-  signal: GM_ALL_Voltage_DC: 6.350559234619141
-  signal: GM_ALL_Current_ACDC: 1.117356538772583
-  signal: GM_ALL_Current_DC: 0.8135887980461121
-  signal: GM_ALL_Active_Power: 0.03517334908246994
+  signal: GM_ALL_Voltage_ACDC: 11.845407485961914
+  signal: GM_ALL_Voltage_DC: 6.349673748016357
+  signal: GM_ALL_Current_ACDC: 1.1172995567321777
+  signal: GM_ALL_Current_DC: 0.8140321373939514
+  signal: GM_ALL_Active_Power: 0.03518347814679146
   signal: GM_ALL_Power_Factor: 0.0
   signal: GM_ALL_Displacement_Factor: 0.0
   signal: GM_ALL_Distortion_Factor: 0.0
-  signal: GM_ALL_Crest_Factor: 0.0
+  signal: GM_ALL_Crest_Factor: 1.7650173902511597
   signal: GM_ALL_Voltage_THD: 0.0
   signal: GM_ALL_Current_THD: 0.0
-  signal: GM_ALL_Peak_Current: 1.9683340787887573
-  signal: GM_ALL_Peak_Current_Recoded: 0.0
-  signal: GM_ALL_Kilowatt_Hour: 0.0396047979593277
-  signal: GM_ALL_KWH_Elapsed_Time: 1411.380126953125
+  signal: GM_ALL_Peak_Current: 1.9720585346221924
+  signal: GM_ALL_Peak_Current_Recoded: 3.6694681644439697
+  signal: GM_ALL_Kilowatt_Hour: 0.06526778638362885
+  signal: GM_ALL_KWH_Elapsed_Time: 4039.767822265625
 Press <Enter> to quit...

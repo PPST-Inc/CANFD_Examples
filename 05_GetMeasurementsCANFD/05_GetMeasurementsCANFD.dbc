@@ -312,10 +312,10 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ SCPI_Read_Response : 0|64@1+ (1,0) [0|1.84467440737096E+019] "" Vector__XXX
 
 BO_ 257 Get_Measurements_Message: 64 Client_PC
- SG_ GM_ALL_Peak_Current_Recoded : 416|32@1- (1,0) [-3.4E+038|3.4E+038] "A" Vector__XXX
- SG_ GM_ALL_Distortion_Factor : 256|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Displacement_Factor : 224|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
- SG_ GM_ALL_Crest_Factor : 288|32@1- (1,0) [-3.4E+038|3.4E+038] "" Vector__XXX
+ SG_ GM_ALL_Peak_Current_Recoded : 416|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  Client_PC,PPS_Device
+ SG_ GM_ALL_Distortion_Factor : 256|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC,PPS_Device
+ SG_ GM_ALL_Displacement_Factor : 224|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC,PPS_Device
+ SG_ GM_ALL_Crest_Factor : 288|32@1- (1,0) [-3.4E+038|3.4E+038] ""  Client_PC,PPS_Device
  SG_ GM_ALL_Peak_Current : 384|32@1- (1,0) [-3.4E+038|3.4E+038] "A"  PPS_Device,Client_PC
  SG_ GM_ALL_KWH_Elapsed_Time : 480|32@1- (1,0) [-3.4E+038|3.4E+038] "s"  PPS_Device,Client_PC
  SG_ GM_ALL_Kilowatt_Hour : 448|32@1- (1,0) [-3.4E+038|3.4E+038] "kWh"  PPS_Device,Client_PC
@@ -1216,9 +1216,9 @@ BA_ "BusType" "CAN FD";
 BA_ "DBName" "PPST";
 BA_ "VFrameFormat" BO_ 257 14;
 BA_ "VFrameFormat" BO_ 256 14;
-BA_ "Mode" EV_ PPST 2;
-BA_ "Data_Bit_Rate" EV_ PPST 2000000;
 BA_ "Nominal_Bit_Rate" EV_ PPST 1000000;
+BA_ "Data_Bit_Rate" EV_ PPST 2000000;
+BA_ "Mode" EV_ PPST 2;
 VAL_ 3221225472 SC_CSC_Enable 1 "Enabled" 0 "Disabled" ;
 VAL_ 3221225472 GS_Fault 1 "Faults_present" 0 "No_faults_present" ;
 VAL_ 3221225472 SP_ALL_Enable_Output 1 "Enabled" 0 "Disabled" ;
